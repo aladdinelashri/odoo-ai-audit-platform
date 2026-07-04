@@ -1,0 +1,16 @@
+{
+    "model": "pos.category",
+    "source": "pos.category.xlsx",
+    "rows": 6,
+    "columns": 2,
+    "fields": [
+        {
+            "name": "Sequence",
+            "type": "int64"
+        },
+        {
+            "name": "Display Name",
+            "type": "str"
+        }
+    ]
+}

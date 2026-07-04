@@ -1,0 +1,32 @@
+{
+    "model": "ir.module.module",
+    "source": "ir.module.module.xlsx",
+    "rows": 80,
+    "columns": 6,
+    "fields": [
+        {
+            "name": "Author",
+            "type": "str"
+        },
+        {
+            "name": "Latest Version",
+            "type": "str"
+        },
+        {
+            "name": "Module Name",
+            "type": "str"
+        },
+        {
+            "name": "Status",
+            "type": "str"
+        },
+        {
+            "name": "Technical Name",
+            "type": "str"
+        },
+        {
+            "name": "Website",
+            "type": "str"
+        }
+    ]
+}

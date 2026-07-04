@@ -1,0 +1,40 @@
+{
+    "model": "account.tax",
+    "source": "account.tax.xlsx",
+    "rows": 2,
+    "columns": 8,
+    "fields": [
+        {
+            "name": "تسلسل",
+            "type": "int64"
+        },
+        {
+            "name": "اسم الضريبة",
+            "type": "str"
+        },
+        {
+            "name": "ETA Code (Egypt)",
+            "type": "float64"
+        },
+        {
+            "name": "الوصف",
+            "type": "float64"
+        },
+        {
+            "name": "نوع الضريبة",
+            "type": "str"
+        },
+        {
+            "name": "نطاق الضريبة",
+            "type": "float64"
+        },
+        {
+            "name": "بطاقة العنوان على الفواتير",
+            "type": "str"
+        },
+        {
+            "name": "نشط",
+            "type": "bool"
+        }
+    ]
+}

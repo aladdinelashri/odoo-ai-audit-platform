@@ -4,6 +4,7 @@ from commands.status import run as status
 from commands.scan import run as scan
 from commands.models import run as models
 from commands.inspect import run as inspect
+from commands.build import run as build
 
 parser = argparse.ArgumentParser(
     description="Odoo AI Audit Platform Builder"
@@ -37,6 +38,9 @@ elif args.command == "inspect":
         print("Please specify the Odoo model.")
     else:
         inspect(args.model)
+
+elif args.command == "build":
+    build()
 
 else:
     print(f"Unknown command: {args.command}")
