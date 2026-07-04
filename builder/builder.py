@@ -7,6 +7,7 @@ from commands.inspect import run as inspect
 from commands.build import run as build
 from commands.dictionary import run as dictionary
 from commands.report import run as report
+from commands.relations import run as relations
 
 parser = argparse.ArgumentParser(
     description="Odoo AI Audit Platform Builder"
@@ -49,6 +50,9 @@ elif args.command == "dictionary":
     
 elif args.command == "report":
     report()
+    
+elif args.command == "relations":
+    relations()
 
 else:
     print(f"Unknown command: {args.command}")
