@@ -1,3 +1,9 @@
+import sys
+from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 import argparse
 
 from commands.status import run as status
@@ -8,6 +14,7 @@ from commands.build import run as build
 from commands.dictionary import run as dictionary
 from commands.report import run as report
 from commands.relations import run as relations
+from commands.connect import run as connect
 
 parser = argparse.ArgumentParser(
     description="Odoo AI Audit Platform Builder"
@@ -53,6 +60,9 @@ elif args.command == "report":
     
 elif args.command == "relations":
     relations()
+    
+elif args.command == "connect":
+    connect()
 
 else:
     print(f"Unknown command: {args.command}")

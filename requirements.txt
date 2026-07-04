@@ -4,3 +4,5 @@ typer
 rich
 pyyaml
 python-dotenv
+sqlalchemy
+psycopg[binary]
