@@ -1,5 +1,48 @@
 {
-  "version": "1.0",
-  "generated_at": "",
-  "models": []
+    "version": "1.0",
+    "generated_at": "2026-07-04T16:59:57.974220",
+    "models": [
+        {
+            "model": "account.account",
+            "rows": 118,
+            "columns": 6,
+            "file": "account.account.json"
+        },
+        {
+            "model": "account.journal",
+            "rows": 53,
+            "columns": 5,
+            "file": "account.journal.json"
+        },
+        {
+            "model": "account.move",
+            "rows": 3265,
+            "columns": 7,
+            "file": "account.move.json"
+        },
+        {
+            "model": "account.tax",
+            "rows": 2,
+            "columns": 8,
+            "file": "account.tax.json"
+        },
+        {
+            "model": "ir.module.module",
+            "rows": 80,
+            "columns": 6,
+            "file": "ir.module.module.json"
+        },
+        {
+            "model": "pos.category",
+            "rows": 6,
+            "columns": 2,
+            "file": "pos.category.json"
+        },
+        {
+            "model": "product.template",
+            "rows": 295,
+            "columns": 14,
+            "file": "product.template.json"
+        }
+    ]
 }
