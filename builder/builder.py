@@ -2,6 +2,7 @@ import argparse
 
 from commands.status import run as status
 from commands.scan import run as scan
+from commands.models import run as models
 
 parser = argparse.ArgumentParser()
 
@@ -17,6 +18,9 @@ if args.command == "status":
 
 elif args.command == "scan":
     scan()
+
+elif args.command == "models":
+    models()
 
 else:
     print("Unknown command")
