@@ -1,0 +1,4420 @@
+{
+    "res_config_settings": {
+        "name": "res_config_settings_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_module_module": {
+        "name": "ir_module_module_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_import_mapping": {
+        "name": "base_import_mapping_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_import_import": {
+        "name": "base_import_import_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_import_module": {
+        "name": "base_import_module_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_module_module_dependency": {
+        "name": "ir_module_module_dependency_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "bus_bus": {
+        "name": "bus_bus_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "web_tour_tour": {
+        "name": "web_tour_tour_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_users_web_tour_tour_rel": {
+        "name": "res_users_web_tour_tour_rel_pkey",
+        "columns": [
+            "web_tour_tour_id",
+            "res_users_id"
+        ]
+    },
+    "web_tour_tour_step": {
+        "name": "web_tour_tour_step_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_attachment": {
+        "name": "ir_attachment_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "web_editor_converter_test_sub": {
+        "name": "web_editor_converter_test_sub_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_users_settings": {
+        "name": "res_users_settings_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "web_editor_converter_test": {
+        "name": "web_editor_converter_test_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_document_sale_pdf_form_field_rel": {
+        "name": "product_document_sale_pdf_form_field_rel_pkey",
+        "columns": [
+            "product_document_id",
+            "sale_pdf_form_field_id"
+        ]
+    },
+    "sale_pdf_form_field": {
+        "name": "sale_pdf_form_field_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "quotation_document": {
+        "name": "quotation_document_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "header_footer_quotation_template_rel": {
+        "name": "header_footer_quotation_template_rel_pkey",
+        "columns": [
+            "quotation_document_id",
+            "sale_order_template_id"
+        ]
+    },
+    "quotation_document_sale_pdf_form_field_rel": {
+        "name": "quotation_document_sale_pdf_form_field_rel_pkey",
+        "columns": [
+            "quotation_document_id",
+            "sale_pdf_form_field_id"
+        ]
+    },
+    "quotation_document_sale_order_rel": {
+        "name": "quotation_document_sale_order_rel_pkey",
+        "columns": [
+            "sale_order_id",
+            "quotation_document_id"
+        ]
+    },
+    "uom_uom": {
+        "name": "uom_uom_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_order_line_product_document_rel": {
+        "name": "sale_order_line_product_document_rel_pkey",
+        "columns": [
+            "sale_order_line_id",
+            "product_document_id"
+        ]
+    },
+    "uom_category": {
+        "name": "uom_category_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "onboarding_progress": {
+        "name": "onboarding_progress_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "onboarding_progress_onboarding_progress_step_rel": {
+        "name": "onboarding_progress_onboarding_progress_step_rel_pkey",
+        "columns": [
+            "onboarding_progress_id",
+            "onboarding_progress_step_id"
+        ]
+    },
+    "onboarding_progress_step": {
+        "name": "onboarding_progress_step_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "onboarding_onboarding": {
+        "name": "onboarding_onboarding_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "onboarding_onboarding_onboarding_onboarding_step_rel": {
+        "name": "onboarding_onboarding_onboarding_onboarding_step_rel_pkey",
+        "columns": [
+            "onboarding_onboarding_id",
+            "onboarding_onboarding_step_id"
+        ]
+    },
+    "onboarding_onboarding_step": {
+        "name": "onboarding_onboarding_step_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "resource_resource": {
+        "name": "resource_resource_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "resource_calendar_attendance": {
+        "name": "resource_calendar_attendance_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "resource_calendar": {
+        "name": "resource_calendar_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "resource_calendar_leaves": {
+        "name": "resource_calendar_leaves_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "utm_medium": {
+        "name": "utm_medium_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_logging": {
+        "name": "ir_logging_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_module_category": {
+        "name": "ir_module_category_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "utm_source": {
+        "name": "utm_source_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "utm_tag_rel": {
+        "name": "utm_tag_rel_pkey",
+        "columns": [
+            "tag_id",
+            "campaign_id"
+        ]
+    },
+    "utm_tag": {
+        "name": "utm_tag_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "utm_stage": {
+        "name": "utm_stage_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_profile": {
+        "name": "ir_profile_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_users_apikeys": {
+        "name": "res_users_apikeys_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_model_fields_group_rel": {
+        "name": "ir_model_fields_group_rel_pkey",
+        "columns": [
+            "field_id",
+            "group_id"
+        ]
+    },
+    "res_groups": {
+        "name": "res_groups_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_model_inherit": {
+        "name": "ir_model_inherit_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_model_fields_selection": {
+        "name": "ir_model_fields_selection_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_model_constraint": {
+        "name": "ir_model_constraint_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_model_relation": {
+        "name": "ir_model_relation_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_model_access": {
+        "name": "ir_model_access_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_model_data": {
+        "name": "ir_model_data_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_ui_menu": {
+        "name": "ir_ui_menu_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "wizard_ir_model_menu_create": {
+        "name": "wizard_ir_model_menu_create_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_sequence": {
+        "name": "ir_sequence_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_sequence_date_range": {
+        "name": "ir_sequence_date_range_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_ui_menu_group_rel": {
+        "name": "ir_ui_menu_group_rel_pkey",
+        "columns": [
+            "menu_id",
+            "gid"
+        ]
+    },
+    "ir_ui_view_custom": {
+        "name": "ir_ui_view_custom_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_ui_view_group_rel": {
+        "name": "ir_ui_view_group_rel_pkey",
+        "columns": [
+            "view_id",
+            "group_id"
+        ]
+    },
+    "reset_view_arch_wizard": {
+        "name": "reset_view_arch_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_asset": {
+        "name": "ir_asset_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_ui_view": {
+        "name": "ir_ui_view_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_actions": {
+        "name": "ir_actions_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_act_window": {
+        "name": "ir_act_window_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_act_window_group_rel": {
+        "name": "ir_act_window_group_rel_pkey",
+        "columns": [
+            "act_id",
+            "gid"
+        ]
+    },
+    "ir_act_window_view": {
+        "name": "ir_act_window_view_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_act_url": {
+        "name": "ir_act_url_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "rel_server_actions": {
+        "name": "rel_server_actions_pkey",
+        "columns": [
+            "server_id",
+            "action_id"
+        ]
+    },
+    "ir_act_server_group_rel": {
+        "name": "ir_act_server_group_rel_pkey",
+        "columns": [
+            "act_id",
+            "gid"
+        ]
+    },
+    "ir_act_server_webhook_field_rel": {
+        "name": "ir_act_server_webhook_field_rel_pkey",
+        "columns": [
+            "server_id",
+            "field_id"
+        ]
+    },
+    "ir_actions_todo": {
+        "name": "ir_actions_todo_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_act_client": {
+        "name": "ir_act_client_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_embedded_actions": {
+        "name": "ir_embedded_actions_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_embedded_actions_res_groups_rel": {
+        "name": "ir_embedded_actions_res_groups_rel_pkey",
+        "columns": [
+            "ir_embedded_actions_id",
+            "res_groups_id"
+        ]
+    },
+    "res_groups_report_rel": {
+        "name": "res_groups_report_rel_pkey",
+        "columns": [
+            "uid",
+            "gid"
+        ]
+    },
+    "report_paperformat": {
+        "name": "report_paperformat_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_cron_trigger": {
+        "name": "ir_cron_trigger_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_cron_progress": {
+        "name": "ir_cron_progress_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_filters": {
+        "name": "ir_filters_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_default": {
+        "name": "ir_default_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_exports": {
+        "name": "ir_exports_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_exports_line": {
+        "name": "ir_exports_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_rule": {
+        "name": "ir_rule_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "rule_group_rel": {
+        "name": "rule_group_rel_pkey",
+        "columns": [
+            "rule_group_id",
+            "group_id"
+        ]
+    },
+    "ir_config_parameter": {
+        "name": "ir_config_parameter_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "module_country": {
+        "name": "module_country_pkey",
+        "columns": [
+            "module_id",
+            "country_id"
+        ]
+    },
+    "res_country": {
+        "name": "res_country_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_module_module_exclusion": {
+        "name": "ir_module_module_exclusion_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_demo": {
+        "name": "ir_demo_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_demo_failure": {
+        "name": "ir_demo_failure_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_demo_failure_wizard": {
+        "name": "ir_demo_failure_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "report_layout": {
+        "name": "report_layout_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_enable_profiling_wizard": {
+        "name": "base_enable_profiling_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_country_res_country_group_rel": {
+        "name": "res_country_res_country_group_rel_pkey",
+        "columns": [
+            "res_country_id",
+            "res_country_group_id"
+        ]
+    },
+    "res_country_group": {
+        "name": "res_country_group_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_currency": {
+        "name": "res_currency_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_country_state": {
+        "name": "res_country_state_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_lang": {
+        "name": "res_lang_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_partner_category": {
+        "name": "res_partner_category_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_partner_res_partner_category_rel": {
+        "name": "res_partner_res_partner_category_rel_pkey",
+        "columns": [
+            "category_id",
+            "partner_id"
+        ]
+    },
+    "res_partner_title": {
+        "name": "res_partner_title_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_act_report_xml": {
+        "name": "ir_act_report_xml_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_partner_industry": {
+        "name": "res_partner_industry_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_bank": {
+        "name": "res_bank_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_config": {
+        "name": "res_config_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_currency_rate": {
+        "name": "res_currency_rate_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_company_users_rel": {
+        "name": "res_company_users_rel_pkey",
+        "columns": [
+            "cid",
+            "user_id"
+        ]
+    },
+    "res_groups_users_rel": {
+        "name": "res_groups_users_rel_pkey",
+        "columns": [
+            "gid",
+            "uid"
+        ]
+    },
+    "res_groups_implied_rel": {
+        "name": "res_groups_implied_rel_pkey",
+        "columns": [
+            "gid",
+            "hid"
+        ]
+    },
+    "res_users_log": {
+        "name": "res_users_log_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_users_identitycheck": {
+        "name": "res_users_identitycheck_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "change_password_wizard": {
+        "name": "change_password_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "change_password_user": {
+        "name": "change_password_user_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "change_password_own": {
+        "name": "change_password_own_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_users_apikeys_description": {
+        "name": "res_users_apikeys_description_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_users_deletion": {
+        "name": "res_users_deletion_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_device_log": {
+        "name": "res_device_log_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "decimal_precision": {
+        "name": "decimal_precision_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_module_update": {
+        "name": "base_module_update_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_language_install": {
+        "name": "base_language_install_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_lang_install_rel": {
+        "name": "res_lang_install_rel_pkey",
+        "columns": [
+            "language_wizard_id",
+            "lang_id"
+        ]
+    },
+    "base_language_import": {
+        "name": "base_language_import_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_module_upgrade": {
+        "name": "base_module_upgrade_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_module_uninstall": {
+        "name": "base_module_uninstall_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_language_export": {
+        "name": "base_language_export_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "rel_modules_langexport": {
+        "name": "rel_modules_langexport_pkey",
+        "columns": [
+            "wiz_id",
+            "module_id"
+        ]
+    },
+    "base_partner_merge_automatic_wizard": {
+        "name": "base_partner_merge_automatic_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_partner_merge_line": {
+        "name": "base_partner_merge_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_partner_merge_automatic_wizard_res_partner_rel": {
+        "name": "base_partner_merge_automatic_wizard_res_partner_rel_pkey",
+        "columns": [
+            "base_partner_merge_automatic_wizard_id",
+            "res_partner_id"
+        ]
+    },
+    "auth_totp_device": {
+        "name": "auth_totp_device_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_partner_bank": {
+        "name": "res_partner_bank_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_document_layout": {
+        "name": "base_document_layout_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "auth_totp_wizard": {
+        "name": "auth_totp_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_cron": {
+        "name": "ir_cron_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "bus_presence": {
+        "name": "bus_presence_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "link_tracker_code": {
+        "name": "link_tracker_code_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_act_server": {
+        "name": "ir_act_server_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_model_fields": {
+        "name": "ir_model_fields_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "link_tracker": {
+        "name": "link_tracker_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_model": {
+        "name": "ir_model_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "link_tracker_click": {
+        "name": "link_tracker_click_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "rating_rating": {
+        "name": "rating_rating_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_alias_domain": {
+        "name": "mail_alias_domain_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_alias": {
+        "name": "mail_alias_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_activity_plan": {
+        "name": "mail_activity_plan_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_message": {
+        "name": "mail_message_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_activity_type": {
+        "name": "mail_activity_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_activity_rel": {
+        "name": "mail_activity_rel_pkey",
+        "columns": [
+            "activity_id",
+            "recommended_id"
+        ]
+    },
+    "mail_activity_type_mail_template_rel": {
+        "name": "mail_activity_type_mail_template_rel_pkey",
+        "columns": [
+            "mail_activity_type_id",
+            "mail_template_id"
+        ]
+    },
+    "mail_template": {
+        "name": "mail_template_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "activity_attachment_rel": {
+        "name": "activity_attachment_rel_pkey",
+        "columns": [
+            "activity_id",
+            "attachment_id"
+        ]
+    },
+    "mail_activity_plan_template": {
+        "name": "mail_activity_plan_template_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_followers": {
+        "name": "mail_followers_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_followers_mail_message_subtype_rel": {
+        "name": "mail_followers_mail_message_subtype_rel_pkey",
+        "columns": [
+            "mail_followers_id",
+            "mail_message_subtype_id"
+        ]
+    },
+    "mail_message_subtype": {
+        "name": "mail_message_subtype_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_gateway_allowed": {
+        "name": "mail_gateway_allowed_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_link_preview": {
+        "name": "mail_link_preview_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_message_reaction": {
+        "name": "mail_message_reaction_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_guest": {
+        "name": "mail_guest_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_message_schedule": {
+        "name": "mail_message_schedule_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_message_translation": {
+        "name": "mail_message_translation_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "message_attachment_rel": {
+        "name": "message_attachment_rel_pkey",
+        "columns": [
+            "message_id",
+            "attachment_id"
+        ]
+    },
+    "mail_message_res_partner_rel": {
+        "name": "mail_message_res_partner_rel_pkey",
+        "columns": [
+            "mail_message_id",
+            "res_partner_id"
+        ]
+    },
+    "mail_message_res_partner_starred_rel": {
+        "name": "mail_message_res_partner_starred_rel_pkey",
+        "columns": [
+            "mail_message_id",
+            "res_partner_id"
+        ]
+    },
+    "mail_mail_res_partner_rel": {
+        "name": "mail_mail_res_partner_rel_pkey",
+        "columns": [
+            "mail_mail_id",
+            "res_partner_id"
+        ]
+    },
+    "mail_push_device": {
+        "name": "mail_push_device_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_push": {
+        "name": "mail_push_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_scheduled_message": {
+        "name": "mail_scheduled_message_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "scheduled_message_attachment_rel": {
+        "name": "scheduled_message_attachment_rel_pkey",
+        "columns": [
+            "scheduled_message_id",
+            "attachment_id"
+        ]
+    },
+    "mail_scheduled_message_res_partner_rel": {
+        "name": "mail_scheduled_message_res_partner_rel_pkey",
+        "columns": [
+            "mail_scheduled_message_id",
+            "res_partner_id"
+        ]
+    },
+    "mail_tracking_value": {
+        "name": "mail_tracking_value_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "email_template_attachment_rel": {
+        "name": "email_template_attachment_rel_pkey",
+        "columns": [
+            "email_template_id",
+            "attachment_id"
+        ]
+    },
+    "mail_template_ir_actions_report_rel": {
+        "name": "mail_template_ir_actions_report_rel_pkey",
+        "columns": [
+            "mail_template_id",
+            "ir_actions_report_id"
+        ]
+    },
+    "mail_ice_server": {
+        "name": "mail_ice_server_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_canned_response": {
+        "name": "mail_canned_response_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_canned_response_res_groups_rel": {
+        "name": "mail_canned_response_res_groups_rel_pkey",
+        "columns": [
+            "mail_canned_response_id",
+            "res_groups_id"
+        ]
+    },
+    "res_users_settings_volumes": {
+        "name": "res_users_settings_volumes_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_blacklist": {
+        "name": "mail_blacklist_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_mail": {
+        "name": "mail_mail_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_activity": {
+        "name": "mail_activity_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_act_server_res_partner_rel": {
+        "name": "ir_act_server_res_partner_rel_pkey",
+        "columns": [
+            "ir_act_server_id",
+            "res_partner_id"
+        ]
+    },
+    "discuss_channel_member": {
+        "name": "discuss_channel_member_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "discuss_channel": {
+        "name": "discuss_channel_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "discuss_channel_rtc_session": {
+        "name": "discuss_channel_rtc_session_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "discuss_channel_res_groups_rel": {
+        "name": "discuss_channel_res_groups_rel_pkey",
+        "columns": [
+            "discuss_channel_id",
+            "res_groups_id"
+        ]
+    },
+    "discuss_gif_favorite": {
+        "name": "discuss_gif_favorite_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "discuss_voice_metadata": {
+        "name": "discuss_voice_metadata_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_blacklist_remove": {
+        "name": "mail_blacklist_remove_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_compose_message_ir_attachments_rel": {
+        "name": "mail_compose_message_ir_attachments_rel_pkey",
+        "columns": [
+            "wizard_id",
+            "attachment_id"
+        ]
+    },
+    "mail_compose_message_res_partner_rel": {
+        "name": "mail_compose_message_res_partner_rel_pkey",
+        "columns": [
+            "wizard_id",
+            "partner_id"
+        ]
+    },
+    "mail_activity_schedule": {
+        "name": "mail_activity_schedule_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_activity_plan_mail_activity_schedule_rel": {
+        "name": "mail_activity_plan_mail_activity_schedule_rel_pkey",
+        "columns": [
+            "mail_activity_schedule_id",
+            "mail_activity_plan_id"
+        ]
+    },
+    "mail_resend_message": {
+        "name": "mail_resend_message_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_notification_mail_resend_message_rel": {
+        "name": "mail_notification_mail_resend_message_rel_pkey",
+        "columns": [
+            "mail_resend_message_id",
+            "mail_notification_id"
+        ]
+    },
+    "mail_resend_partner": {
+        "name": "mail_resend_partner_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_template_preview": {
+        "name": "mail_template_preview_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_template_reset": {
+        "name": "mail_template_reset_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_template_mail_template_reset_rel": {
+        "name": "mail_template_mail_template_reset_rel_pkey",
+        "columns": [
+            "mail_template_reset_id",
+            "mail_template_id"
+        ]
+    },
+    "mail_wizard_invite": {
+        "name": "mail_wizard_invite_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_wizard_invite_res_partner_rel": {
+        "name": "mail_wizard_invite_res_partner_rel_pkey",
+        "columns": [
+            "mail_wizard_invite_id",
+            "res_partner_id"
+        ]
+    },
+    "mail_compose_message": {
+        "name": "mail_compose_message_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_analytic_plan": {
+        "name": "account_analytic_plan_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_analytic_account": {
+        "name": "account_analytic_account_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_module_install_request": {
+        "name": "base_module_install_request_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_module_install_review": {
+        "name": "base_module_install_review_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "fetchmail_server": {
+        "name": "fetchmail_server_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "ir_mail_server": {
+        "name": "ir_mail_server_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "phone_blacklist": {
+        "name": "phone_blacklist_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "phone_blacklist_remove": {
+        "name": "phone_blacklist_remove_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_analytic_distribution_model": {
+        "name": "account_analytic_distribution_model_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "privacy_log": {
+        "name": "privacy_log_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "privacy_lookup_wizard": {
+        "name": "privacy_lookup_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "privacy_lookup_wizard_line": {
+        "name": "privacy_lookup_wizard_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_combo_product_template_rel": {
+        "name": "product_combo_product_template_rel_pkey",
+        "columns": [
+            "product_template_id",
+            "product_combo_id"
+        ]
+    },
+    "product_combo": {
+        "name": "product_combo_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_tag_product_template_rel": {
+        "name": "product_tag_product_template_rel_pkey",
+        "columns": [
+            "product_template_id",
+            "product_tag_id"
+        ]
+    },
+    "product_tag": {
+        "name": "product_tag_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_variant_combination": {
+        "name": "product_variant_combination_pkey",
+        "columns": [
+            "product_product_id",
+            "product_template_attribute_value_id"
+        ]
+    },
+    "product_template_attribute_value": {
+        "name": "product_template_attribute_value_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_tag_product_product_rel": {
+        "name": "product_tag_product_product_rel_pkey",
+        "columns": [
+            "product_product_id",
+            "product_tag_id"
+        ]
+    },
+    "product_attribute": {
+        "name": "product_attribute_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_attribute_product_template_rel": {
+        "name": "product_attribute_product_template_rel_pkey",
+        "columns": [
+            "product_attribute_id",
+            "product_template_id"
+        ]
+    },
+    "product_attribute_value": {
+        "name": "product_attribute_value_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_attribute_value_product_template_attribute_line_rel": {
+        "name": "product_attribute_value_product_template_attribute_line_re_pkey",
+        "columns": [
+            "product_attribute_value_id",
+            "product_template_attribute_line_id"
+        ]
+    },
+    "product_template_attribute_line": {
+        "name": "product_template_attribute_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_combo_item": {
+        "name": "product_combo_item_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_pricelist": {
+        "name": "product_pricelist_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_country_group_pricelist_rel": {
+        "name": "res_country_group_pricelist_rel_pkey",
+        "columns": [
+            "pricelist_id",
+            "res_country_group_id"
+        ]
+    },
+    "product_pricelist_item": {
+        "name": "product_pricelist_item_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_supplierinfo": {
+        "name": "product_supplierinfo_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_template_attribute_exclusion": {
+        "name": "product_template_attribute_exclusion_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_attr_exclusion_value_ids_rel": {
+        "name": "product_attr_exclusion_value_ids_rel_pkey",
+        "columns": [
+            "product_template_attribute_exclusion_id",
+            "product_template_attribute_value_id"
+        ]
+    },
+    "product_label_layout_product_product_rel": {
+        "name": "product_label_layout_product_product_rel_pkey",
+        "columns": [
+            "product_label_layout_id",
+            "product_product_id"
+        ]
+    },
+    "product_label_layout_product_template_rel": {
+        "name": "product_label_layout_product_template_rel_pkey",
+        "columns": [
+            "product_label_layout_id",
+            "product_template_id"
+        ]
+    },
+    "update_product_attribute_value": {
+        "name": "update_product_attribute_value_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_attribute_custom_value": {
+        "name": "product_attribute_custom_value_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_product": {
+        "name": "product_product_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_document": {
+        "name": "product_document_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "crm_team_member": {
+        "name": "crm_team_member_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "team_favorite_user_rel": {
+        "name": "team_favorite_user_rel_pkey",
+        "columns": [
+            "team_id",
+            "user_id"
+        ]
+    },
+    "crm_tag": {
+        "name": "crm_tag_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "portal_share": {
+        "name": "portal_share_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "portal_share_res_partner_rel": {
+        "name": "portal_share_res_partner_rel_pkey",
+        "columns": [
+            "portal_share_id",
+            "res_partner_id"
+        ]
+    },
+    "portal_wizard": {
+        "name": "portal_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "portal_wizard_res_partner_rel": {
+        "name": "portal_wizard_res_partner_rel_pkey",
+        "columns": [
+            "portal_wizard_id",
+            "res_partner_id"
+        ]
+    },
+    "portal_wizard_user": {
+        "name": "portal_wizard_user_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "crm_team": {
+        "name": "crm_team_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "x_pos_config_res_users_rel": {
+        "name": "x_pos_config_res_users_rel_pkey",
+        "columns": [
+            "pos_config_id",
+            "res_users_id"
+        ]
+    },
+    "stock_location": {
+        "name": "stock_location_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "digest_digest_res_users_rel": {
+        "name": "digest_digest_res_users_rel_pkey",
+        "columns": [
+            "digest_digest_id",
+            "res_users_id"
+        ]
+    },
+    "digest_tip": {
+        "name": "digest_tip_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "digest_tip_res_users_rel": {
+        "name": "digest_tip_res_users_rel_pkey",
+        "columns": [
+            "digest_tip_id",
+            "res_users_id"
+        ]
+    },
+    "digest_digest": {
+        "name": "digest_digest_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "payment_provider": {
+        "name": "payment_provider_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "payment_method": {
+        "name": "payment_method_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "payment_method_payment_provider_rel": {
+        "name": "payment_method_payment_provider_rel_pkey",
+        "columns": [
+            "payment_method_id",
+            "payment_provider_id"
+        ]
+    },
+    "payment_method_res_country_rel": {
+        "name": "payment_method_res_country_rel_pkey",
+        "columns": [
+            "payment_method_id",
+            "res_country_id"
+        ]
+    },
+    "payment_method_res_currency_rel": {
+        "name": "payment_method_res_currency_rel_pkey",
+        "columns": [
+            "payment_method_id",
+            "res_currency_id"
+        ]
+    },
+    "payment_country_rel": {
+        "name": "payment_country_rel_pkey",
+        "columns": [
+            "payment_id",
+            "country_id"
+        ]
+    },
+    "payment_currency_rel": {
+        "name": "payment_currency_rel_pkey",
+        "columns": [
+            "payment_provider_id",
+            "currency_id"
+        ]
+    },
+    "payment_token": {
+        "name": "payment_token_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "payment_capture_wizard": {
+        "name": "payment_capture_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "payment_capture_wizard_payment_transaction_rel": {
+        "name": "payment_capture_wizard_payment_transaction_rel_pkey",
+        "columns": [
+            "payment_capture_wizard_id",
+            "payment_transaction_id"
+        ]
+    },
+    "payment_provider_onboarding_wizard": {
+        "name": "payment_provider_onboarding_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "payment_transaction": {
+        "name": "payment_transaction_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "payment_link_wizard": {
+        "name": "payment_link_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_contract_type": {
+        "name": "hr_contract_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "employee_category_rel": {
+        "name": "employee_category_rel_pkey",
+        "columns": [
+            "employee_id",
+            "category_id"
+        ]
+    },
+    "hr_employee_category": {
+        "name": "hr_employee_category_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_department": {
+        "name": "hr_department_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_job": {
+        "name": "hr_job_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_work_location": {
+        "name": "hr_work_location_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_departure_reason": {
+        "name": "hr_departure_reason_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "discuss_channel_hr_department_rel": {
+        "name": "discuss_channel_hr_department_rel_pkey",
+        "columns": [
+            "discuss_channel_id",
+            "hr_department_id"
+        ]
+    },
+    "hr_departure_wizard": {
+        "name": "hr_departure_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_users": {
+        "name": "res_users_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "utm_campaign": {
+        "name": "utm_campaign_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_analytic_line": {
+        "name": "account_analytic_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_analytic_applicability": {
+        "name": "account_analytic_applicability_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_company": {
+        "name": "res_company_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "backup_record": {
+        "name": "backup_record_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "backup_server": {
+        "name": "backup_server_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "backup_dropbox_token_assignment_wizard": {
+        "name": "backup_dropbox_token_assignment_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "iap_account_res_company_rel": {
+        "name": "iap_account_res_company_rel_pkey",
+        "columns": [
+            "iap_account_id",
+            "res_company_id"
+        ]
+    },
+    "iap_account_res_users_rel": {
+        "name": "iap_account_res_users_rel_pkey",
+        "columns": [
+            "iap_account_id",
+            "res_users_id"
+        ]
+    },
+    "iap_service": {
+        "name": "iap_service_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_partner_autocomplete_sync": {
+        "name": "res_partner_autocomplete_sync_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "iap_account": {
+        "name": "iap_account_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "mail_notification": {
+        "name": "mail_notification_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move__account_payment": {
+        "name": "account_move__account_payment_pkey",
+        "columns": [
+            "invoice_id",
+            "payment_id"
+        ]
+    },
+    "account_partial_reconcile": {
+        "name": "account_partial_reconcile_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_payment_term": {
+        "name": "account_payment_term_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_fiscal_position": {
+        "name": "account_fiscal_position_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_incoterms": {
+        "name": "account_incoterms_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_cash_rounding": {
+        "name": "account_cash_rounding_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_fiscal_position_res_country_state_rel": {
+        "name": "account_fiscal_position_res_country_state_rel_pkey",
+        "columns": [
+            "account_fiscal_position_id",
+            "res_country_state_id"
+        ]
+    },
+    "account_fiscal_position_tax": {
+        "name": "account_fiscal_position_tax_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_fiscal_position_account": {
+        "name": "account_fiscal_position_account_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_account_tag": {
+        "name": "account_account_tag_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_tax": {
+        "name": "account_tax_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_account": {
+        "name": "account_account_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_account_tax_default_rel": {
+        "name": "account_account_tax_default_rel_pkey",
+        "columns": [
+            "account_id",
+            "tax_id"
+        ]
+    },
+    "account_account_res_company_rel": {
+        "name": "account_account_res_company_rel_pkey",
+        "columns": [
+            "account_account_id",
+            "res_company_id"
+        ]
+    },
+    "account_account_account_tag": {
+        "name": "account_account_account_tag_pkey",
+        "columns": [
+            "account_account_id",
+            "account_account_tag_id"
+        ]
+    },
+    "account_account_account_journal_rel": {
+        "name": "account_account_account_journal_rel_pkey",
+        "columns": [
+            "account_account_id",
+            "account_journal_id"
+        ]
+    },
+    "account_group": {
+        "name": "account_group_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_journal_group": {
+        "name": "account_journal_group_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_journal_account_journal_group_rel": {
+        "name": "account_journal_account_journal_group_rel_pkey",
+        "columns": [
+            "account_journal_group_id",
+            "account_journal_id"
+        ]
+    },
+    "journal_account_control_rel": {
+        "name": "journal_account_control_rel_pkey",
+        "columns": [
+            "journal_id",
+            "account_id"
+        ]
+    },
+    "account_lock_exception": {
+        "name": "account_lock_exception_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_tax_group": {
+        "name": "account_tax_group_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_tax_filiation_rel": {
+        "name": "account_tax_filiation_rel_pkey",
+        "columns": [
+            "parent_tax",
+            "child_tax"
+        ]
+    },
+    "account_tax_repartition_line": {
+        "name": "account_tax_repartition_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_account_tag_account_tax_repartition_line_rel": {
+        "name": "account_account_tag_account_tax_repartition_line_rel_pkey",
+        "columns": [
+            "account_tax_repartition_line_id",
+            "account_account_tag_id"
+        ]
+    },
+    "account_reconcile_model": {
+        "name": "account_reconcile_model_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_reconcile_model_partner_mapping": {
+        "name": "account_reconcile_model_partner_mapping_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_reconcile_model_line": {
+        "name": "account_reconcile_model_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_reconcile_model_line_account_tax_rel": {
+        "name": "account_reconcile_model_line_account_tax_rel_pkey",
+        "columns": [
+            "account_reconcile_model_line_id",
+            "account_tax_id"
+        ]
+    },
+    "account_journal_account_reconcile_model_rel": {
+        "name": "account_journal_account_reconcile_model_rel_pkey",
+        "columns": [
+            "account_reconcile_model_id",
+            "account_journal_id"
+        ]
+    },
+    "account_reconcile_model_res_partner_rel": {
+        "name": "account_reconcile_model_res_partner_rel_pkey",
+        "columns": [
+            "account_reconcile_model_id",
+            "res_partner_id"
+        ]
+    },
+    "account_reconcile_model_res_partner_category_rel": {
+        "name": "account_reconcile_model_res_partner_category_rel_pkey",
+        "columns": [
+            "account_reconcile_model_id",
+            "res_partner_category_id"
+        ]
+    },
+    "account_payment_term_line": {
+        "name": "account_payment_term_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move_line_account_tax_rel": {
+        "name": "account_move_line_account_tax_rel_pkey",
+        "columns": [
+            "account_move_line_id",
+            "account_tax_id"
+        ]
+    },
+    "account_account_tag_account_move_line_rel": {
+        "name": "account_account_tag_account_move_line_rel_pkey",
+        "columns": [
+            "account_move_line_id",
+            "account_account_tag_id"
+        ]
+    },
+    "account_bank_statement": {
+        "name": "account_bank_statement_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_full_reconcile": {
+        "name": "account_full_reconcile_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_payment_method": {
+        "name": "account_payment_method_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_bank_statement_ir_attachment_rel": {
+        "name": "account_bank_statement_ir_attachment_rel_pkey",
+        "columns": [
+            "account_bank_statement_id",
+            "ir_attachment_id"
+        ]
+    },
+    "account_payment_account_bank_statement_line_rel": {
+        "name": "account_payment_account_bank_statement_line_rel_pkey",
+        "columns": [
+            "account_bank_statement_line_id",
+            "account_payment_id"
+        ]
+    },
+    "product_taxes_rel": {
+        "name": "product_taxes_rel_pkey",
+        "columns": [
+            "prod_id",
+            "tax_id"
+        ]
+    },
+    "product_supplier_taxes_rel": {
+        "name": "product_supplier_taxes_rel_pkey",
+        "columns": [
+            "prod_id",
+            "tax_id"
+        ]
+    },
+    "account_account_tag_product_template_rel": {
+        "name": "account_account_tag_product_template_rel_pkey",
+        "columns": [
+            "product_template_id",
+            "account_account_tag_id"
+        ]
+    },
+    "account_report_section_rel": {
+        "name": "account_report_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "account_report_line": {
+        "name": "account_report_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_report_expression": {
+        "name": "account_report_expression_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_report_column": {
+        "name": "account_report_column_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_report_external_value": {
+        "name": "account_report_external_value_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_automatic_entry_wizard": {
+        "name": "account_automatic_entry_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_automatic_entry_wizard_account_move_line_rel": {
+        "name": "account_automatic_entry_wizard_account_move_line_rel_pkey",
+        "columns": [
+            "account_automatic_entry_wizard_id",
+            "account_move_line_id"
+        ]
+    },
+    "account_autopost_bills_wizard": {
+        "name": "account_autopost_bills_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "validate_account_move": {
+        "name": "validate_account_move_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move_validate_account_move_rel": {
+        "name": "account_move_validate_account_move_rel_pkey",
+        "columns": [
+            "validate_account_move_id",
+            "account_move_id"
+        ]
+    },
+    "account_move_reversal": {
+        "name": "account_move_reversal_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move_reversal_move": {
+        "name": "account_move_reversal_move_pkey",
+        "columns": [
+            "reversal_id",
+            "move_id"
+        ]
+    },
+    "account_move_reversal_new_move": {
+        "name": "account_move_reversal_new_move_pkey",
+        "columns": [
+            "reversal_id",
+            "new_move_id"
+        ]
+    },
+    "account_resequence_wizard": {
+        "name": "account_resequence_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move_account_resequence_wizard_rel": {
+        "name": "account_move_account_resequence_wizard_rel_pkey",
+        "columns": [
+            "account_resequence_wizard_id",
+            "account_move_id"
+        ]
+    },
+    "account_secure_entries_wizard": {
+        "name": "account_secure_entries_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_financial_year_op": {
+        "name": "account_financial_year_op_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_setup_bank_manual_config": {
+        "name": "account_setup_bank_manual_config_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move_send_wizard": {
+        "name": "account_move_send_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move_send_wizard_res_partner_rel": {
+        "name": "account_move_send_wizard_res_partner_rel_pkey",
+        "columns": [
+            "account_move_send_wizard_id",
+            "res_partner_id"
+        ]
+    },
+    "account_move_send_batch_wizard": {
+        "name": "account_move_send_batch_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move_account_move_send_batch_wizard_rel": {
+        "name": "account_move_account_move_send_batch_wizard_rel_pkey",
+        "columns": [
+            "account_move_send_batch_wizard_id",
+            "account_move_id"
+        ]
+    },
+    "account_payment_register_move_line_rel": {
+        "name": "account_payment_register_move_line_rel_pkey",
+        "columns": [
+            "wizard_id",
+            "line_id"
+        ]
+    },
+    "account_accrued_orders_wizard": {
+        "name": "account_accrued_orders_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_merge_wizard": {
+        "name": "account_merge_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_account_account_merge_wizard_rel": {
+        "name": "account_account_account_merge_wizard_rel_pkey",
+        "columns": [
+            "account_merge_wizard_id",
+            "account_account_id"
+        ]
+    },
+    "account_merge_wizard_line": {
+        "name": "account_merge_wizard_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_payment_register": {
+        "name": "account_payment_register_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_payment_method_line": {
+        "name": "account_payment_method_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_invoice_transaction_rel": {
+        "name": "account_invoice_transaction_rel_pkey",
+        "columns": [
+            "invoice_id",
+            "transaction_id"
+        ]
+    },
+    "payment_refund_wizard": {
+        "name": "payment_refund_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move": {
+        "name": "account_move_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_order_line_invoice_rel": {
+        "name": "sale_order_line_invoice_rel_pkey",
+        "columns": [
+            "invoice_line_id",
+            "order_line_id"
+        ]
+    },
+    "sale_order_transaction_rel": {
+        "name": "sale_order_transaction_rel_pkey",
+        "columns": [
+            "transaction_id",
+            "sale_order_id"
+        ]
+    },
+    "product_optional_rel": {
+        "name": "product_optional_rel_pkey",
+        "columns": [
+            "src_id",
+            "dest_id"
+        ]
+    },
+    "sale_order_tag_rel": {
+        "name": "sale_order_tag_rel_pkey",
+        "columns": [
+            "order_id",
+            "tag_id"
+        ]
+    },
+    "product_template_attribute_value_sale_order_line_rel": {
+        "name": "product_template_attribute_value_sale_order_line_rel_pkey",
+        "columns": [
+            "sale_order_line_id",
+            "product_template_attribute_value_id"
+        ]
+    },
+    "account_tax_sale_order_line_rel": {
+        "name": "account_tax_sale_order_line_rel_pkey",
+        "columns": [
+            "sale_order_line_id",
+            "account_tax_id"
+        ]
+    },
+    "sale_mass_cancel_orders": {
+        "name": "sale_mass_cancel_orders_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_order_mass_cancel_wizard_rel": {
+        "name": "sale_order_mass_cancel_wizard_rel_pkey",
+        "columns": [
+            "sale_mass_cancel_orders_id",
+            "sale_order_id"
+        ]
+    },
+    "sale_payment_provider_onboarding_wizard": {
+        "name": "sale_payment_provider_onboarding_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_advance_payment_inv": {
+        "name": "sale_advance_payment_inv_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_advance_payment_inv_sale_order_rel": {
+        "name": "sale_advance_payment_inv_sale_order_rel_pkey",
+        "columns": [
+            "sale_advance_payment_inv_id",
+            "sale_order_id"
+        ]
+    },
+    "sale_order_cancel": {
+        "name": "sale_order_cancel_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_order_discount": {
+        "name": "sale_order_discount_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_tax_sale_order_discount_rel": {
+        "name": "account_tax_sale_order_discount_rel_pkey",
+        "columns": [
+            "sale_order_discount_id",
+            "account_tax_id"
+        ]
+    },
+    "sms_template": {
+        "name": "sms_template_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_sms": {
+        "name": "sms_sms_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_tracker": {
+        "name": "sms_tracker_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_order_template": {
+        "name": "sale_order_template_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_order_option": {
+        "name": "sale_order_option_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_order_template_line": {
+        "name": "sale_order_template_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_order_template_option": {
+        "name": "sale_order_template_option_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_account_code": {
+        "name": "sms_account_code_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_account_phone": {
+        "name": "sms_account_phone_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_account_sender": {
+        "name": "sms_account_sender_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_composer": {
+        "name": "sms_composer_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_resend": {
+        "name": "sms_resend_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_resend_recipient": {
+        "name": "sms_resend_recipient_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_template_preview": {
+        "name": "sms_template_preview_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_template_reset": {
+        "name": "sms_template_reset_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sms_template_sms_template_reset_rel": {
+        "name": "sms_template_sms_template_reset_rel_pkey",
+        "columns": [
+            "sms_template_reset_id",
+            "sms_template_id"
+        ]
+    },
+    "snailmail_letter": {
+        "name": "snailmail_letter_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "snailmail_letter_format_error": {
+        "name": "snailmail_letter_format_error_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "snailmail_letter_missing_required_fields": {
+        "name": "snailmail_letter_missing_required_fields_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "confirm_stock_sms": {
+        "name": "confirm_stock_sms_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_automation": {
+        "name": "base_automation_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "base_automation_onchange_fields_rel": {
+        "name": "base_automation_onchange_fields_rel_pkey",
+        "columns": [
+            "base_automation_id",
+            "ir_model_fields_id"
+        ]
+    },
+    "base_automation_ir_model_fields_rel": {
+        "name": "base_automation_ir_model_fields_rel_pkey",
+        "columns": [
+            "base_automation_id",
+            "ir_model_fields_id"
+        ]
+    },
+    "stock_picking_sms_rel": {
+        "name": "stock_picking_sms_rel_pkey",
+        "columns": [
+            "confirm_stock_sms_id",
+            "stock_picking_id"
+        ]
+    },
+    "project_share_wizard_res_partner_rel": {
+        "name": "project_share_wizard_res_partner_rel_pkey",
+        "columns": [
+            "project_share_wizard_id",
+            "res_partner_id"
+        ]
+    },
+    "sale_order_line": {
+        "name": "sale_order_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "res_partner": {
+        "name": "res_partner_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move_purchase_order_rel": {
+        "name": "account_move_purchase_order_rel_pkey",
+        "columns": [
+            "purchase_order_id",
+            "account_move_id"
+        ]
+    },
+    "account_tax_purchase_order_line_rel": {
+        "name": "account_tax_purchase_order_line_rel_pkey",
+        "columns": [
+            "purchase_order_line_id",
+            "account_tax_id"
+        ]
+    },
+    "product_template_attribute_value_purchase_order_line_rel": {
+        "name": "product_template_attribute_value_purchase_order_line_rel_pkey",
+        "columns": [
+            "purchase_order_line_id",
+            "product_template_attribute_value_id"
+        ]
+    },
+    "bill_to_po_wizard": {
+        "name": "bill_to_po_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "barcode_nomenclature": {
+        "name": "barcode_nomenclature_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "barcode_rule": {
+        "name": "barcode_rule_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_packaging": {
+        "name": "product_packaging_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_category": {
+        "name": "product_category_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_template": {
+        "name": "product_template_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_label_layout": {
+        "name": "product_label_layout_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_removal": {
+        "name": "product_removal_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_putaway_rule": {
+        "name": "stock_putaway_rule_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_package_type_stock_putaway_rule_rel": {
+        "name": "stock_package_type_stock_putaway_rule_rel_pkey",
+        "columns": [
+            "stock_putaway_rule_id",
+            "stock_package_type_id"
+        ]
+    },
+    "stock_package_type": {
+        "name": "stock_package_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_storage_category": {
+        "name": "stock_storage_category_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_route_product": {
+        "name": "stock_route_product_pkey",
+        "columns": [
+            "route_id",
+            "product_id"
+        ]
+    },
+    "stock_route_categ": {
+        "name": "stock_route_categ_pkey",
+        "columns": [
+            "route_id",
+            "categ_id"
+        ]
+    },
+    "stock_route_packaging": {
+        "name": "stock_route_packaging_pkey",
+        "columns": [
+            "route_id",
+            "packaging_id"
+        ]
+    },
+    "stock_route_warehouse": {
+        "name": "stock_route_warehouse_pkey",
+        "columns": [
+            "route_id",
+            "warehouse_id"
+        ]
+    },
+    "template_attribute_value_stock_move_rel": {
+        "name": "template_attribute_value_stock_move_rel_pkey",
+        "columns": [
+            "move_id",
+            "template_attribute_value_id"
+        ]
+    },
+    "stock_move_move_rel": {
+        "name": "stock_move_move_rel_pkey",
+        "columns": [
+            "move_orig_id",
+            "move_dest_id"
+        ]
+    },
+    "stock_route_move": {
+        "name": "stock_route_move_pkey",
+        "columns": [
+            "move_id",
+            "route_id"
+        ]
+    },
+    "stock_route": {
+        "name": "stock_route_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_warehouse": {
+        "name": "stock_warehouse_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_scrap": {
+        "name": "stock_scrap_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_rule": {
+        "name": "stock_rule_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_package_level": {
+        "name": "stock_package_level_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_move_line": {
+        "name": "stock_move_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_move_line_consume_rel": {
+        "name": "stock_move_line_consume_rel_pkey",
+        "columns": [
+            "consume_line_id",
+            "produce_line_id"
+        ]
+    },
+    "stock_quant_package": {
+        "name": "stock_quant_package_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "picking_type_favorite_user_rel": {
+        "name": "picking_type_favorite_user_rel_pkey",
+        "columns": [
+            "picking_type_id",
+            "user_id"
+        ]
+    },
+    "stock_wh_resupply_table": {
+        "name": "stock_wh_resupply_table_pkey",
+        "columns": [
+            "supplied_wh_id",
+            "supplier_wh_id"
+        ]
+    },
+    "stock_scrap_stock_scrap_reason_tag_rel": {
+        "name": "stock_scrap_stock_scrap_reason_tag_rel_pkey",
+        "columns": [
+            "stock_scrap_id",
+            "stock_scrap_reason_tag_id"
+        ]
+    },
+    "stock_scrap_reason_tag": {
+        "name": "stock_scrap_reason_tag_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_storage_category_capacity": {
+        "name": "stock_storage_category_capacity_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_traceability_report": {
+        "name": "stock_traceability_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_label_layout_stock_move_rel": {
+        "name": "product_label_layout_stock_move_rel_pkey",
+        "columns": [
+            "product_label_layout_id",
+            "stock_move_id"
+        ]
+    },
+    "stock_return_picking": {
+        "name": "stock_return_picking_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_change_product_qty": {
+        "name": "stock_change_product_qty_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_inventory_conflict": {
+        "name": "stock_inventory_conflict_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_conflict_quant_rel": {
+        "name": "stock_conflict_quant_rel_pkey",
+        "columns": [
+            "stock_inventory_conflict_id",
+            "stock_quant_id"
+        ]
+    },
+    "stock_inventory_conflict_stock_quant_rel": {
+        "name": "stock_inventory_conflict_stock_quant_rel_pkey",
+        "columns": [
+            "stock_inventory_conflict_id",
+            "stock_quant_id"
+        ]
+    },
+    "stock_inventory_warning": {
+        "name": "stock_inventory_warning_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_inventory_warning_stock_quant_rel": {
+        "name": "stock_inventory_warning_stock_quant_rel_pkey",
+        "columns": [
+            "stock_inventory_warning_id",
+            "stock_quant_id"
+        ]
+    },
+    "stock_inventory_adjustment_name": {
+        "name": "stock_inventory_adjustment_name_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_inventory_adjustment_name_stock_quant_rel": {
+        "name": "stock_inventory_adjustment_name_stock_quant_rel_pkey",
+        "columns": [
+            "stock_inventory_adjustment_name_id",
+            "stock_quant_id"
+        ]
+    },
+    "picking_label_type": {
+        "name": "picking_label_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "picking_label_type_stock_picking_rel": {
+        "name": "picking_label_type_stock_picking_rel_pkey",
+        "columns": [
+            "picking_label_type_id",
+            "stock_picking_id"
+        ]
+    },
+    "lot_label_layout": {
+        "name": "lot_label_layout_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "lot_label_layout_stock_move_line_rel": {
+        "name": "lot_label_layout_stock_move_line_rel_pkey",
+        "columns": [
+            "lot_label_layout_id",
+            "stock_move_line_id"
+        ]
+    },
+    "stock_backorder_confirmation": {
+        "name": "stock_backorder_confirmation_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_backorder_confirmation_line": {
+        "name": "stock_backorder_confirmation_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_picking_backorder_rel": {
+        "name": "stock_picking_backorder_rel_pkey",
+        "columns": [
+            "stock_backorder_confirmation_id",
+            "stock_picking_id"
+        ]
+    },
+    "stock_quantity_history": {
+        "name": "stock_quantity_history_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_rules_report": {
+        "name": "stock_rules_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_rules_report_stock_warehouse_rel": {
+        "name": "stock_rules_report_stock_warehouse_rel_pkey",
+        "columns": [
+            "stock_rules_report_id",
+            "stock_warehouse_id"
+        ]
+    },
+    "stock_warn_insufficient_qty_scrap": {
+        "name": "stock_warn_insufficient_qty_scrap_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_track_confirmation": {
+        "name": "stock_track_confirmation_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_quant_stock_track_confirmation_rel": {
+        "name": "stock_quant_stock_track_confirmation_rel_pkey",
+        "columns": [
+            "stock_track_confirmation_id",
+            "stock_quant_id"
+        ]
+    },
+    "product_product_stock_track_confirmation_rel": {
+        "name": "product_product_stock_track_confirmation_rel_pkey",
+        "columns": [
+            "stock_track_confirmation_id",
+            "product_product_id"
+        ]
+    },
+    "stock_track_line": {
+        "name": "stock_track_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_lot": {
+        "name": "stock_lot_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_picking_type": {
+        "name": "stock_picking_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "procurement_group": {
+        "name": "procurement_group_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_package_destination": {
+        "name": "stock_package_destination_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_orderpoint_snooze": {
+        "name": "stock_orderpoint_snooze_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_orderpoint_snooze_stock_warehouse_orderpoint_rel": {
+        "name": "stock_orderpoint_snooze_stock_warehouse_orderpoint_rel_pkey",
+        "columns": [
+            "stock_orderpoint_snooze_id",
+            "stock_warehouse_orderpoint_id"
+        ]
+    },
+    "stock_quant_stock_request_count_rel": {
+        "name": "stock_quant_stock_request_count_rel_pkey",
+        "columns": [
+            "stock_request_count_id",
+            "stock_quant_id"
+        ]
+    },
+    "stock_replenishment_info": {
+        "name": "stock_replenishment_info_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_replenishment_option": {
+        "name": "stock_replenishment_option_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_quant_relocate": {
+        "name": "stock_quant_relocate_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_quant_stock_quant_relocate_rel": {
+        "name": "stock_quant_stock_quant_relocate_rel_pkey",
+        "columns": [
+            "stock_quant_relocate_id",
+            "stock_quant_id"
+        ]
+    },
+    "stock_quant": {
+        "name": "stock_quant_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_return_picking_line": {
+        "name": "stock_return_picking_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_request_count": {
+        "name": "stock_request_count_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_move": {
+        "name": "stock_move_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_picking": {
+        "name": "stock_picking_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_analytic_line_stock_move_rel": {
+        "name": "account_analytic_line_stock_move_rel_pkey",
+        "columns": [
+            "stock_move_id",
+            "account_analytic_line_id"
+        ]
+    },
+    "stock_valuation_layer": {
+        "name": "stock_valuation_layer_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_valuation_layer_revaluation": {
+        "name": "stock_valuation_layer_revaluation_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_valuation_layer_stock_valuation_layer_revaluation_rel": {
+        "name": "stock_valuation_layer_stock_valuation_layer_revaluation_re_pkey",
+        "columns": [
+            "stock_valuation_layer_revaluation_id",
+            "stock_valuation_layer_id"
+        ]
+    },
+    "refunded_invoices": {
+        "name": "refunded_invoices_pkey",
+        "columns": [
+            "refund_account_move",
+            "original_account_move"
+        ]
+    },
+    "pos_category": {
+        "name": "pos_category_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_config_printer_rel": {
+        "name": "pos_config_printer_rel_pkey",
+        "columns": [
+            "config_id",
+            "printer_id"
+        ]
+    },
+    "pos_category_pos_config_rel": {
+        "name": "pos_category_pos_config_rel_pkey",
+        "columns": [
+            "pos_config_id",
+            "pos_category_id"
+        ]
+    },
+    "pos_config_product_pricelist_rel": {
+        "name": "pos_config_product_pricelist_rel_pkey",
+        "columns": [
+            "pos_config_id",
+            "product_pricelist_id"
+        ]
+    },
+    "account_fiscal_position_pos_config_rel": {
+        "name": "account_fiscal_position_pos_config_rel_pkey",
+        "columns": [
+            "pos_config_id",
+            "account_fiscal_position_id"
+        ]
+    },
+    "pos_bill_pos_config_rel": {
+        "name": "pos_bill_pos_config_rel_pkey",
+        "columns": [
+            "pos_config_id",
+            "pos_bill_id"
+        ]
+    },
+    "pos_bill": {
+        "name": "pos_bill_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_config_pos_payment_method_rel": {
+        "name": "pos_config_pos_payment_method_rel_pkey",
+        "columns": [
+            "pos_config_id",
+            "pos_payment_method_id"
+        ]
+    },
+    "pos_config_trust_relation": {
+        "name": "pos_config_trust_relation_pkey",
+        "columns": [
+            "is_trusting",
+            "is_trusted"
+        ]
+    },
+    "pos_config_pos_note_rel": {
+        "name": "pos_config_pos_note_rel_pkey",
+        "columns": [
+            "pos_config_id",
+            "pos_note_id"
+        ]
+    },
+    "pos_note": {
+        "name": "pos_note_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_order_line_product_template_attribute_value_rel": {
+        "name": "pos_order_line_product_template_attribute_value_rel_pkey",
+        "columns": [
+            "pos_order_line_id",
+            "product_template_attribute_value_id"
+        ]
+    },
+    "account_tax_pos_order_line_rel": {
+        "name": "account_tax_pos_order_line_rel_pkey",
+        "columns": [
+            "pos_order_line_id",
+            "account_tax_id"
+        ]
+    },
+    "pos_pack_operation_lot": {
+        "name": "pos_pack_operation_lot_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_category_product_template_rel": {
+        "name": "pos_category_product_template_rel_pkey",
+        "columns": [
+            "product_template_id",
+            "pos_category_id"
+        ]
+    },
+    "product_pricelist_res_config_settings_rel": {
+        "name": "product_pricelist_res_config_settings_rel_pkey",
+        "columns": [
+            "res_config_settings_id",
+            "product_pricelist_id"
+        ]
+    },
+    "account_fiscal_position_res_config_settings_rel": {
+        "name": "account_fiscal_position_res_config_settings_rel_pkey",
+        "columns": [
+            "res_config_settings_id",
+            "account_fiscal_position_id"
+        ]
+    },
+    "pos_category_res_config_settings_rel": {
+        "name": "pos_category_res_config_settings_rel_pkey",
+        "columns": [
+            "res_config_settings_id",
+            "pos_category_id"
+        ]
+    },
+    "printer_category_rel": {
+        "name": "printer_category_rel_pkey",
+        "columns": [
+            "printer_id",
+            "category_id"
+        ]
+    },
+    "pos_details_wizard": {
+        "name": "pos_details_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_detail_configs": {
+        "name": "pos_detail_configs_pkey",
+        "columns": [
+            "pos_details_wizard_id",
+            "pos_config_id"
+        ]
+    },
+    "pos_make_payment": {
+        "name": "pos_make_payment_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_close_session_wizard": {
+        "name": "pos_close_session_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_printer": {
+        "name": "pos_printer_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_payment_method": {
+        "name": "pos_payment_method_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_order": {
+        "name": "pos_order_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "purchase_order": {
+        "name": "purchase_order_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_payment": {
+        "name": "pos_payment_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "payment_provider_pos_payment_method_rel": {
+        "name": "payment_provider_pos_payment_method_rel_pkey",
+        "columns": [
+            "pos_payment_method_id",
+            "payment_provider_id"
+        ]
+    },
+    "purchase_order_line": {
+        "name": "purchase_order_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_warehouse_orderpoint": {
+        "name": "stock_warehouse_orderpoint_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "product_replenish": {
+        "name": "product_replenish_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "purchase_order_stock_picking_rel": {
+        "name": "purchase_order_stock_picking_rel_pkey",
+        "columns": [
+            "purchase_order_id",
+            "stock_picking_id"
+        ]
+    },
+    "stock_move_created_purchase_line_rel": {
+        "name": "stock_move_created_purchase_line_rel_pkey",
+        "columns": [
+            "created_purchase_line_id",
+            "move_id"
+        ]
+    },
+    "product_supplierinfo_stock_replenishment_info_rel": {
+        "name": "product_supplierinfo_stock_replenishment_info_rel_pkey",
+        "columns": [
+            "stock_replenishment_info_id",
+            "product_supplierinfo_id"
+        ]
+    },
+    "pos_session": {
+        "name": "pos_session_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_daily_sales_reports_wizard": {
+        "name": "pos_daily_sales_reports_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_hr_basic_employee_hr_employee": {
+        "name": "pos_hr_basic_employee_hr_employee_pkey",
+        "columns": [
+            "pos_config_id",
+            "hr_employee_id"
+        ]
+    },
+    "pos_hr_advanced_employee_hr_employee": {
+        "name": "pos_hr_advanced_employee_hr_employee_pkey",
+        "columns": [
+            "pos_config_id",
+            "hr_employee_id"
+        ]
+    },
+    "pos_order_line": {
+        "name": "pos_order_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "stock_route_stock_rules_report_rel": {
+        "name": "stock_route_stock_rules_report_rel_pkey",
+        "columns": [
+            "stock_rules_report_id",
+            "stock_route_id"
+        ]
+    },
+    "print_prenumbered_checks": {
+        "name": "print_prenumbered_checks_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_budget_post": {
+        "name": "account_budget_post_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_budget_rel": {
+        "name": "account_budget_rel_pkey",
+        "columns": [
+            "budget_id",
+            "account_id"
+        ]
+    },
+    "budget_budget": {
+        "name": "budget_budget_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "budget_lines": {
+        "name": "budget_lines_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_payment": {
+        "name": "account_payment_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_bank_statement_line": {
+        "name": "account_bank_statement_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_journal": {
+        "name": "account_journal_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_move_line": {
+        "name": "account_move_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_report": {
+        "name": "account_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "sale_order": {
+        "name": "sale_order_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "pos_config": {
+        "name": "pos_config_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_financial_report": {
+        "name": "account_financial_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_common_journal_report_section_rel": {
+        "name": "account_common_journal_report_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "account_common_journal_report": {
+        "name": "account_common_journal_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_common_journal_report_account_journal_rel": {
+        "name": "account_common_journal_report_account_journal_rel_pkey",
+        "columns": [
+            "account_common_journal_report_id",
+            "account_journal_id"
+        ]
+    },
+    "account_asset_asset": {
+        "name": "account_asset_asset_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_asset_category": {
+        "name": "account_asset_category_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_asset_depreciation_line": {
+        "name": "account_asset_depreciation_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_bank_statement_line_account_tax_rel": {
+        "name": "account_bank_statement_line_account_tax_rel_pkey",
+        "columns": [
+            "account_bank_statement_line_id",
+            "account_tax_id"
+        ]
+    },
+    "account_followup": {
+        "name": "account_followup_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_recurring_payments": {
+        "name": "account_recurring_payments_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_recurring_entries_line": {
+        "name": "account_recurring_entries_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_journal_account_report_rel": {
+        "name": "account_journal_account_report_rel_pkey",
+        "columns": [
+            "account_report_id",
+            "account_journal_id"
+        ]
+    },
+    "followup_line": {
+        "name": "followup_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "multiple_invoice": {
+        "name": "multiple_invoice_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "multiple_invoice_layout": {
+        "name": "multiple_invoice_layout_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_common_report_section_rel": {
+        "name": "account_common_report_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "account_common_account_report": {
+        "name": "account_common_account_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_common_account_report_account_journal_rel": {
+        "name": "account_common_account_report_account_journal_rel_pkey",
+        "columns": [
+            "account_common_account_report_id",
+            "account_journal_id"
+        ]
+    },
+    "account_account_type": {
+        "name": "account_account_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_account_financial_report": {
+        "name": "account_account_financial_report_pkey",
+        "columns": [
+            "report_line_id",
+            "account_id"
+        ]
+    },
+    "account_common_parnter_report_section_rel": {
+        "name": "account_common_parnter_report_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "account_common_partner_report": {
+        "name": "account_common_partner_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_common_partner_report_account_journal_rel": {
+        "name": "account_common_partner_report_account_journal_rel_pkey",
+        "columns": [
+            "account_common_partner_report_id",
+            "account_journal_id"
+        ]
+    },
+    "account_aged_trail_report_section_rel": {
+        "name": "account_aged_trail_report_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "account_aged_trial_balance": {
+        "name": "account_aged_trial_balance_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_aged_trial_balance_account_journal_rel": {
+        "name": "account_aged_trial_balance_account_journal_rel_pkey",
+        "columns": [
+            "account_aged_trial_balance_id",
+            "account_journal_id"
+        ]
+    },
+    "account_balance_report_section_rel": {
+        "name": "account_balance_report_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "account_balance_report": {
+        "name": "account_balance_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_balance_report_journal_rel": {
+        "name": "account_balance_report_journal_rel_pkey",
+        "columns": [
+            "account_id",
+            "journal_id"
+        ]
+    },
+    "account_bank_book_report": {
+        "name": "account_bank_book_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_report_bankbook_account_rel": {
+        "name": "account_report_bankbook_account_rel_pkey",
+        "columns": [
+            "report_id",
+            "account_id"
+        ]
+    },
+    "account_report_bankbook_journal_rel": {
+        "name": "account_report_bankbook_journal_rel_pkey",
+        "columns": [
+            "account_id",
+            "journal_id"
+        ]
+    },
+    "account_cash_book_report": {
+        "name": "account_cash_book_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_report_cashbook_account_rel": {
+        "name": "account_report_cashbook_account_rel_pkey",
+        "columns": [
+            "report_id",
+            "account_id"
+        ]
+    },
+    "account_report_cashbook_journal_rel": {
+        "name": "account_report_cashbook_journal_rel_pkey",
+        "columns": [
+            "account_id",
+            "journal_id"
+        ]
+    },
+    "account_day_book_report": {
+        "name": "account_day_book_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_day_book_report_account_journal_rel": {
+        "name": "account_day_book_report_account_journal_rel_pkey",
+        "columns": [
+            "account_day_book_report_id",
+            "account_journal_id"
+        ]
+    },
+    "account_report_daybook_account_rel": {
+        "name": "account_report_daybook_account_rel_pkey",
+        "columns": [
+            "report_id",
+            "account_id"
+        ]
+    },
+    "account_lock_date": {
+        "name": "account_lock_date_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_common_print_report_section_rel": {
+        "name": "account_common_print_report_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "account_print_journal": {
+        "name": "account_print_journal_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_journal_account_print_journal_rel": {
+        "name": "account_journal_account_print_journal_rel_pkey",
+        "columns": [
+            "account_print_journal_id",
+            "account_journal_id"
+        ]
+    },
+    "account_report_general_section_rel": {
+        "name": "account_report_general_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "account_report_general_ledger": {
+        "name": "account_report_general_ledger_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_report_general_ledger_journal_rel": {
+        "name": "account_report_general_ledger_journal_rel_pkey",
+        "columns": [
+            "account_id",
+            "journal_id"
+        ]
+    },
+    "account_report_partner_section_rel": {
+        "name": "account_report_partner_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "account_report_partner_ledger": {
+        "name": "account_report_partner_ledger_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_journal_account_report_partner_ledger_rel": {
+        "name": "account_journal_account_report_partner_ledger_rel_pkey",
+        "columns": [
+            "account_report_partner_ledger_id",
+            "account_journal_id"
+        ]
+    },
+    "asset_depreciation_confirmation": {
+        "name": "asset_depreciation_confirmation_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "asset_modify": {
+        "name": "asset_modify_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_cash_flow_report_section_rel": {
+        "name": "account_cash_flow_report_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "cash_flow_report": {
+        "name": "cash_flow_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_journal_cash_flow_report_rel": {
+        "name": "account_journal_cash_flow_report_rel_pkey",
+        "columns": [
+            "cash_flow_report_id",
+            "account_journal_id"
+        ]
+    },
+    "account_financial_report_section_rel": {
+        "name": "account_financial_report_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "financial_report": {
+        "name": "financial_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_journal_financial_report_rel": {
+        "name": "account_journal_financial_report_rel_pkey",
+        "columns": [
+            "financial_report_id",
+            "account_journal_id"
+        ]
+    },
+    "import_bank_statement": {
+        "name": "import_bank_statement_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_tax_report_section_rel": {
+        "name": "account_tax_report_section_rel_pkey",
+        "columns": [
+            "main_report_id",
+            "sub_report_id"
+        ]
+    },
+    "kit_account_tax_report": {
+        "name": "kit_account_tax_report_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_journal_kit_account_tax_report_rel": {
+        "name": "account_journal_kit_account_tax_report_rel_pkey",
+        "columns": [
+            "kit_account_tax_report_id",
+            "account_journal_id"
+        ]
+    },
+    "hr_attendance": {
+        "name": "hr_attendance_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_attendance_overtime": {
+        "name": "hr_attendance_overtime_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_structure": {
+        "name": "hr_payroll_structure_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_user_work_entry_employee": {
+        "name": "hr_user_work_entry_employee_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_work_entry_regeneration_wizard": {
+        "name": "hr_work_entry_regeneration_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_employee_hr_work_entry_regeneration_wizard_rel": {
+        "name": "hr_employee_hr_work_entry_regeneration_wizard_rel_pkey",
+        "columns": [
+            "hr_work_entry_regeneration_wizard_id",
+            "hr_employee_id"
+        ]
+    },
+    "hr_contract": {
+        "name": "hr_contract_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_employee": {
+        "name": "hr_employee_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_structure_type": {
+        "name": "hr_payroll_structure_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_work_entry": {
+        "name": "hr_work_entry_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_work_entry_type": {
+        "name": "hr_work_entry_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payslip": {
+        "name": "hr_payslip_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_employee_hr_salary_attachment_rel": {
+        "name": "hr_employee_hr_salary_attachment_rel_pkey",
+        "columns": [
+            "hr_employee_id",
+            "hr_salary_attachment_id"
+        ]
+    },
+    "hr_salary_attachment": {
+        "name": "hr_salary_attachment_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_dashboard_warning": {
+        "name": "hr_payroll_dashboard_warning_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_structure_hr_work_entry_type_rel": {
+        "name": "hr_payroll_structure_hr_work_entry_type_rel_pkey",
+        "columns": [
+            "hr_payroll_structure_id",
+            "hr_work_entry_type_id"
+        ]
+    },
+    "hr_payroll_structure_hr_payslip_input_type_rel": {
+        "name": "hr_payroll_structure_hr_payslip_input_type_rel_pkey",
+        "columns": [
+            "hr_payroll_structure_id",
+            "hr_payslip_input_type_id"
+        ]
+    },
+    "hr_payslip_input_type": {
+        "name": "hr_payslip_input_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_salary_rule_category": {
+        "name": "hr_salary_rule_category_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payslip_hr_salary_attachment_rel": {
+        "name": "hr_payslip_hr_salary_attachment_rel_pkey",
+        "columns": [
+            "hr_payslip_id",
+            "hr_salary_attachment_id"
+        ]
+    },
+    "hr_salary_rule": {
+        "name": "hr_salary_rule_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payslip_line": {
+        "name": "hr_payslip_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payslip_worked_days": {
+        "name": "hr_payslip_worked_days_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payslip_input": {
+        "name": "hr_payslip_input_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_rule_parameter": {
+        "name": "hr_rule_parameter_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_rule_parameter_value": {
+        "name": "hr_rule_parameter_value_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_note": {
+        "name": "hr_payroll_note_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_employee_declaration": {
+        "name": "hr_payroll_employee_declaration_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_headcount": {
+        "name": "hr_payroll_headcount_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_headcount_line": {
+        "name": "hr_payroll_headcount_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_headcount_line_hr_payroll_headcount_working_rate_rel": {
+        "name": "hr_payroll_headcount_line_hr_payroll_headcount_working_rat_pkey",
+        "columns": [
+            "hr_payroll_headcount_line_id",
+            "hr_payroll_headcount_working_rate_id"
+        ]
+    },
+    "hr_payroll_headcount_working_rate": {
+        "name": "hr_payroll_headcount_working_rate_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payslip_employees": {
+        "name": "hr_payslip_employees_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_employee_group_rel": {
+        "name": "hr_employee_group_rel_pkey",
+        "columns": [
+            "payslip_id",
+            "employee_id"
+        ]
+    },
+    "hr_payroll_index": {
+        "name": "hr_payroll_index_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_contract_hr_payroll_index_rel": {
+        "name": "hr_contract_hr_payroll_index_rel_pkey",
+        "columns": [
+            "hr_payroll_index_id",
+            "hr_contract_id"
+        ]
+    },
+    "hr_payroll_edit_payslip_lines_wizard": {
+        "name": "hr_payroll_edit_payslip_lines_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_edit_payslip_line": {
+        "name": "hr_payroll_edit_payslip_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_edit_payslip_worked_days_line": {
+        "name": "hr_payroll_edit_payslip_worked_days_line_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_payment_report_wizard": {
+        "name": "hr_payroll_payment_report_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_payroll_payment_report_wizard_hr_payslip_rel": {
+        "name": "hr_payroll_payment_report_wizard_hr_payslip_rel_pkey",
+        "columns": [
+            "hr_payroll_payment_report_wizard_id",
+            "hr_payslip_id"
+        ]
+    },
+    "hr_payslip_run": {
+        "name": "hr_payslip_run_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_salary_rule_debit_tag_rel": {
+        "name": "hr_salary_rule_debit_tag_rel_pkey",
+        "columns": [
+            "hr_salary_rule_id",
+            "account_account_tag_id"
+        ]
+    },
+    "hr_salary_rule_credit_tag_rel": {
+        "name": "hr_salary_rule_credit_tag_rel_pkey",
+        "columns": [
+            "hr_salary_rule_id",
+            "account_account_tag_id"
+        ]
+    },
+    "report_l10n_eg_hr_payroll_master": {
+        "name": "report_l10n_eg_hr_payroll_master_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "calendar_event_res_partner_rel": {
+        "name": "calendar_event_res_partner_rel_pkey",
+        "columns": [
+            "res_partner_id",
+            "calendar_event_id"
+        ]
+    },
+    "calendar_event": {
+        "name": "calendar_event_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "calendar_attendee": {
+        "name": "calendar_attendee_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "calendar_recurrence": {
+        "name": "calendar_recurrence_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "meeting_category_rel": {
+        "name": "meeting_category_rel_pkey",
+        "columns": [
+            "event_id",
+            "type_id"
+        ]
+    },
+    "calendar_event_type": {
+        "name": "calendar_event_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "calendar_alarm_calendar_event_rel": {
+        "name": "calendar_alarm_calendar_event_rel_pkey",
+        "columns": [
+            "calendar_event_id",
+            "calendar_alarm_id"
+        ]
+    },
+    "calendar_filters": {
+        "name": "calendar_filters_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "calendar_provider_config": {
+        "name": "calendar_provider_config_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "calendar_popover_delete_wizard": {
+        "name": "calendar_popover_delete_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "calendar_alarm": {
+        "name": "calendar_alarm_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_leave_accrual_plan": {
+        "name": "hr_leave_accrual_plan_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_leave_type_res_users_rel": {
+        "name": "hr_leave_type_res_users_rel_pkey",
+        "columns": [
+            "hr_leave_type_id",
+            "res_users_id"
+        ]
+    },
+    "hr_leave_mandatory_day": {
+        "name": "hr_leave_mandatory_day_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_department_hr_leave_mandatory_day_rel": {
+        "name": "hr_department_hr_leave_mandatory_day_rel_pkey",
+        "columns": [
+            "hr_leave_mandatory_day_id",
+            "hr_department_id"
+        ]
+    },
+    "hr_holidays_cancel_leave": {
+        "name": "hr_holidays_cancel_leave_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_holidays_summary_employee": {
+        "name": "hr_holidays_summary_employee_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "summary_emp_rel": {
+        "name": "summary_emp_rel_pkey",
+        "columns": [
+            "sum_id",
+            "emp_id"
+        ]
+    },
+    "hr_leave_generate_multi_wizard": {
+        "name": "hr_leave_generate_multi_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_employee_hr_leave_generate_multi_wizard_rel": {
+        "name": "hr_employee_hr_leave_generate_multi_wizard_rel_pkey",
+        "columns": [
+            "hr_leave_generate_multi_wizard_id",
+            "hr_employee_id"
+        ]
+    },
+    "hr_leave_allocation_generate_multi_wizard": {
+        "name": "hr_leave_allocation_generate_multi_wizard_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_employee_hr_leave_allocation_generate_multi_wizard_rel": {
+        "name": "hr_employee_hr_leave_allocation_generate_multi_wizard_rel_pkey",
+        "columns": [
+            "hr_leave_allocation_generate_multi_wizard_id",
+            "hr_employee_id"
+        ]
+    },
+    "hr_leave_allocation": {
+        "name": "hr_leave_allocation_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_leave_accrual_level": {
+        "name": "hr_leave_accrual_level_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_leave": {
+        "name": "hr_leave_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hr_leave_type": {
+        "name": "hr_leave_type_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "action_data": {
+        "name": "action_data_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "view_data": {
+        "name": "view_data_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "remove_action": {
+        "name": "remove_action_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "remove_action_view_data_rel_ah": {
+        "name": "remove_action_view_data_rel_ah_pkey",
+        "columns": [
+            "remove_action_id",
+            "view_data_id"
+        ]
+    },
+    "remove_action_server_action_data_rel_ah": {
+        "name": "remove_action_server_action_data_rel_ah_pkey",
+        "columns": [
+            "remove_action_id",
+            "server_action_id"
+        ]
+    },
+    "remove_action_report_action_data_rel_ah": {
+        "name": "remove_action_report_action_data_rel_ah_pkey",
+        "columns": [
+            "remove_action_id",
+            "report_action_id"
+        ]
+    },
+    "access_management": {
+        "name": "access_management_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "access_management_users_rel_ah": {
+        "name": "access_management_users_rel_ah_pkey",
+        "columns": [
+            "access_management_id",
+            "user_id"
+        ]
+    },
+    "access_management_menu_rel_ah": {
+        "name": "access_management_menu_rel_ah_pkey",
+        "columns": [
+            "access_management_id",
+            "menu_id"
+        ]
+    },
+    "menu_item": {
+        "name": "menu_item_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "access_management_ir_ui_self_module_menu": {
+        "name": "access_management_ir_ui_self_module_menu_pkey",
+        "columns": [
+            "access_management_id",
+            "menu_id"
+        ]
+    },
+    "access_management_comapnay_rel": {
+        "name": "access_management_comapnay_rel_pkey",
+        "columns": [
+            "access_management_id",
+            "company_id"
+        ]
+    },
+    "hide_field": {
+        "name": "hide_field_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hide_field_ir_model_fields_rel": {
+        "name": "hide_field_ir_model_fields_rel_pkey",
+        "columns": [
+            "hide_field_id",
+            "ir_field_id"
+        ]
+    },
+    "access_domain_ah": {
+        "name": "access_domain_ah_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "hide_view_nodes": {
+        "name": "hide_view_nodes_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "btn_hide_view_nodes_store_model_nodes_rel": {
+        "name": "btn_hide_view_nodes_store_model_nodes_rel_pkey",
+        "columns": [
+            "hide_id",
+            "store_id"
+        ]
+    },
+    "store_model_nodes": {
+        "name": "store_model_nodes_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "page_hide_view_nodes_store_model_nodes_rel": {
+        "name": "page_hide_view_nodes_store_model_nodes_rel_pkey",
+        "columns": [
+            "hide_id",
+            "store_id"
+        ]
+    },
+    "link_hide_view_nodes_store_model_nodes_rel": {
+        "name": "link_hide_view_nodes_store_model_nodes_rel_pkey",
+        "columns": [
+            "hide_id",
+            "store_id"
+        ]
+    },
+    "hide_filters_groups": {
+        "name": "hide_filters_groups_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "filters_hide_filters_groups_store_filters_groups_rel": {
+        "name": "filters_hide_filters_groups_store_filters_groups_rel_pkey",
+        "columns": [
+            "hide_id",
+            "store_id"
+        ]
+    },
+    "store_filters_groups": {
+        "name": "store_filters_groups_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "groups_hide_filters_groups_store_filters_groups_rel": {
+        "name": "groups_hide_filters_groups_store_filters_groups_rel_pkey",
+        "columns": [
+            "hide_id",
+            "store_id"
+        ]
+    },
+    "hide_chatter": {
+        "name": "hide_chatter_pkey",
+        "columns": [
+            "id"
+        ]
+    },
+    "account_journal_res_users_rel": {
+        "name": "account_journal_res_users_rel_pkey",
+        "columns": [
+            "account_journal_id",
+            "res_users_id"
+        ]
+    },
+    "res_users_stock_warehouse_rel": {
+        "name": "res_users_stock_warehouse_rel_pkey",
+        "columns": [
+            "stock_warehouse_id",
+            "res_users_id"
+        ]
+    }
+}

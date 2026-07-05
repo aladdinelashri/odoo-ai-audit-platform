@@ -1,0 +1,15 @@
+[
+    "asset_asset_report",
+    "hr_contract_history",
+    "hr_employee_public",
+    "hr_leave_employee_type_report",
+    "hr_leave_report",
+    "hr_leave_report_calendar",
+    "hr_payroll_report",
+    "hr_work_entry_report",
+    "purchase_bill_union",
+    "report_pos_order",
+    "report_stock_quantity",
+    "res_device",
+    "vendor_delay_report"
+]
