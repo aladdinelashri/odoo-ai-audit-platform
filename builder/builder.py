@@ -15,6 +15,7 @@ from commands.dictionary import run as dictionary
 from commands.report import run as report
 from commands.relations import run as relations
 from commands.discover_schema import run as discover_schema
+from commands.metadata import run as metadata
 from commands.connect import run as connect
 
 parser = argparse.ArgumentParser(
@@ -66,6 +67,8 @@ elif args.command == "connect":
     connect()
 elif args.command == "discover-schema":
     discover_schema()
+elif args.command == "metadata":
+    metadata()
 
 else:
     print(f"Unknown command: {args.command}")
