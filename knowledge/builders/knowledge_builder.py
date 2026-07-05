@@ -2,6 +2,8 @@ import json
 from pathlib import Path
 
 from knowledge.builders.domain_builder import DomainBuilder
+from knowledge.builders.risk_builder import RiskBuilder
+from knowledge.builders.audit_builder import AuditBuilder
 
 
 class KnowledgeBuilder:
@@ -11,6 +13,8 @@ class KnowledgeBuilder:
         self.metadata_file = Path("data/metadata/database.json")
 
         self.domain_builder = DomainBuilder()
+        self.risk_builder = RiskBuilder()
+        self.audit_builder = AuditBuilder()
 
     def build(self):
 
@@ -26,11 +30,17 @@ class KnowledgeBuilder:
 
         for table_name, table_data in metadata.items():
 
+            risk = self.risk_builder.classify(table_name)
+
             knowledge[table_name] = {
 
                 **table_data,
 
-                "domain": self.domain_builder.classify(table_name)
+                "domain": self.domain_builder.classify(table_name),
+
+                "risk": risk,
+
+                "audit_tests": self.audit_builder.build(risk)
 
             }
 
