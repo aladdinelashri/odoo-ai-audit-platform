@@ -37,10 +37,10 @@ parser.add_argument(
 )
 
 parser.add_argument(
-    "model",
+    "target",
     nargs="?",
     default=None,
-    help="Odoo model name"
+    help="Model name or report name"
 )
 
 args = parser.parse_args()
@@ -55,7 +55,7 @@ elif args.command == "models":
     models()
 
 elif args.command == "inspect":
-    inspect(args.model)
+    inspect(args.target)
 
 elif args.command == "build":
     build()
@@ -64,7 +64,7 @@ elif args.command == "dictionary":
     dictionary()
 
 elif args.command == "report":
-    report()
+    report(args.target)
 
 elif args.command == "relations":
     relations()
@@ -98,6 +98,8 @@ elif args.command == "executive":
 
 elif args.command == "html":
     html()
+
+# Legacy Commands (سيتم حذفها لاحقاً)
 
 elif args.command == "sales":
     sales()
