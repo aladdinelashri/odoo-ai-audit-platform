@@ -1,0 +1,14 @@
+{
+    "id": "ISA240",
+    "name": "ISA 240 - Auditor's Responsibilities Relating to Fraud",
+
+    "description": "Audit procedures related to fraud risk.",
+
+    "rules": [
+
+        "LARGE_JOURNAL_ENTRIES",
+
+        "DUPLICATE_PAYMENT_REFERENCE"
+
+    ]
+}

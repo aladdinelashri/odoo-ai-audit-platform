@@ -19,8 +19,10 @@ from commands.metadata import run as metadata
 from commands.knowledge import run as knowledge
 from commands.audit import run as audit
 from commands.audit_ai import run as audit_ai
+from commands.sql import run as sql
+from commands.rules import run as rules
 from commands.connect import run as connect
-
+from commands.executive import run as executive
 
 parser = argparse.ArgumentParser(
     description="Odoo AI Audit Platform Builder"
@@ -50,11 +52,7 @@ elif args.command == "models":
     models()
 
 elif args.command == "inspect":
-
-    if args.model is None:
-        print("Please specify the Odoo model.")
-    else:
-        inspect(args.model)
+    inspect(args.model)
 
 elif args.command == "build":
     build()
@@ -83,8 +81,17 @@ elif args.command == "audit":
 elif args.command == "audit-ai":
     audit_ai()
 
+elif args.command == "sql":
+    sql()
+
+elif args.command == "rules":
+    rules()
+
 elif args.command == "connect":
     connect()
+
+elif args.command == "executive":
+    executive()
 
 else:
     print(f"Unknown command: {args.command}")

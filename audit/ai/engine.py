@@ -2,7 +2,8 @@ from audit.ai.context_builder import ContextBuilder
 from audit.ai.prompt_builder import PromptBuilder
 from audit.ai.recommendation_builder import RecommendationBuilder
 from audit.ai.anomaly_builder import AnomalyBuilder
-from audit.ai.mock_ai import MockAI
+
+from ai.providers.mock_provider import MockAIProvider
 
 
 class AuditAIEngine:
@@ -14,8 +15,7 @@ class AuditAIEngine:
         self.recommendation_builder = RecommendationBuilder()
         self.anomaly_builder = AnomalyBuilder()
 
-        # سيتم استبداله لاحقًا بـ OpenAI أو Llama
-        self.ai = MockAI()
+        self.provider = MockAIProvider()
 
     def analyze(self, audit_item):
 
@@ -23,7 +23,7 @@ class AuditAIEngine:
 
         prompt = self.prompt_builder.build(context)
 
-        ai_response = self.ai.analyze(prompt)
+        ai_response = self.provider.analyze(prompt)
 
         return {
 

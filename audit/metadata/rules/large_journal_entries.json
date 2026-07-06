@@ -1,0 +1,11 @@
+{
+    "id": "LARGE_JOURNAL_ENTRIES",
+    "title": "Large Journal Entries",
+    "category": "Journal Entries",
+    "severity": "High",
+    "risk_score": 90,
+    "standard": "ISA 240",
+    "description": "Detect journal entries exceeding the approval threshold.",
+    "recommendation": "Review approvals and supporting documents for high-value journal entries.",
+    "ai_prompt": "Explain why large journal entries represent a fraud risk."
+}
