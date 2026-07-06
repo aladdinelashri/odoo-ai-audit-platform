@@ -73,8 +73,6 @@ elif args.command == "metadata":
     metadata()
 elif args.command == "knowledge":
     knowledge()
-elif args.command == "audit":
-    audit()
 
 else:
     print(f"Unknown command: {args.command}")

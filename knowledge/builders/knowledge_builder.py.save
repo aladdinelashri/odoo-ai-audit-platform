@@ -6,9 +6,7 @@ from knowledge.builders.risk_builder import RiskBuilder
 from knowledge.builders.audit_builder import AuditBuilder
 from knowledge.builders.rule_builder import RuleBuilder
 from knowledge.builders.sensitive_fields_builder import SensitiveFieldsBuilder
-from knowledge.builders.risk_score_builder import RiskScoreBuilder
-from knowledge.builders.risk_factor_builder import RiskFactorBuilder
-
+from knowledge.builders.risk_score_builder import RiskScoreBuilderfrom knowledge.builders.risk_factor_builder import RiskFactorBuilder
 
 class KnowledgeBuilder:
 
@@ -22,7 +20,6 @@ class KnowledgeBuilder:
         self.rule_builder = RuleBuilder()
         self.sensitive_fields_builder = SensitiveFieldsBuilder()
         self.risk_score_builder = RiskScoreBuilder()
-        self.risk_factor_builder = RiskFactorBuilder()
 
     def build(self):
 
@@ -42,6 +39,14 @@ class KnowledgeBuilder:
 
             risk = self.risk_builder.classify(table_name)
 
+            audit_tests = self.audit_builder.build(risk)
+
+            audit_rules = self.rule_builder.build(
+                table_name,
+                domain,
+                risk
+            )
+
             sensitive_fields = self.sensitive_fields_builder.build(
                 table_data["columns"]
             )
@@ -49,21 +54,6 @@ class KnowledgeBuilder:
             risk_score = self.risk_score_builder.calculate(
                 risk,
                 sensitive_fields
-            )
-
-            risk_factor = self.risk_factor_builder.calculate(
-                {
-                    **table_data,
-                    "sensitive_fields": sensitive_fields
-                }
-            )
-
-            audit_tests = self.audit_builder.build(risk)
-
-            audit_rules = self.rule_builder.build(
-                table_name,
-                domain,
-                risk
             )
 
             knowledge[table_name] = {
@@ -75,8 +65,6 @@ class KnowledgeBuilder:
                 "risk": risk,
 
                 "risk_score": risk_score,
-
-                "risk_factor": risk_factor,
 
                 "audit_tests": audit_tests,
 
