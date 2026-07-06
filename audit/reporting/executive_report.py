@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+from audit.scoring.risk_engine import RiskScoringEngine
+
 
 class ExecutiveReport:
 
@@ -9,6 +11,8 @@ class ExecutiveReport:
         self.audit_report = Path(
             "audit/data/audit_report.json"
         )
+
+        self.risk_engine = RiskScoringEngine()
 
     def load(self):
 
@@ -19,6 +23,8 @@ class ExecutiveReport:
 
         report = self.load()
 
+        risk = self.risk_engine.calculate()
+
         return {
 
             "summary": {
@@ -27,7 +33,11 @@ class ExecutiveReport:
 
                 "failed_rules": report["failed_rules"],
 
-                "passed_rules": report["passed_rules"]
+                "passed_rules": report["passed_rules"],
+
+                "overall_score": risk["overall_score"],
+
+                "risk_level": risk["risk_level"]
 
             },
 

@@ -1,0 +1,14 @@
+{
+    "id": "TOP_PRODUCTS",
+    "title_key": "products.top.title",
+    "description_key": "products.top.description",
+    "category": "Sales",
+    "version": "1.0",
+    "enabled": true,
+    "query": "top_products",
+    "output": [
+        "console",
+        "html",
+        "api"
+    ]
+}

@@ -1,14 +1,13 @@
 from pathlib import Path
-import json
+
+from audit.core.metadata_loader import MetadataLoader
 
 
 class AuditCatalog:
 
     def __init__(self):
 
-        self.path = Path(
-            "audit/metadata/rules"
-        )
+        self.path = Path("audit/metadata/rules")
 
     def load(self):
 
@@ -16,8 +15,11 @@ class AuditCatalog:
 
         for file in sorted(self.path.glob("*.json")):
 
-            with open(file, encoding="utf-8") as f:
-                rules.append(json.load(f))
+            rules.append(
+                MetadataLoader.load_json(
+                    f"rules/{file.name}"
+                )
+            )
 
         return rules
 

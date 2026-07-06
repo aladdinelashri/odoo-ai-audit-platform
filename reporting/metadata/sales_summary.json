@@ -1,0 +1,29 @@
+{
+    "id": "SALES_SUMMARY",
+    "title": "Sales Summary",
+    "category": "Sales",
+    "description": "Executive sales summary report.",
+    "icon": "chart-line",
+    "version": "1.0",
+    "enabled": true,
+    "query": "sales_summary",
+    "output": [
+        "console",
+        "html",
+        "api"
+    ],
+    "columns": [
+        {
+            "field": "total_orders",
+            "title": "Total Orders"
+        },
+        {
+            "field": "total_sales",
+            "title": "Total Sales"
+        },
+        {
+            "field": "average_order",
+            "title": "Average Order"
+        }
+    ]
+}

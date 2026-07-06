@@ -1,0 +1,13 @@
+{
+    "sales.summary.title": "ملخص المبيعات",
+    "sales.summary.description": "التقرير التنفيذي للمبيعات",
+    "sales.total_orders": "إجمالي الطلبات",
+    "sales.total_sales": "إجمالي المبيعات",
+    "sales.average_order": "متوسط قيمة الطلب",
+
+    "audit.executive.title": "التقرير التنفيذي للمراجعة",
+    "audit.failed_rules": "القواعد الفاشلة",
+    "audit.passed_rules": "القواعد الناجحة",
+    "audit.overall_score": "درجة المخاطر",
+    "audit.risk_level": "مستوى المخاطر"
+}

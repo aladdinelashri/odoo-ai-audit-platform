@@ -1,0 +1,13 @@
+{
+    "sales.summary.title": "Sales Summary",
+    "sales.summary.description": "Executive Sales Summary",
+    "sales.total_orders": "Total Orders",
+    "sales.total_sales": "Total Sales",
+    "sales.average_order": "Average Order",
+
+    "audit.executive.title": "Executive Audit Report",
+    "audit.failed_rules": "Failed Rules",
+    "audit.passed_rules": "Passed Rules",
+    "audit.overall_score": "Overall Score",
+    "audit.risk_level": "Risk Level"
+}

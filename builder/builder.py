@@ -23,6 +23,9 @@ from commands.sql import run as sql
 from commands.rules import run as rules
 from commands.connect import run as connect
 from commands.executive import run as executive
+from commands.html import run as html
+from commands.sales import run as sales
+from commands.top_products import run as top_products
 
 parser = argparse.ArgumentParser(
     description="Odoo AI Audit Platform Builder"
@@ -92,6 +95,15 @@ elif args.command == "connect":
 
 elif args.command == "executive":
     executive()
+
+elif args.command == "html":
+    html()
+
+elif args.command == "sales":
+    sales()
+
+elif args.command == "top-products":
+    top_products()
 
 else:
     print(f"Unknown command: {args.command}")
