@@ -33,9 +33,11 @@ class AuditPlanBuilder:
                     "domain": table["domain"],
                     "risk": table["risk"],
                     "risk_score": table["risk_score"],
+                    "risk_factor": table["risk_factor"],
                     "audit_tests": table["audit_tests"],
                     "audit_rules": table["audit_rules"],
                     "sensitive_fields": table["sensitive_fields"],
+                    "validation": table["validation"],
                 }
             )
 

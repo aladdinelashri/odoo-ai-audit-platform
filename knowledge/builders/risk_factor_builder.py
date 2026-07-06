@@ -15,3 +15,9 @@ class RiskFactorBuilder:
         score += len(table.get("sensitive_fields", [])) * 5
 
         return score
+
+    def process(self, table_name, context):
+
+        context["risk_factor"] = self.calculate(context)
+
+        return context

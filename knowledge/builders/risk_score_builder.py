@@ -16,3 +16,12 @@ class RiskScoreBuilder:
             score = 100
 
         return score
+
+    def process(self, table_name, context):
+
+        context["risk_score"] = self.calculate(
+            context["risk"],
+            context["sensitive_fields"]
+        )
+
+        return context

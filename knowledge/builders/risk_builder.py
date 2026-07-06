@@ -28,3 +28,9 @@ class RiskBuilder:
                 return "Medium"
 
         return "Low"
+
+    def process(self, table_name, context):
+
+        context["risk"] = self.classify(table_name)
+
+        return context

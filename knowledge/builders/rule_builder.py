@@ -6,26 +6,20 @@ class RuleBuilder:
 
         if risk == "High":
 
-            rules.append(
+            rules.extend([
                 {
                     "id": "APPROVAL",
                     "description": "Verify approval workflow"
-                }
-            )
-
-            rules.append(
+                },
                 {
                     "id": "DUPLICATE",
                     "description": "Check duplicate transactions"
-                }
-            )
-
-            rules.append(
+                },
                 {
                     "id": "ACCESS",
                     "description": "Validate user permissions"
                 }
-            )
+            ])
 
         elif risk == "Medium":
 
@@ -46,3 +40,13 @@ class RuleBuilder:
             )
 
         return rules
+
+    def process(self, table_name, context):
+
+        context["audit_rules"] = self.build(
+            table_name,
+            context["domain"],
+            context["risk"]
+        )
+
+        return context

@@ -4,11 +4,12 @@
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 100,
+        "risk_factor": 343,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -145,18 +146,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 100,
+        "risk_factor": 282,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -278,18 +284,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_payment",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 100,
+        "risk_factor": 216,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -381,18 +392,23 @@
                 "type": "VARCHAR",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_payment_register",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 100,
+        "risk_factor": 161,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -489,18 +505,23 @@
                 "type": "VARCHAR",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_bank_statement_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 98,
+        "risk_factor": 130,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -557,18 +578,23 @@
                 "type": "NUMERIC",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_tax",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 98,
+        "risk_factor": 90,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -625,18 +651,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_partial_reconcile",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 97,
+        "risk_factor": 92,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -688,18 +719,23 @@
                 "type": "NUMERIC",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_reconcile_model",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 97,
+        "risk_factor": 84,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -751,18 +787,23 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 96,
+        "risk_factor": 114,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -809,18 +850,23 @@
                 "type": "VARCHAR",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_reconcile_model_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 94,
+        "risk_factor": 62,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -857,18 +903,23 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_analytic_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 93,
+        "risk_factor": 96,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -900,18 +951,23 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_bank_statement",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 93,
+        "risk_factor": 50,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -943,18 +999,23 @@
                 "type": "NUMERIC",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_common_journal_report",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 93,
+        "risk_factor": 77,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -986,18 +1047,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_payment_method_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 93,
+        "risk_factor": 51,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1029,18 +1095,23 @@
                 "type": "INTEGER",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_print_journal",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 93,
+        "risk_factor": 78,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1072,18 +1143,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_recurring_payments",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 93,
+        "risk_factor": 68,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1115,18 +1191,23 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_general_ledger",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 93,
+        "risk_factor": 79,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1158,18 +1239,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_partner_ledger",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 93,
+        "risk_factor": 79,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1201,18 +1287,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_tax_group",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 93,
+        "risk_factor": 58,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1244,18 +1335,23 @@
                 "type": "INTEGER",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_accrued_orders_wizard",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 47,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1282,18 +1378,23 @@
                 "type": "NUMERIC",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_aged_trial_balance",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 73,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1320,18 +1421,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_asset_category",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 74,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1358,18 +1464,23 @@
                 "type": "NUMERIC",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_balance_report",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 72,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1396,18 +1507,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_bank_statement_line_account_tax_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 22,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1434,18 +1550,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_common_account_report",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 72,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1472,18 +1593,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_common_partner_report",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 72,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1510,18 +1636,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_fiscal_position_tax",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 46,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1548,18 +1679,23 @@
                 "type": "INTEGER",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_payment_account_bank_statement_line_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 22,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1586,18 +1722,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_payment_term_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 35,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1624,18 +1765,23 @@
                 "type": "NUMERIC",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 71,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1662,18 +1808,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_tax_filiation_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 22,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1700,18 +1851,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_tax_repartition_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 92,
+        "risk_factor": 44,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1738,18 +1894,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 39,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1771,18 +1932,23 @@
                 "type": "INTEGER",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_tag",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 31,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1804,18 +1970,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_tag_account_tax_repartition_line_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1837,18 +2008,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_tax_default_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1870,18 +2046,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_aged_trial_balance_account_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1903,18 +2084,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_asset_asset",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 59,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1936,18 +2122,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_asset_depreciation_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 39,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -1969,18 +2160,23 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_automatic_entry_wizard",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 34,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2002,18 +2198,23 @@
                 "type": "NUMERIC",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_bank_book_report",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 30,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2035,18 +2236,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_bank_statement_ir_attachment_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2068,18 +2274,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_cash_book_report",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 30,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2101,18 +2312,23 @@
                 "type": "BOOLEAN",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal_kit_account_tax_report_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2134,18 +2350,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move__account_payment",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2167,18 +2388,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_line_account_tax_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2200,18 +2426,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_payment_method",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 24,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2233,18 +2464,23 @@
                 "type": "VARCHAR",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_reconcile_model_line_account_tax_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2266,18 +2502,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_reconcile_model_partner_mapping",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 31,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2299,18 +2540,23 @@
                 "type": "VARCHAR",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_recurring_entries_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 27,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2332,18 +2578,23 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_setup_bank_manual_config",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 26,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2365,18 +2616,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_tax_pos_order_line_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2398,18 +2654,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_tax_purchase_order_line_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2431,18 +2692,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_tax_sale_order_discount_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2464,18 +2730,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_tax_sale_order_line_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 91,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2497,18 +2768,23 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_account_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2524,18 +2800,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_account_merge_wizard_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2551,18 +2832,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_account_tag",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2578,18 +2864,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_financial_report",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2605,18 +2896,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_res_company_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2632,18 +2928,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_tag_account_move_line_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2659,18 +2960,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_tag_product_template_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2686,18 +2992,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_account_type",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 16,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2713,18 +3024,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_aged_trail_report_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2740,18 +3056,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_analytic_account",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 39,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2767,18 +3088,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_analytic_applicability",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 32,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2794,18 +3120,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_analytic_distribution_model",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 43,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2821,18 +3152,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_analytic_line_stock_move_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2848,18 +3184,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_analytic_plan",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 28,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2875,18 +3216,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_automatic_entry_wizard_account_move_line_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2902,18 +3248,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_autopost_bills_wizard",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 20,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2929,18 +3280,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_balance_report_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2956,18 +3312,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_balance_report_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -2983,18 +3344,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_budget_post",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 20,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3010,18 +3376,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_budget_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3037,18 +3408,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_cash_flow_report_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3064,18 +3440,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_cash_rounding",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 22,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3091,18 +3472,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_common_account_report_account_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3118,18 +3504,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_common_journal_report_account_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3145,18 +3536,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_common_journal_report_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3172,18 +3568,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_common_parnter_report_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3199,18 +3600,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_common_partner_report_account_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3226,18 +3632,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_common_print_report_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3253,18 +3664,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_common_report_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3280,18 +3696,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_day_book_report",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 22,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3307,18 +3728,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_day_book_report_account_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3334,18 +3760,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_financial_report",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 32,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3361,18 +3792,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_financial_report_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3388,18 +3824,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_financial_year_op",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 19,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3415,18 +3856,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_fiscal_position",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 38,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3442,18 +3888,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_fiscal_position_account",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 36,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3469,18 +3920,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_fiscal_position_pos_config_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3496,18 +3952,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_fiscal_position_res_config_settings_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3523,18 +3984,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_fiscal_position_res_country_state_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3550,18 +4016,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_followup",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 19,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3577,18 +4048,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_full_reconcile",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 20,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3604,18 +4080,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_group",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 29,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3631,18 +4112,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_incoterms",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 17,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3658,18 +4144,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_invoice_transaction_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3685,18 +4176,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal_account_journal_group_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3712,18 +4208,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal_account_print_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3739,18 +4240,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal_account_reconcile_model_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3766,18 +4272,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal_account_report_partner_ledger_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3793,18 +4304,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal_account_report_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3820,18 +4336,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal_cash_flow_report_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3847,18 +4368,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal_financial_report_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3874,18 +4400,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal_group",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 23,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3901,18 +4432,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_journal_res_users_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3928,18 +4464,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_lock_date",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 22,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3955,18 +4496,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_lock_exception",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 31,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -3982,18 +4528,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_merge_wizard",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 15,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4009,18 +4560,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_merge_wizard_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 28,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4036,18 +4592,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_account_move_send_batch_wizard_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4063,18 +4624,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_account_resequence_wizard_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4090,18 +4656,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_purchase_order_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4117,18 +4688,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_reversal",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 26,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4144,18 +4720,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_reversal_move",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4171,18 +4752,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_reversal_new_move",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4198,18 +4784,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_send_batch_wizard",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 14,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4225,18 +4816,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_send_wizard",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 34,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4252,18 +4848,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_send_wizard_res_partner_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4279,18 +4880,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_move_validate_account_move_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4306,18 +4912,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_payment_register_move_line_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4333,18 +4944,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_payment_term",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 28,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4360,18 +4976,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_reconcile_model_res_partner_category_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4387,18 +5008,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_reconcile_model_res_partner_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4414,18 +5040,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_bankbook_account_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4441,18 +5072,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_bankbook_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4468,18 +5104,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_cashbook_account_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4495,18 +5136,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_cashbook_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4522,18 +5168,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_column",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 30,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4549,18 +5200,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_daybook_account_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4576,18 +5232,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_expression",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 32,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4603,18 +5264,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_external_value",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 39,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4630,18 +5296,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_general_ledger_journal_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4657,18 +5328,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_general_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4684,18 +5360,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_line",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 37,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4711,18 +5392,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_partner_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4738,18 +5424,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_report_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4765,18 +5456,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_resequence_wizard",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 18,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4792,18 +5488,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_secure_entries_wizard",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 20,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4819,18 +5520,23 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "account_tax_report_section_rel",
         "domain": "Accounting",
         "risk": "High",
         "risk_score": 90,
+        "risk_factor": 12,
         "audit_tests": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights"
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation"
         ],
         "audit_rules": [
             {
@@ -4846,16 +5552,21 @@
                 "description": "Validate user permissions"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 72,
+        "risk_factor": 211,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -4924,16 +5635,21 @@
                 "type": "NUMERIC",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_line",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 71,
+        "risk_factor": 166,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -4997,16 +5713,21 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "purchase_order",
         "domain": "Purchase",
         "risk": "Medium",
         "risk_score": 68,
+        "risk_factor": 136,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5055,16 +5776,21 @@
                 "type": "NUMERIC",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "purchase_order_line",
         "domain": "Purchase",
         "risk": "Medium",
         "risk_score": 66,
+        "risk_factor": 135,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5103,16 +5829,21 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_advance_payment_inv",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 65,
+        "risk_factor": 54,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5146,16 +5877,21 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_template",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 62,
+        "risk_factor": 44,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5174,16 +5910,21 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_payment_provider_onboarding_wizard",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 62,
+        "risk_factor": 30,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5202,16 +5943,21 @@
                 "type": "VARCHAR",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_valuation_layer",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 62,
+        "risk_factor": 78,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5230,16 +5976,21 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_advance_payment_inv_sale_order_rel",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 61,
+        "risk_factor": 17,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5253,16 +6004,21 @@
                 "type": "INTEGER",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_discount",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 61,
+        "risk_factor": 27,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5276,16 +6032,21 @@
                 "type": "NUMERIC",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_option",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 61,
+        "risk_factor": 45,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5299,16 +6060,21 @@
                 "type": "NUMERIC",
                 "nullable": false
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_lot",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 61,
+        "risk_factor": 48,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5322,16 +6088,21 @@
                 "type": "JSONB",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_move",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 61,
+        "risk_factor": 159,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5345,16 +6116,21 @@
                 "type": "DOUBLE PRECISION",
                 "nullable": true
             }
-        ]
+        ],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "purchase_order_stock_picking_rel",
         "domain": "Purchase",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5362,16 +6138,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_mass_cancel_orders",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 14,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5379,16 +6160,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_cancel",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 33,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5396,16 +6182,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_line_invoice_rel",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5413,16 +6204,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_line_product_document_rel",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5430,16 +6226,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_mass_cancel_wizard_rel",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5447,16 +6248,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_tag_rel",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5464,16 +6270,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_template_line",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 42,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5481,16 +6292,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_template_option",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 38,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5498,16 +6314,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_order_transaction_rel",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5515,16 +6336,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "sale_pdf_form_field",
         "domain": "Sales",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 19,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5532,16 +6358,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_backorder_confirmation",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 15,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5549,16 +6380,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_backorder_confirmation_line",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 25,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5566,16 +6402,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_change_product_qty",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 25,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5583,16 +6424,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_conflict_quant_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5600,16 +6446,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_inventory_adjustment_name",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 15,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5617,16 +6468,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_inventory_adjustment_name_stock_quant_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5634,16 +6490,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_inventory_conflict",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 14,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5651,16 +6512,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_inventory_conflict_stock_quant_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5668,16 +6534,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_inventory_warning",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 14,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5685,16 +6556,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_inventory_warning_stock_quant_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5702,16 +6578,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_location",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 73,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5719,16 +6600,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_move_created_purchase_line_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5736,16 +6622,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_move_line",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 88,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5753,16 +6644,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_move_line_consume_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5770,16 +6666,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_move_move_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5787,16 +6688,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_orderpoint_snooze",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 16,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5804,16 +6710,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_orderpoint_snooze_stock_warehouse_orderpoint_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5821,16 +6732,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_package_destination",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 24,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5838,16 +6754,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_package_level",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 35,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5855,16 +6776,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_package_type",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 34,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5872,16 +6798,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_package_type_stock_putaway_rule_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5889,16 +6820,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_picking",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 108,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5906,16 +6842,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_picking_backorder_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5923,16 +6864,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_picking_sms_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5940,16 +6886,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_picking_type",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 75,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5957,16 +6908,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_putaway_rule",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 49,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5974,16 +6930,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_quant",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 67,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -5991,16 +6952,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_quant_package",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 37,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6008,16 +6974,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_quant_relocate",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 25,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6025,16 +6996,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_quant_stock_quant_relocate_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6042,16 +7018,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_quant_stock_request_count_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6059,16 +7040,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_quant_stock_track_confirmation_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6076,16 +7062,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_quantity_history",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 15,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6093,16 +7084,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_replenishment_info",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 19,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6110,16 +7106,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_replenishment_option",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 29,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6127,16 +7128,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_request_count",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 22,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6144,16 +7150,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_return_picking",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 19,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6161,16 +7172,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_return_picking_line",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 31,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6178,16 +7194,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_route",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 38,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6195,16 +7216,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_route_categ",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6212,16 +7238,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_route_move",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6229,16 +7260,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_route_packaging",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6246,16 +7282,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_route_product",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6263,16 +7304,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_route_stock_rules_report_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6280,16 +7326,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_route_warehouse",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6297,16 +7348,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_rule",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 77,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6314,16 +7370,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_rules_report",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 25,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6331,16 +7392,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_rules_report_stock_warehouse_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6348,16 +7414,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_scrap",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 65,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6365,16 +7436,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_scrap_reason_tag",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 19,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6382,16 +7458,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_scrap_stock_scrap_reason_tag_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6399,16 +7480,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_storage_category",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 23,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6416,16 +7502,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_storage_category_capacity",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 36,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6433,16 +7524,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_traceability_report",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 14,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6450,16 +7546,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_track_confirmation",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 14,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6467,16 +7568,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_track_line",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 24,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6484,16 +7590,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_valuation_layer_revaluation",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 42,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6501,16 +7612,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_valuation_layer_stock_valuation_layer_revaluation_rel",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6518,16 +7634,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_warehouse",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 135,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6535,16 +7656,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_warehouse_orderpoint",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 78,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6552,16 +7678,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_warn_insufficient_qty_scrap",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 31,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6569,16 +7700,21 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     },
     {
         "table": "stock_wh_resupply_table",
         "domain": "Inventory",
         "risk": "Medium",
         "risk_score": 60,
+        "risk_factor": 12,
         "audit_tests": [
-            "Review workflow",
-            "Check document completeness"
+            "Workflow review",
+            "Data integrity"
         ],
         "audit_rules": [
             {
@@ -6586,6 +7722,10 @@
                 "description": "Review workflow integrity"
             }
         ],
-        "sensitive_fields": []
+        "sensitive_fields": [],
+        "validation": {
+            "valid": true,
+            "missing": []
+        }
     }
 ]

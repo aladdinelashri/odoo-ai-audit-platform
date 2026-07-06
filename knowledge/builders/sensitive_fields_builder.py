@@ -33,3 +33,11 @@ class SensitiveFieldsBuilder:
                     break
 
         return sensitive
+
+    def process(self, table_name, context):
+
+        context["sensitive_fields"] = self.build(
+            context["columns"]
+        )
+
+        return context

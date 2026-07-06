@@ -1,28 +1,16 @@
 import json
 from pathlib import Path
 
-from knowledge.builders.domain_builder import DomainBuilder
-from knowledge.builders.risk_builder import RiskBuilder
-from knowledge.builders.audit_builder import AuditBuilder
-from knowledge.builders.rule_builder import RuleBuilder
-from knowledge.builders.sensitive_fields_builder import SensitiveFieldsBuilder
-from knowledge.builders.risk_score_builder import RiskScoreBuilder
-from knowledge.builders.risk_factor_builder import RiskFactorBuilder
+from knowledge.pipeline.default_pipeline import create_pipeline
 
 
 class KnowledgeBuilder:
 
     def __init__(self):
 
-        self.metadata_file = Path("data/metadata/database.json")
-
-        self.domain_builder = DomainBuilder()
-        self.risk_builder = RiskBuilder()
-        self.audit_builder = AuditBuilder()
-        self.rule_builder = RuleBuilder()
-        self.sensitive_fields_builder = SensitiveFieldsBuilder()
-        self.risk_score_builder = RiskScoreBuilder()
-        self.risk_factor_builder = RiskFactorBuilder()
+        self.metadata_file = Path(
+            "data/metadata/database.json"
+        )
 
     def build(self):
 
@@ -34,56 +22,15 @@ class KnowledgeBuilder:
 
             metadata = json.load(f)
 
+        pipeline = create_pipeline()
+
         knowledge = {}
 
         for table_name, table_data in metadata.items():
 
-            domain = self.domain_builder.classify(table_name)
-
-            risk = self.risk_builder.classify(table_name)
-
-            sensitive_fields = self.sensitive_fields_builder.build(
-                table_data["columns"]
-            )
-
-            risk_score = self.risk_score_builder.calculate(
-                risk,
-                sensitive_fields
-            )
-
-            risk_factor = self.risk_factor_builder.calculate(
-                {
-                    **table_data,
-                    "sensitive_fields": sensitive_fields
-                }
-            )
-
-            audit_tests = self.audit_builder.build(risk)
-
-            audit_rules = self.rule_builder.build(
+            knowledge[table_name] = pipeline.run(
                 table_name,
-                domain,
-                risk
+                table_data
             )
-
-            knowledge[table_name] = {
-
-                **table_data,
-
-                "domain": domain,
-
-                "risk": risk,
-
-                "risk_score": risk_score,
-
-                "risk_factor": risk_factor,
-
-                "audit_tests": audit_tests,
-
-                "audit_rules": audit_rules,
-
-                "sensitive_fields": sensitive_fields
-
-            }
 
         return knowledge

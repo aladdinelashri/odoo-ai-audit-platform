@@ -1,15 +1,15 @@
 class AuditBuilder:
 
-    RULES = {
+    TESTS = {
         "High": [
-            "Verify approvals",
-            "Check audit trail",
-            "Detect duplicate transactions",
-            "Validate access rights",
+            "Approval workflow",
+            "Duplicate detection",
+            "Access control",
+            "Financial reconciliation",
         ],
         "Medium": [
-            "Review workflow",
-            "Check document completeness",
+            "Workflow review",
+            "Data integrity",
         ],
         "Low": [
             "General review",
@@ -18,4 +18,12 @@ class AuditBuilder:
 
     def build(self, risk):
 
-        return self.RULES.get(risk, ["General review"])
+        return self.TESTS.get(risk, [])
+
+    def process(self, table_name, context):
+
+        context["audit_tests"] = self.build(
+            context["risk"]
+        )
+
+        return context
