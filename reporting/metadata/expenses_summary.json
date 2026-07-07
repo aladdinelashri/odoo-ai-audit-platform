@@ -1,0 +1,23 @@
+{
+    "id": "EXPENSES_SUMMARY",
+    "title": "Expenses Summary",
+    "query": "expenses_summary",
+    "columns": [
+        {
+            "field": "account_code",
+            "title": "Account"
+        },
+        {
+            "field": "account_name",
+            "title": "Account Name"
+        },
+        {
+            "field": "entries",
+            "title": "Entries"
+        },
+        {
+            "field": "total_expense",
+            "title": "Total Expense"
+        }
+    ]
+}

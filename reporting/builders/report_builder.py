@@ -3,6 +3,7 @@ from pathlib import Path
 
 from reporting.report_engine import ReportEngine
 from reporting.renderers.console_renderer import ConsoleRenderer
+from reporting.utils.json_formatter import JSONFormatter
 
 
 class ReportBuilder:
@@ -12,6 +13,8 @@ class ReportBuilder:
         self.engine = ReportEngine()
 
         self.renderer = ConsoleRenderer()
+
+        self.formatter = JSONFormatter()
 
         self.metadata_path = Path("reporting/metadata")
 
@@ -38,6 +41,8 @@ class ReportBuilder:
             raise Exception(f"Unknown report query: {query}")
 
         rows = getattr(self.engine, query)()
+
+        rows = self.formatter.format_rows(rows)
 
         report = {
 

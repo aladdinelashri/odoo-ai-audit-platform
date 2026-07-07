@@ -1,14 +1,19 @@
 {
     "id": "TOP_PRODUCTS",
-    "title_key": "products.top.title",
-    "description_key": "products.top.description",
-    "category": "Sales",
-    "version": "1.0",
-    "enabled": true,
+    "title": "Top Selling Products",
     "query": "top_products",
-    "output": [
-        "console",
-        "html",
-        "api"
+    "columns": [
+        {
+            "field": "product",
+            "title": "Product"
+        },
+        {
+            "field": "quantity",
+            "title": "Quantity"
+        },
+        {
+            "field": "sales",
+            "title": "Sales"
+        }
     ]
 }

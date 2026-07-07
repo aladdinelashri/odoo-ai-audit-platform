@@ -1,0 +1,15 @@
+{
+    "id": "INVENTORY_SUMMARY",
+    "title": "Inventory Summary",
+    "query": "inventory_summary",
+    "columns": [
+        {
+            "field": "total_products",
+            "title": "Total Products"
+        },
+        {
+            "field": "total_quantity",
+            "title": "Total Quantity"
+        }
+    ]
+}

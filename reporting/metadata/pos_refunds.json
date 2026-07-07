@@ -1,0 +1,46 @@
+{
+    "id": "POS_REFUNDS",
+    "title_key": "pos.refunds.title",
+    "description_key": "pos.refunds.description",
+    "category": "POS",
+    "version": "1.0",
+    "enabled": true,
+    "query": "pos_refunds",
+
+    "columns": [
+        {
+            "field": "name",
+            "title": "Order"
+        },
+        {
+            "field": "date_order",
+            "title": "Date"
+        },
+        {
+            "field": "pos",
+            "title": "POS"
+        },
+        {
+            "field": "customer",
+            "title": "Customer"
+        },
+        {
+            "field": "full_product_name",
+            "title": "Product"
+        },
+        {
+            "field": "qty",
+            "title": "Qty"
+        },
+        {
+            "field": "refunded_orderline_id",
+            "title": "Refunded Line"
+        }
+    ],
+
+    "output": [
+        "console",
+        "html",
+        "api"
+    ]
+}

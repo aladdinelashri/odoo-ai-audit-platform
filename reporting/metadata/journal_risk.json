@@ -1,0 +1,35 @@
+{
+    "id": "JOURNAL_RISK",
+    "title": "Journal Risk Report",
+    "query": "journal_risk",
+    "columns": [
+        {
+            "field": "id",
+            "title": "Move ID"
+        },
+        {
+            "field": "name",
+            "title": "Journal Entry"
+        },
+        {
+            "field": "date",
+            "title": "Date"
+        },
+        {
+            "field": "journal",
+            "title": "Journal"
+        },
+        {
+            "field": "partner",
+            "title": "Partner"
+        },
+        {
+            "field": "total",
+            "title": "Amount"
+        },
+        {
+            "field": "risk",
+            "title": "Risk"
+        }
+    ]
+}

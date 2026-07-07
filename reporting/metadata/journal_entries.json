@@ -1,0 +1,20 @@
+{
+    "id": "journal_entries",
+    "title": "Journal Entries",
+    "description": "Journal Entries",
+    "table": "account_move",
+    "fields": [
+        "name",
+        "date",
+        "journal.name",
+        "partner.name",
+        "amount_total"
+    ],
+    "filters": [],
+    "order_by": [
+        {
+            "field": "date",
+            "direction": "DESC"
+        }
+    ]
+}

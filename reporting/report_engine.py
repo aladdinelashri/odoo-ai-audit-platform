@@ -1,4 +1,7 @@
+import importlib
+
 from database.sql.executor import SQLExecutor
+from database.reportbuilder.report_compiler import ReportCompiler
 
 
 class ReportEngine:
@@ -7,87 +10,86 @@ class ReportEngine:
 
         self.db = SQLExecutor()
 
+        self.compiler = ReportCompiler()
+
+    # =====================================================
+
     def execute(self, sql):
 
         return self.db.execute(sql)
 
-    # -------------------------------------------------------
-    # ACCOUNT MOVE SUMMARY
-    # -------------------------------------------------------
+    # =====================================================
+
+    def run(self, report_name):
+
+        try:
+
+            sql = self.compiler.compile(report_name)
+
+        except Exception:
+
+            module = importlib.import_module(
+
+                f"reporting.queries.{report_name}"
+
+            )
+
+            sql = module.query()
+
+        return self.execute(sql)
+
+    # =====================================================
+    # Accounting Reports
+    # =====================================================
 
     def account_move_summary(self):
 
-        sql = """
-        SELECT
-            COUNT(*) AS total_moves,
-            SUM(amount_total) AS total_amount,
-            AVG(amount_total) AS average_amount,
-            MAX(amount_total) AS maximum_amount,
-            MIN(amount_total) AS minimum_amount
-        FROM account_move;
-        """
+        return self.run("account_move_summary")
 
-        return self.execute(sql)
+    def expenses_summary(self):
 
-    # -------------------------------------------------------
-    # SALES SUMMARY
-    # -------------------------------------------------------
+        return self.run("expenses_summary")
+
+    def journal_risk(self):
+
+        return self.run("journal_risk")
+
+    def missing_partner(self):
+
+        return self.run("missing_partner")
+
+    # =====================================================
+    # Sales Reports
+    # =====================================================
 
     def sales_summary(self):
 
-        sql = """
-        SELECT
-            COUNT(*) AS total_orders,
-            COALESCE(SUM(amount_total),0) AS total_sales,
-            COALESCE(AVG(amount_total),0) AS average_order
-        FROM pos_order;
-        """
+        return self.run("sales_summary")
 
-        return self.execute(sql)
+    def top_products(self):
 
-    # -------------------------------------------------------
-    # TOP SELLING PRODUCTS
-    # -------------------------------------------------------
+        return self.run("top_products")
 
-    def top_products(self, limit=20):
-
-        sql = f"""
-        SELECT
-
-            pt.name AS product,
-
-            SUM(pol.qty) AS quantity,
-
-            SUM(pol.price_subtotal_incl) AS sales
-
-        FROM pos_order_line pol
-
-        JOIN product_product pp
-             ON pol.product_id = pp.id
-
-        JOIN product_template pt
-             ON pp.product_tmpl_id = pt.id
-
-        GROUP BY pt.name
-
-        ORDER BY sales DESC
-
-        LIMIT {limit};
-        """
-
-        return self.execute(sql)
-
-    # -------------------------------------------------------
-    # INVENTORY SUMMARY
-    # -------------------------------------------------------
+    # =====================================================
+    # Inventory Reports
+    # =====================================================
 
     def inventory_summary(self):
 
-        sql = """
-        SELECT
-            COUNT(*) AS total_products,
-            COALESCE(SUM(quantity),0) AS total_quantity
-        FROM stock_quant;
-        """
+        return self.run("inventory_summary")
 
-        return self.execute(sql)
+    # =====================================================
+    # POS Reports
+    # =====================================================
+
+    def pos_refunds(self):
+
+        return self.run("pos_refunds")
+
+    # =====================================================
+    # Dynamic Reports
+    # =====================================================
+
+    def report(self, report_name):
+
+        return self.run(report_name)
