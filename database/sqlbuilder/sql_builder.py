@@ -1,5 +1,6 @@
 from database.sqlbuilder.where_builder import WhereBuilder
 from database.sqlbuilder.order_builder import OrderBuilder
+from database.sqlbuilder.aggregate_builder import AggregateBuilder
 
 from database.resolver.field_resolver import FieldResolver
 
@@ -15,6 +16,8 @@ class SQLBuilder:
         self.selects = []
 
         self.joins = []
+
+        self.aggregate = AggregateBuilder()
 
         self.where_builder = WhereBuilder()
 
@@ -73,6 +76,18 @@ class SQLBuilder:
             if join and join not in self.joins:
 
                 self.joins.append(join)
+
+        return self
+
+    # ---------------------------------------------------------
+
+    def aggregate_from_plan(self, plan):
+
+        sql = self.aggregate.build(plan)
+
+        if sql:
+
+            self.selects = [sql]
 
         return self
 

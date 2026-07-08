@@ -3,75 +3,50 @@ import re
 
 class ParameterDetector:
 
-    def __init__(self):
-
-        self.desc_words = [
-
-            "last",
-            "latest",
-            "recent",
-            "آخر",
-            "اخر"
-
-        ]
-
-        self.asc_words = [
-
-            "first",
-            "oldest",
-            "أول",
-            "اول"
-
-        ]
-
-    # ---------------------------------------------------------
-
     def detect(self, text):
-
-        text = text.lower()
 
         result = {
 
             "limit": None,
 
-            "order": None
+            "order": "DESC"
 
         }
 
-        # ------------------------------------------
-        # limit
-        # ------------------------------------------
+        m = re.search(
 
-        m = re.search(r"\b(\d+)\b", text)
+            r"(?:last|آخر)\s+(\d+)",
+
+            text,
+
+            re.IGNORECASE
+
+        )
 
         if m:
 
-            result["limit"] = int(
+            result["limit"] = int(m.group(1))
 
-                m.group(1)
+            result["order"] = "DESC"
 
-            )
+            return result
 
-        # ------------------------------------------
-        # order
-        # ------------------------------------------
+        m = re.search(
 
-        for word in self.desc_words:
+            r"(?:first|أول)\s+(\d+)",
 
-            if word in text:
+            text,
 
-                result["order"] = "DESC"
+            re.IGNORECASE
 
-                break
+        )
 
-        if result["order"] is None:
+        if m:
 
-            for word in self.asc_words:
+            result["limit"] = int(m.group(1))
 
-                if word in text:
+            result["order"] = "ASC"
 
-                    result["order"] = "ASC"
-
-                    break
+            return result
 
         return result
