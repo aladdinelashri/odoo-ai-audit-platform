@@ -18,46 +18,128 @@ class AggregateSkill(BaseSkill):
 
             return plan
 
-        text = text.lower()
+        lowered = text.lower()
 
         aggregate = None
 
-        if any(word in text for word in [
+        # -------------------------------------------------
+        # Aggregate Function
+        # -------------------------------------------------
 
-            "sum",
-            "total",
-            "اجمالي",
-            "إجمالي",
-            "مجموع"
+        if any(
 
-        ]):
+            word in lowered
+
+            for word in (
+
+                "sum",
+                "total",
+                "اجمالي",
+                "إجمالي",
+                "مجموع"
+
+            )
+
+        ):
 
             aggregate = "SUM"
 
-        elif any(word in text for word in [
+        elif any(
 
-            "count",
-            "عدد"
+            word in lowered
 
-        ]):
+            for word in (
+
+                "count",
+                "عدد"
+
+            )
+
+        ):
 
             aggregate = "COUNT"
+
+        elif any(
+
+            word in lowered
+
+            for word in (
+
+                "average",
+                "avg",
+                "متوسط"
+
+            )
+
+        ):
+
+            aggregate = "AVG"
+
+        elif any(
+
+            word in lowered
+
+            for word in (
+
+                "maximum",
+                "max",
+                "اعلى",
+                "أعلى",
+                "اكبر",
+                "الأكبر"
+
+            )
+
+        ):
+
+            aggregate = "MAX"
+
+        elif any(
+
+            word in lowered
+
+            for word in (
+
+                "minimum",
+                "min",
+                "اقل",
+                "أقل",
+                "اصغر",
+                "الأصغر"
+
+            )
+
+        ):
+
+            aggregate = "MIN"
 
         if not aggregate:
 
             return plan
 
-        field = self.ranker.best(
-
-            table,
-
-            "monetary_total"
-
-        )
+        # -------------------------------------------------
+        # Target Field
+        # -------------------------------------------------
 
         if aggregate == "COUNT":
 
             field = "id"
+
+        else:
+
+            field = self.ranker.best(
+
+                table,
+
+                "monetary_total"
+
+            )
+
+            if not field:
+
+                field = "id"
+
+        # -------------------------------------------------
 
         plan["aggregate"] = {
 
