@@ -3,6 +3,9 @@ from database.ai.skills.date import DateSkill
 from database.ai.skills.state import StateSkill
 from database.ai.skills.aggregate import AggregateSkill
 
+from database.ai.skills.group import GroupSkill
+from database.ai.skills.top import TopSkill
+
 
 class SkillEngine:
 
@@ -14,7 +17,11 @@ class SkillEngine:
 
             DateSkill(),
 
-            StateSkill()
+            StateSkill(),
+
+            GroupSkill(),
+
+            TopSkill()
 
         ]
 
@@ -26,7 +33,7 @@ class SkillEngine:
 
         for skill in self.skills:
 
-            filters = skill.detect(
+            result = skill.detect(
 
                 text,
 
@@ -34,9 +41,15 @@ class SkillEngine:
 
             )
 
-            if filters:
+            if result:
 
-                plan["filters"].extend(filters)
+                if isinstance(result, dict):
+
+                    plan.update(result)
+
+                else:
+
+                    plan["filters"].extend(result)
 
         plan = self.aggregate.detect(
 
