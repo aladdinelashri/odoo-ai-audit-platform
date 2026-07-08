@@ -1,6 +1,7 @@
 from database.schema.schema_index import SchemaIndex
 from database.resolver.table_resolver import TableResolver
 from database.resolver.relation_resolver import RelationResolver
+from database.jsonb.jsonb_resolver import JSONBResolver
 
 
 class FieldResolver:
@@ -12,6 +13,8 @@ class FieldResolver:
         self.tables = TableResolver()
 
         self.relations = RelationResolver()
+
+        self.jsonb = JSONBResolver()
 
     # ---------------------------------------------------------
 
@@ -26,9 +29,8 @@ class FieldResolver:
 
             if datatype == "jsonb":
 
-                sql = (
+                sql = self.jsonb.sql(
                     f"{source_table}.{expression}"
-                    "->>'ar_001'"
                 )
 
             else:
@@ -62,9 +64,8 @@ class FieldResolver:
 
         if datatype == "jsonb":
 
-            sql = (
+            sql = self.jsonb.sql(
                 f"{target_table}.{field}"
-                "->>'ar_001'"
             )
 
         else:

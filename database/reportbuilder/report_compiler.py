@@ -1,4 +1,5 @@
 from database.reportbuilder.report_parser import ReportParser
+from database.planner.planner import Planner
 from database.sqlbuilder.sql_builder import SQLBuilder
 
 
@@ -8,27 +9,23 @@ class ReportCompiler:
 
         self.parser = ReportParser()
 
+        self.planner = Planner()
+
     # ---------------------------------------------------------
 
     def compile(self, report_name):
 
         report = self.parser.load(report_name)
 
+        plan = self.planner.build(report)
+
         builder = SQLBuilder()
 
-        builder.table(
+        builder.table(plan["table"])
 
-            self.parser.table(report)
+        builder.select(*plan["select"])
 
-        )
-
-        builder.select(
-
-            *self.parser.fields(report)
-
-        )
-
-        for item in self.parser.filters(report):
+        for item in plan["where"]:
 
             builder.where(
 
@@ -40,7 +37,7 @@ class ReportCompiler:
 
             )
 
-        for item in self.parser.order(report):
+        for item in plan["order"]:
 
             builder.order_by(
 

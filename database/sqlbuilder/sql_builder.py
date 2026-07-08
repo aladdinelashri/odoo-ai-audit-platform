@@ -34,6 +34,22 @@ class SQLBuilder:
 
         for field in fields:
 
+            # -----------------------------------------
+            # New Planner Style
+            # -----------------------------------------
+
+            if isinstance(field, dict):
+
+                sql = f"{field['sql']} AS {field['alias']}"
+
+                self.selects.append(sql)
+
+                continue
+
+            # -----------------------------------------
+            # Old Style
+            # -----------------------------------------
+
             item = self.fields.resolve(
 
                 self.current_table,
@@ -55,6 +71,18 @@ class SQLBuilder:
             )
 
             if join and join not in self.joins:
+
+                self.joins.append(join)
+
+        return self
+
+    # ---------------------------------------------------------
+
+    def joins_from_plan(self, joins):
+
+        for join in joins:
+
+            if join not in self.joins:
 
                 self.joins.append(join)
 
@@ -98,13 +126,27 @@ class SQLBuilder:
 
         sql.append("SELECT")
 
-        sql.append("    " + ",\n    ".join(self.selects))
+        sql.append(
 
-        sql.append(f"FROM {self.current_table}")
+            "    " +
+
+            ",\n    ".join(self.selects)
+
+        )
+
+        sql.append(
+
+            f"FROM {self.current_table}"
+
+        )
 
         if self.joins:
 
-            sql.append("\n".join(self.joins))
+            sql.append(
+
+                "\n".join(self.joins)
+
+            )
 
         where_sql = self.where_builder.sql()
 

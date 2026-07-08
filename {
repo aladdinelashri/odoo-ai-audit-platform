@@ -1,0 +1,24 @@
+  "journal entries": "account_move", "journal entry": "account_move", "entries": "account_move", "move": "account_move", "moves": "account_move", "invoice": "account_move", "invoices": 
+  "account_move",
+  "customer": "res_partner",
+  "customers": "res_partner",
+  "partner": "res_partner",
+  "partners": "res_partner",
+  "journal": "account_journal",
+  "journals": "account_journal",
+  "product": "product_product",
+  "products": "product_product",
+
+  "قيد": "account_move",
+  "قيود": "account_move",
+  "قيود محاسبية": "account_move",
+  "فاتورة": "account_move",
+  "فواتير": "account_move",
+  "عميل": "res_partner",
+  "عملاء": "res_partner",
+  "شريك": "res_partner",
+  "دفتر": "account_journal",
+  "يومية": "account_journal",
+  "منتج": "product_product",
+  "منتجات": "product_product"
+}
