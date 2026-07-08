@@ -1,44 +1,79 @@
-from database.schema.schema_index import SchemaIndex
+from database.ai.reasoning.relationships.graph import RelationshipGraph
+from database.ai.reasoning.relationships.path_finder import PathFinder
 
 
 class RelationResolver:
 
     def __init__(self):
 
-        self.db = SchemaIndex()
+        self.graph = RelationshipGraph()
 
-    def from_table(self, table):
+        self.finder = PathFinder(
 
-        return self.db.relations_from(table)
+            self.graph
 
-    def to_table(self, table):
+        )
 
-        return self.db.relations_to(table)
+    # ---------------------------------------------------------
 
     def relation(self, source, target):
 
-        for r in self.db.relations_from(source):
+        path = self.finder.find(
 
-            if r["target_table"] == target:
+            source,
 
-                return r
+            target
 
-        return None
+        )
+
+        if not path:
+
+            return None
+
+        return path[0]
+
+    # ---------------------------------------------------------
 
     def exists(self, source, target):
 
-        return self.relation(source, target) is not None
+        return self.relation(
+
+            source,
+
+            target
+
+        ) is not None
+
+    # ---------------------------------------------------------
 
     def join(self, source, target):
 
-        rel = self.relation(source, target)
+        relation = self.relation(
 
-        if not rel:
+            source,
+
+            target
+
+        )
+
+        if not relation:
 
             return None
 
         return f"""
-LEFT JOIN {target}
-ON {target}.{rel['target_field']} =
-   {source}.{rel['source_field']}
+LEFT JOIN {relation['table']}
+ON {relation['table']}.{relation['target_field']} =
+   {source}.{relation['source_field']}
 """.strip()
+
+    # ---------------------------------------------------------
+
+    def path(self, source, target):
+
+        return self.finder.find(
+
+            source,
+
+            target
+
+        )
