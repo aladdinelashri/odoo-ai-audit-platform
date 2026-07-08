@@ -14,6 +14,7 @@ class IntentDetector:
                 "display",
                 "find",
                 "get",
+
                 "اعرض",
                 "اظهر",
                 "هات",
@@ -27,6 +28,7 @@ class IntentDetector:
 
                 "count",
                 "how many",
+
                 "عدد",
                 "كم",
                 "احصاء"
@@ -37,6 +39,7 @@ class IntentDetector:
 
                 "sum",
                 "total",
+
                 "اجمالي",
                 "إجمالي",
                 "مجموع"
@@ -47,7 +50,40 @@ class IntentDetector:
 
                 "average",
                 "avg",
+
                 "متوسط"
+
+            ],
+
+            "group": [
+
+                "group",
+                "group by",
+
+                "حسب",
+                "لكل",
+                "بواسطة",
+                "وفق",
+
+                "per",
+                "by"
+
+            ],
+
+            "top": [
+
+                "top",
+                "best",
+                "highest",
+                "largest",
+                "ranking",
+
+                "أفضل",
+                "اعلى",
+                "أعلى",
+                "اكبر",
+                "الأكبر",
+                "ترتيب"
 
             ]
 
@@ -57,13 +93,24 @@ class IntentDetector:
 
     def detect(self, text):
 
-        text = text.lower()
+        lowered = text.lower()
 
-        for intent, words in self.intents.items():
+        priority = [
 
-            for word in words:
+            "top",
+            "group",
+            "count",
+            "sum",
+            "average",
+            "show"
 
-                if re.search(r"\b" + re.escape(word.lower()) + r"\b", text):
+        ]
+
+        for intent in priority:
+
+            for word in self.intents[intent]:
+
+                if word.lower() in lowered:
 
                     return intent
 
