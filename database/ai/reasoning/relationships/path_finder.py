@@ -13,38 +13,54 @@ class PathFinder:
 
         if source == target:
 
-            return [source]
+            return []
 
         queue = deque()
 
-        queue.append((source, [source]))
+        queue.append(
+
+            (
+
+                source,
+
+                []
+
+            )
+
+        )
 
         visited = {source}
 
         while queue:
 
-            node, path = queue.popleft()
+            table, path = queue.popleft()
 
-            for neighbor in self.graph.neighbors(node):
+            for relation in self.graph.neighbors(table):
 
-                if neighbor == target:
+                next_table = relation["table"]
 
-                    return path + [neighbor]
+                if next_table in visited:
 
-                if neighbor not in visited:
+                    continue
 
-                    visited.add(neighbor)
+                new_path = path + [relation]
 
-                    queue.append(
+                if next_table == target:
 
-                        (
+                    return new_path
 
-                            neighbor,
+                visited.add(next_table)
 
-                            path + [neighbor]
+                queue.append(
 
-                        )
+                    (
+
+                        next_table,
+
+                        new_path
 
                     )
+
+                )
 
         return None

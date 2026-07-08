@@ -1,20 +1,53 @@
+from database.catalog.catalog_loader import CatalogLoader
+
+
 class RelationshipGraph:
 
     def __init__(self):
 
+        self.catalog = CatalogLoader()
+
         self.graph = {}
+
+        self.build()
 
     # ---------------------------------------------------------
 
-    def add(self, source, target):
+    def build(self):
 
-        self.graph.setdefault(
+        catalog = self.catalog.load()
 
-            source,
+        for table, info in catalog.items():
 
-            []
+            self.graph.setdefault(
 
-        ).append(target)
+                table,
+
+                []
+
+            )
+
+            for relation in info.get(
+
+                "relations",
+
+                []
+
+            ):
+
+                self.graph[table].append(
+
+                    {
+
+                        "table": relation["target_table"],
+
+                        "source_field": relation["source_field"],
+
+                        "target_field": relation["target_field"]
+
+                    }
+
+                )
 
     # ---------------------------------------------------------
 
