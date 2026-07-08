@@ -78,7 +78,7 @@ class ExecutionPlanner:
 
                 "field": "date",
 
-                "direction": parameters["order"] or "DESC"
+                "direction": parameters.get("order") or "DESC"
 
             }
 
@@ -100,9 +100,59 @@ class ExecutionPlanner:
 
             "order": order,
 
-            "limit": parameters["limit"] or 100
+            "limit": parameters.get("limit") or 100
 
         }
+
+        # -------------------------------------------------
+        # Aggregate
+        # -------------------------------------------------
+
+        aggregate = parameters.get("aggregate")
+
+        if aggregate:
+
+            numeric_fields = [
+
+                f for f in fields
+
+                if any(
+
+                    key in f.lower()
+
+                    for key in (
+
+                        "amount",
+
+                        "total",
+
+                        "balance",
+
+                        "price",
+
+                        "qty",
+
+                        "quantity",
+
+                        "debit",
+
+                        "credit"
+
+                    )
+
+                )
+
+            ]
+
+            target = numeric_fields[0] if numeric_fields else fields[0]
+
+            plan["aggregate"] = {
+
+                "function": aggregate,
+
+                "field": target
+
+            }
 
         # -------------------------------------------------
         # Skills
