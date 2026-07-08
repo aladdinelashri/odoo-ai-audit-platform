@@ -23,6 +23,12 @@ class SQLBuilder:
 
         self.order_builder = OrderBuilder()
 
+        self.group_fields = []
+
+        self.having_clause = None
+
+        self.limit_value = None
+
     # ---------------------------------------------------------
 
     def table(self, table):
@@ -37,10 +43,6 @@ class SQLBuilder:
 
         for field in fields:
 
-            # -----------------------------------------
-            # New Planner Style
-            # -----------------------------------------
-
             if isinstance(field, dict):
 
                 sql = f"{field['sql']} AS {field['alias']}"
@@ -48,10 +50,6 @@ class SQLBuilder:
                 self.selects.append(sql)
 
                 continue
-
-            # -----------------------------------------
-            # Old Style
-            # -----------------------------------------
 
             item = self.fields.resolve(
 
@@ -135,6 +133,30 @@ class SQLBuilder:
 
     # ---------------------------------------------------------
 
+    def group_by(self, *fields):
+
+        self.group_fields.extend(fields)
+
+        return self
+
+    # ---------------------------------------------------------
+
+    def having(self, clause):
+
+        self.having_clause = clause
+
+        return self
+
+    # ---------------------------------------------------------
+
+    def limit(self, value):
+
+        self.limit_value = value
+
+        return self
+
+    # ---------------------------------------------------------
+
     def build(self):
 
         sql = []
@@ -169,10 +191,36 @@ class SQLBuilder:
 
             sql.append(where_sql)
 
+        if self.group_fields:
+
+            sql.append(
+
+                "GROUP BY\n    " +
+
+                ", ".join(self.group_fields)
+
+            )
+
+        if self.having_clause:
+
+            sql.append(
+
+                f"HAVING\n    {self.having_clause}"
+
+            )
+
         order_sql = self.order_builder.sql()
 
         if order_sql:
 
             sql.append(order_sql)
+
+        if self.limit_value:
+
+            sql.append(
+
+                f"LIMIT {self.limit_value}"
+
+            )
 
         return "\n".join(sql)
