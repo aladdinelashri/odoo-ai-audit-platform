@@ -9,9 +9,17 @@ class ParameterDetector:
 
             "limit": None,
 
-            "order": "DESC"
+            "order": "DESC",
+
+            "aggregate": None
 
         }
+
+        lowered = text.lower()
+
+        # -------------------------------------------------
+        # LIMIT
+        # -------------------------------------------------
 
         m = re.search(
 
@@ -29,8 +37,6 @@ class ParameterDetector:
 
             result["order"] = "DESC"
 
-            return result
-
         m = re.search(
 
             r"(?:first|أول)\s+(\d+)",
@@ -47,6 +53,92 @@ class ParameterDetector:
 
             result["order"] = "ASC"
 
-            return result
+        # -------------------------------------------------
+        # AGGREGATE
+        # -------------------------------------------------
+
+        if any(
+
+            word in lowered
+
+            for word in (
+
+                "sum",
+                "total",
+                "إجمالي",
+                "مجموع"
+
+            )
+
+        ):
+
+            result["aggregate"] = "SUM"
+
+        elif any(
+
+            word in lowered
+
+            for word in (
+
+                "count",
+                "عدد"
+
+            )
+
+        ):
+
+            result["aggregate"] = "COUNT"
+
+        elif any(
+
+            word in lowered
+
+            for word in (
+
+                "average",
+                "avg",
+                "متوسط"
+
+            )
+
+        ):
+
+            result["aggregate"] = "AVG"
+
+        elif any(
+
+            word in lowered
+
+            for word in (
+
+                "maximum",
+                "max",
+                "أعلى",
+                "اكبر",
+                "الأكبر"
+
+            )
+
+        ):
+
+            result["aggregate"] = "MAX"
+
+        elif any(
+
+            word in lowered
+
+            for word in (
+
+                "minimum",
+                "min",
+                "أقل",
+                "اصغر",
+                "الأصغر"
+
+            )
+
+        ):
+
+            result["aggregate"] = "MIN"
 
         return result
