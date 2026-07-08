@@ -1,9 +1,10 @@
-import json
-from pathlib import Path
+import re
 
 from database.catalog.catalog_loader import CatalogLoader
 from database.catalog.column_index import ColumnIndex
 from database.resolver.table_resolver import TableResolver
+
+from database.ai.reasoning.business_dictionary import BUSINESS_TERMS
 
 
 class EntityDetector:
@@ -11,30 +12,20 @@ class EntityDetector:
     def __init__(self):
 
         self.loader = CatalogLoader()
+
         self.tables = TableResolver()
+
         self.columns = ColumnIndex()
 
-        self.business = self.load_business_terms()
-
-    # ---------------------------------------------------------
-
-    def load_business_terms(self):
-
-        path = (
-            Path(__file__).parent
-            / "vocabulary"
-            / "business_terms.json"
-        )
-
-        with open(path, "r", encoding="utf-8") as f:
-
-            return json.load(f)
+        self.business = BUSINESS_TERMS
 
     # ---------------------------------------------------------
 
     def detect(self, text):
 
-        text = text.lower()
+        original = text
+
+        lowered = text.lower()
 
         entities = {
 
@@ -44,13 +35,11 @@ class EntityDetector:
 
         }
 
-        consumed = set()
-
         # -------------------------------------------------
-        # Business vocabulary (longest match first)
+        # Business phrases (consume text)
         # -------------------------------------------------
 
-        terms = sorted(
+        phrases = sorted(
 
             self.business.items(),
 
@@ -60,41 +49,43 @@ class EntityDetector:
 
         )
 
-        for phrase, table in terms:
+        consumed = lowered
 
-            if phrase.lower() in text:
+        for phrase, table in phrases:
+
+            p = phrase.lower()
+
+            if p in consumed:
 
                 if table not in entities["tables"]:
 
                     entities["tables"].append(table)
 
-                consumed.add(phrase.lower())
+                consumed = consumed.replace(p, " ")
 
         # -------------------------------------------------
+        # Remaining words
+        # -------------------------------------------------
 
-        words = text.split()
+        words = re.findall(
 
-        # Direct table names
+            r"[A-Za-z0-9_]+",
+
+            consumed
+
+        )
+
+        # -------------------------------------------------
+        # Tables
+        # -------------------------------------------------
 
         for word in words:
-
-            if word in consumed:
-
-                continue
 
             if self.loader.exists(word):
 
                 if word not in entities["tables"]:
 
                     entities["tables"].append(word)
-
-                consumed.add(word)
-
-        # Alias names
-
-        for word in words:
-
-            if word in consumed:
 
                 continue
 
@@ -106,24 +97,30 @@ class EntityDetector:
 
                     entities["tables"].append(table)
 
-                consumed.add(word)
-
+        # -------------------------------------------------
         # Columns
+        # -------------------------------------------------
 
-        for word in words:
+        for word in re.findall(
 
-            if word in consumed:
+            r"[A-Za-z0-9_]+",
 
-                continue
+            original
+
+        ):
 
             if self.columns.exists(word):
 
-                entities["columns"].append({
+                entities["columns"].append(
 
-                    "name": word,
+                    {
 
-                    "tables": self.columns.tables(word)
+                        "name": word,
 
-                })
+                        "tables": self.columns.tables(word)
+
+                    }
+
+                )
 
         return entities
