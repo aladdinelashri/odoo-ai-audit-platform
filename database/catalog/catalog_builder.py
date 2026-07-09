@@ -10,17 +10,79 @@ class CatalogBuilder:
 
         self.db = SchemaIndex()
 
+    # ---------------------------------------------------------
+
+    def infer_roles(self, columns):
+
+        roles = {}
+
+        for column in columns:
+
+            name = column["column_name"].lower()
+
+            if name in (
+                "amount_total",
+                "price_total",
+                "balance",
+                "list_price",
+                "standard_price",
+                "price_unit",
+            ):
+                roles.setdefault("monetary_total", []).append(name)
+
+            elif name in (
+                "amount_tax",
+                "tax_amount",
+            ):
+                roles.setdefault("tax_amount", []).append(name)
+
+            elif name in (
+                "amount_residual",
+            ):
+                roles.setdefault("residual_amount", []).append(name)
+
+            elif name in (
+                "partner_id",
+            ):
+                roles.setdefault("business_partner", []).append(name)
+
+            elif name in (
+                "date",
+                "date_order",
+                "invoice_date",
+            ):
+                roles.setdefault("document_date", []).append(name)
+
+            elif name in (
+                "name",
+                "move_name",
+                "number",
+            ):
+                roles.setdefault("document_number", []).append(name)
+
+            elif name == "state":
+
+                roles.setdefault("document_state", []).append(name)
+
+        return roles
+
+    # ---------------------------------------------------------
+
     def build(self):
 
         catalog = {}
 
         for table in self.db.table_names():
 
+            columns = self.db.columns(table)
+
             catalog[table] = {
 
-                "columns": self.db.columns(table),
+                "columns": columns,
 
-                "relations": self.db.relations_from(table)
+                "relations": self.db.relations_from(table),
+
+                "semantic_roles": self.infer_roles(columns)
 
             }
 
