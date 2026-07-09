@@ -10,33 +10,49 @@ class RelationshipBuilder:
 
         self.registry = TableRegistry()
 
+    # ---------------------------------------------------------
+
     def discover(self):
 
         relations = []
 
         for table in self.registry.tables():
 
-            for column in self.registry.columns(table):
+            columns = self.registry.columns(table)
 
-                name = column["column_name"]
+            for column in columns:
 
-                if name.endswith("_id"):
+                if isinstance(column, str):
 
-                    target = name[:-3]
+                    name = column
 
-                    relations.append({
+                else:
 
-                        "table": table,
+                    name = column["column_name"]
 
-                        "column": name,
+                if not name.endswith("_id"):
 
-                        "target": target
+                    continue
 
-                    })
+                relations.append({
+
+                    "source_table": table,
+
+                    "source_field": name,
+
+                    "target_table": name[:-3],
+
+                    "target_field": "id"
+
+                })
 
         return relations
 
+    # ---------------------------------------------------------
+
     def build(self):
+
+        relations = self.discover()
 
         output = Path("database/schema/relationships.json")
 
@@ -44,7 +60,7 @@ class RelationshipBuilder:
 
             json.dump(
 
-                self.discover(),
+                relations,
 
                 f,
 
@@ -55,6 +71,8 @@ class RelationshipBuilder:
             )
 
         print(f"Relationships saved to {output}")
+
+        return relations
 
 
 if __name__ == "__main__":

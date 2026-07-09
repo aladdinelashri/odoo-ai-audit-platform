@@ -12,24 +12,43 @@ class TableRegistry:
 
             self.schema = json.load(f)
 
+    # ---------------------------------------------------------
+
     def tables(self):
 
         return sorted(self.schema.keys())
+
+    # ---------------------------------------------------------
 
     def exists(self, table):
 
         return table in self.schema
 
+    # ---------------------------------------------------------
+
     def columns(self, table):
 
-        return self.schema.get(table, [])
+        info = self.schema.get(table)
+
+        if not info:
+
+            return []
+
+        return info.get("columns", [])
+
+    # ---------------------------------------------------------
 
     def has_column(self, table, column):
 
         return any(
+
             c["column_name"] == column
+
             for c in self.columns(table)
+
         )
+
+    # ---------------------------------------------------------
 
     def column_type(self, table, column):
 

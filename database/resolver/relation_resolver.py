@@ -1,5 +1,5 @@
-from database.ai.reasoning.relationships.graph import RelationshipGraph
-from database.ai.reasoning.relationships.path_finder import PathFinder
+from database.schema.relationship_graph import RelationshipGraph
+from database.schema.path_finder import PathFinder
 
 
 class RelationResolver:
@@ -8,23 +8,19 @@ class RelationResolver:
 
         self.graph = RelationshipGraph()
 
-        self.finder = PathFinder(
+        self.finder = PathFinder(self.graph)
 
-            self.graph
+    # ---------------------------------------------------------
 
-        )
+    def resolve(self, source, target):
+
+        return self.finder.find(source, target)
 
     # ---------------------------------------------------------
 
     def relation(self, source, target):
 
-        path = self.finder.find(
-
-            source,
-
-            target
-
-        )
+        path = self.resolve(source, target)
 
         if not path:
 
@@ -36,44 +32,10 @@ class RelationResolver:
 
     def exists(self, source, target):
 
-        return self.relation(
-
-            source,
-
-            target
-
-        ) is not None
-
-    # ---------------------------------------------------------
-
-    def join(self, source, target):
-
-        relation = self.relation(
-
-            source,
-
-            target
-
-        )
-
-        if not relation:
-
-            return None
-
-        return f"""
-LEFT JOIN {relation['table']}
-ON {relation['table']}.{relation['target_field']} =
-   {source}.{relation['source_field']}
-""".strip()
+        return self.relation(source, target) is not None
 
     # ---------------------------------------------------------
 
     def path(self, source, target):
 
-        return self.finder.find(
-
-            source,
-
-            target
-
-        )
+        return self.resolve(source, target)
