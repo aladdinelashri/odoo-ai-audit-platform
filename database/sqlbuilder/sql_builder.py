@@ -3,6 +3,7 @@ from database.sqlbuilder.order_builder import OrderBuilder
 from database.sqlbuilder.aggregate_builder import AggregateBuilder
 
 from database.resolver.field_resolver import FieldResolver
+from database.compiler.join_compiler import JoinCompiler
 
 
 class SQLBuilder:
@@ -12,6 +13,8 @@ class SQLBuilder:
         self.current_table = None
 
         self.fields = FieldResolver()
+
+        self.join_compiler = JoinCompiler()
 
         self.selects = []
 
@@ -63,7 +66,7 @@ class SQLBuilder:
 
             self.selects.append(sql)
 
-            join = self.fields.join(
+            relation = self.fields.join(
 
                 self.current_table,
 
@@ -71,9 +74,21 @@ class SQLBuilder:
 
             )
 
-            if join and join not in self.joins:
+            if relation:
 
-                self.joins.append(join)
+                compiled = self.join_compiler.compile(
+
+                    relation["source"],
+
+                    relation["target"]
+
+                )
+
+                for join in compiled:
+
+                    if join not in self.joins:
+
+                        self.joins.append(join)
 
         return self
 
@@ -92,12 +107,6 @@ class SQLBuilder:
     # ---------------------------------------------------------
 
     def joins_from_plan(self, joins):
-
-        for join in joins:
-
-            if join not in self.joins:
-
-                self.joins.append(join)
 
         return self
 

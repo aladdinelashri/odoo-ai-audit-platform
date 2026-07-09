@@ -20,10 +20,6 @@ class FieldResolver:
 
     def resolve(self, source_table, expression):
 
-        # ---------------------------------------------
-        # Local field
-        # ---------------------------------------------
-
         if "." not in expression:
 
             datatype = self.schema.column_type(
@@ -53,10 +49,6 @@ class FieldResolver:
                 "alias": expression
 
             }
-
-        # ---------------------------------------------
-        # Related field
-        # ---------------------------------------------
 
         alias, field = expression.split(".", 1)
 
@@ -94,7 +86,7 @@ class FieldResolver:
 
             "sql": sql,
 
-            "alias": alias
+            "alias": field
 
         }
 
@@ -114,13 +106,13 @@ class FieldResolver:
 
             return None
 
-        return self.relations.join(
+        return {
 
-            source_table,
+            "source": source_table,
 
-            target_table
+            "target": target_table
 
-        )
+        }
 
     # ---------------------------------------------------------
 
