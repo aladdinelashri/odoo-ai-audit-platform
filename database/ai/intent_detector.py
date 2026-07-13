@@ -1,93 +1,95 @@
+from dataclasses import dataclass
 import re
+
+
+@dataclass
+class Intent:
+
+    name: str
+
+    confidence: float
 
 
 class IntentDetector:
 
     def __init__(self):
 
-        self.intents = {
+        self.rules = [
 
-            "show": [
-
-                "show",
-                "list",
-                "display",
-                "find",
-                "get",
-
-                "اعرض",
-                "اظهر",
-                "هات",
-                "اعطني",
-                "اعطنى",
-                "عرض"
-
-            ],
-
-            "count": [
-
+            (
                 "count",
-                "how many",
+                [
+                    "count",
+                    "how many",
+                    "number of",
+                    "عدد",
+                    "كم عدد"
+                ]
+            ),
 
-                "عدد",
-                "كم",
-                "احصاء"
-
-            ],
-
-            "sum": [
-
+            (
                 "sum",
-                "total",
+                [
+                    "sum",
+                    "total",
+                    "total amount",
+                    "اجمالي",
+                    "إجمالي",
+                    "مجموع"
+                ]
+            ),
 
-                "اجمالي",
-                "إجمالي",
-                "مجموع"
-
-            ],
-
-            "average": [
-
+            (
                 "average",
-                "avg",
+                [
+                    "average",
+                    "avg",
+                    "mean",
+                    "متوسط"
+                ]
+            ),
 
-                "متوسط"
+            (
+                "max",
+                [
+                    "maximum",
+                    "max",
+                    "highest",
+                    "largest",
+                    "اكبر",
+                    "أكبر",
+                    "اعلى",
+                    "أعلى"
+                ]
+            ),
 
-            ],
+            (
+                "min",
+                [
+                    "minimum",
+                    "min",
+                    "smallest",
+                    "اقل",
+                    "أقل"
+                ]
+            ),
 
-            "group": [
+            (
+                "list",
+                [
+                    "show",
+                    "list",
+                    "display",
+                    "get",
+                    "اعرض",
+                    "عرض",
+                    "اظهر",
+                    "أظهر",
+                    "هات"
+                ]
+            )
 
-                "group",
-                "group by",
-
-                "حسب",
-                "لكل",
-                "بواسطة",
-                "وفق",
-
-                "per",
-                "by"
-
-            ],
-
-            "top": [
-
-                "top",
-                "best",
-                "highest",
-                "largest",
-                "ranking",
-
-                "أفضل",
-                "اعلى",
-                "أعلى",
-                "اكبر",
-                "الأكبر",
-                "ترتيب"
-
-            ]
-
-        }
+        ]
 
     # ---------------------------------------------------------
 
@@ -95,23 +97,24 @@ class IntentDetector:
 
         lowered = text.lower()
 
-        priority = [
+        for intent, keywords in self.rules:
 
-            "top",
-            "group",
-            "count",
-            "sum",
-            "average",
-            "show"
+            for keyword in keywords:
 
-        ]
+                if re.search(r"\b" + re.escape(keyword.lower()) + r"\b", lowered):
 
-        for intent in priority:
+                    return Intent(
 
-            for word in self.intents[intent]:
+                        name=intent,
 
-                if word.lower() in lowered:
+                        confidence=1.0
 
-                    return intent
+                    )
 
-        return "show"
+        return Intent(
+
+            name="list",
+
+            confidence=0.50
+
+        )

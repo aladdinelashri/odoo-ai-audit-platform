@@ -1,4 +1,5 @@
 from database.ai.default_fields import DefaultFields
+from database.ai.join_resolver import JoinResolver
 
 
 class ExecutionPlanner:
@@ -6,6 +7,8 @@ class ExecutionPlanner:
     def __init__(self):
 
         self.defaults = DefaultFields()
+
+        self.join_resolver = JoinResolver()
 
     # ---------------------------------------------------------
 
@@ -15,38 +18,39 @@ class ExecutionPlanner:
 
         parameters = parsed.get("parameters", {})
 
+        models = entities["models"]
+
         tables = entities["tables"]
 
-        columns = entities["columns"]
+        fields_info = entities["fields"]
 
         # -------------------------------------------------
-        # Main table
+        # Main Model / Table
         # -------------------------------------------------
+
+        model = models[0] if models else None
 
         table = tables[0] if tables else None
 
         # -------------------------------------------------
-        # Fields
+        # SELECT Fields
         # -------------------------------------------------
 
         fields = []
 
-        for column in columns:
+        for item in fields_info:
 
-            name = column["name"]
+            if item["model"] != model:
+                continue
 
-            if table:
+            field = item["field"]
 
-                if table in column["tables"]:
+            if field not in fields:
 
-                    fields.append(name)
-
-            else:
-
-                fields.append(name)
+                fields.append(field)
 
         # -------------------------------------------------
-        # Default fields
+        # Default Fields
         # -------------------------------------------------
 
         if not fields:
@@ -60,6 +64,18 @@ class ExecutionPlanner:
                 fields = ["id"]
 
         # -------------------------------------------------
+        # JOINS
+        # -------------------------------------------------
+
+        joins = self.join_resolver.resolve(
+
+            model,
+
+            fields_info
+
+        )
+
+        # -------------------------------------------------
         # Parameters
         # -------------------------------------------------
 
@@ -71,15 +87,21 @@ class ExecutionPlanner:
 
         plan = {
 
+            "success": True,
+
+            "model": model,
+
             "table": table,
 
             "fields": fields,
 
             "filters": [],
 
-            "joins": [],
+            "joins": joins,
 
-            "order": [
+            "group_by": [],
+
+            "order_by": [
 
                 {
 
@@ -90,6 +112,8 @@ class ExecutionPlanner:
                 }
 
             ],
+
+            "aggregate": None,
 
             "limit": limit
 

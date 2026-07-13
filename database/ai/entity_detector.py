@@ -1,47 +1,40 @@
 import re
 
-from database.catalog.catalog_loader import CatalogLoader
-from database.catalog.column_index import ColumnIndex
-from database.resolver.table_resolver import TableResolver
-
-from database.ai.reasoning.business_dictionary import BUSINESS_TERMS
+from database.ai.ai_context import AIContext
+from database.ai.primary_entity_resolver import PrimaryEntityResolver
 
 
 class EntityDetector:
 
     def __init__(self):
 
-        self.loader = CatalogLoader()
+        self.context = AIContext()
 
-        self.tables = TableResolver()
-
-        self.columns = ColumnIndex()
-
-        self.business = BUSINESS_TERMS
+        self.resolver = PrimaryEntityResolver()
 
     # ---------------------------------------------------------
 
     def detect(self, text):
 
-        original = text
-
-        lowered = text.lower()
+        self.context.initialize()
 
         entities = {
 
+            "models": [],
             "tables": [],
-
-            "columns": []
+            "fields": []
 
         }
 
+        lowered = text.lower()
+
         # -------------------------------------------------
-        # Business phrases (consume text)
+        # Detect Models
         # -------------------------------------------------
 
-        phrases = sorted(
+        aliases = sorted(
 
-            self.business.items(),
+            self.context.business.aliases().items(),
 
             key=lambda x: len(x[0]),
 
@@ -51,73 +44,91 @@ class EntityDetector:
 
         consumed = lowered
 
-        for phrase, table in phrases:
+        for alias, model in aliases:
 
-            p = phrase.lower()
+            if alias in consumed:
 
-            if p in consumed:
+                if model not in entities["models"]:
 
-                if table not in entities["tables"]:
+                    entities["models"].append(model)
 
-                    entities["tables"].append(table)
-
-                consumed = consumed.replace(p, " ")
+                consumed = consumed.replace(alias, " ")
 
         # -------------------------------------------------
-        # Remaining words
+        # Rank Primary Entity
+        # -------------------------------------------------
+
+        entities["models"] = self.resolver.rank(
+
+            entities["models"]
+
+        )
+
+        entities["tables"] = []
+
+        for model in entities["models"]:
+
+            table = self.context.table(model)
+
+            if table:
+
+                entities["tables"].append(table)
+
+        # -------------------------------------------------
+        # Detect Fields
         # -------------------------------------------------
 
         words = re.findall(
 
             r"[A-Za-z0-9_]+",
 
-            consumed
+            text
 
         )
 
-        # -------------------------------------------------
-        # Tables
-        # -------------------------------------------------
+        scanned_models = entities["models"][:]
 
-        for word in words:
+        if not scanned_models:
 
-            if self.loader.exists(word):
+            scanned_models = list(
 
-                if word not in entities["tables"]:
+                self.context.metadata.all_models().keys()
 
-                    entities["tables"].append(word)
+            )
 
-                continue
+        seen = set()
 
-            table = self.tables.resolve(word)
+        for model in scanned_models:
 
-            if table:
+            fields = self.context.fields(model)
 
-                if table not in entities["tables"]:
+            for word in words:
 
-                    entities["tables"].append(table)
+                if word not in fields:
+                    continue
 
-        # -------------------------------------------------
-        # Columns
-        # -------------------------------------------------
+                key = (model, word)
 
-        for word in re.findall(
+                if key in seen:
+                    continue
 
-            r"[A-Za-z0-9_]+",
+                seen.add(key)
 
-            original
-
-        ):
-
-            if self.columns.exists(word):
-
-                entities["columns"].append(
+                entities["fields"].append(
 
                     {
 
-                        "name": word,
+                        "model": model,
 
-                        "tables": self.columns.tables(word)
+                        "field": word,
+
+                        "semantic": self.context.semantic_role(
+
+                            model,
+
+                            word
+
+                        )
 
                     }
 

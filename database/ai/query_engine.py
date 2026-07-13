@@ -1,56 +1,35 @@
-from database.ai.query_parser import QueryParser
-from database.ai.execution_planner import ExecutionPlanner
-from database.sqlbuilder.sql_builder import SQLBuilder
+from database.planner.execution_planner import ExecutionPlanner
+from database.sql.sql_builder import SQLBuilder
 
 
 class QueryEngine:
 
     def __init__(self):
 
-        self.parser = QueryParser()
         self.planner = ExecutionPlanner()
+
+        self.sql = SQLBuilder()
 
     # ---------------------------------------------------------
 
-    def build_sql(self, text):
+    def execute(self, question):
 
-        parsed = self.parser.parse(text)
+        plan = self.planner.build(question)
 
-        plan = self.planner.build(parsed)
+        if not plan.get("success"):
 
-        builder = SQLBuilder()
+            return plan
 
-        builder.table(plan["table"])
-
-        builder.select(*plan["fields"])
-
-        for item in plan["filters"]:
-
-            builder.where(
-
-                item["field"],
-                item["operator"],
-                item["value"]
-
-            )
-
-        for item in plan["order"]:
-
-            builder.order_by(
-
-                item["field"],
-                item["direction"]
-
-            )
+        sql = self.sql.build(plan)
 
         return {
 
-            "query": text,
+            "success": True,
 
-            "parsed": parsed,
+            "question": question,
 
             "plan": plan,
 
-            "sql": builder.build()
+            "sql": sql
 
         }

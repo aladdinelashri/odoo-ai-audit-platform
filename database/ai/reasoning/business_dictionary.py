@@ -1,47 +1,77 @@
 BUSINESS_TERMS = {
 
-    "journal entries": "account_move",
-    "journal entry": "account_move",
+    # -----------------------------------------------------
+    # Accounting
+    # -----------------------------------------------------
 
-    "invoice": "account_move",
-    "invoices": "account_move",
+    "journal entry": "account.move",
+    "journal entries": "account.move",
 
-    "customer": "res_partner",
-    "customers": "res_partner",
+    "invoice": "account.move",
+    "invoices": "account.move",
 
-    "vendor": "res_partner",
-    "vendors": "res_partner",
+    # -----------------------------------------------------
+    # Partners
+    # -----------------------------------------------------
 
-    "product": "product_product",
-    "products": "product_product",
+    "customer": "res.partner",
+    "customers": "res.partner",
 
-    "payment": "account_payment",
-    "payments": "account_payment",
+    "vendor": "res.partner",
+    "vendors": "res.partner",
 
-    "receipt": "pos_order",
-    "receipts": "pos_order",
+    "partner": "res.partner",
+    "partners": "res.partner",
 
-    "قيد": "account_move",
-    "قيود": "account_move",
-    "القيود": "account_move",
-    "القيود المحاسبية": "account_move",
+    # -----------------------------------------------------
+    # Products
+    # -----------------------------------------------------
 
-    "فاتورة": "account_move",
-    "فواتير": "account_move",
+    "product": "product.product",
+    "products": "product.product",
 
-    "عميل": "res_partner",
-    "العملاء": "res_partner",
+    # -----------------------------------------------------
+    # Payments
+    # -----------------------------------------------------
 
-    "مورد": "res_partner",
-    "الموردين": "res_partner",
+    "payment": "account.payment",
+    "payments": "account.payment",
 
-    "منتج": "product_product",
-    "المنتجات": "product_product",
+    # -----------------------------------------------------
+    # POS
+    # -----------------------------------------------------
 
-    "دفعة": "account_payment",
-    "الدفعات": "account_payment",
+    "receipt": "pos.order",
+    "receipts": "pos.order",
 
-    "إيصال": "pos_order",
-    "الإيصالات": "pos_order"
+    "pos order": "pos.order",
+    "pos orders": "pos.order",
+
+    # -----------------------------------------------------
+    # Arabic
+    # -----------------------------------------------------
+
+    "قيد": "account.move",
+    "قيود": "account.move",
+    "القيود": "account.move",
+    "القيود المحاسبية": "account.move",
+
+    "فاتورة": "account.move",
+    "فواتير": "account.move",
+
+    "عميل": "res.partner",
+    "العملاء": "res.partner",
+
+    "مورد": "res.partner",
+    "الموردين": "res.partner",
+
+    "منتج": "product.product",
+    "المنتجات": "product.product",
+
+    "دفعة": "account.payment",
+    "الدفعات": "account.payment",
+
+    "إيصال": "pos.order",
+    "الإيصالات": "pos.order"
 
 }

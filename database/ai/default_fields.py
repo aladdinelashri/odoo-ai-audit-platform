@@ -8,10 +8,10 @@ class DefaultFields:
 
                 "name",
                 "date",
-                "journal.name",
-                "partner.name",
+                "journal_id",
+                "partner_id",
                 "amount_total",
-                "state"
+                "state",
 
             ],
 
@@ -20,7 +20,7 @@ class DefaultFields:
                 "name",
                 "phone",
                 "mobile",
-                "email"
+                "email",
 
             ],
 
@@ -28,7 +28,7 @@ class DefaultFields:
 
                 "name",
                 "default_code",
-                "list_price"
+                "list_price",
 
             ],
 
@@ -36,7 +36,7 @@ class DefaultFields:
 
                 "name",
                 "default_code",
-                "list_price"
+                "list_price",
 
             ],
 
@@ -44,10 +44,10 @@ class DefaultFields:
 
                 "name",
                 "date_order",
-                "partner.name",
-                "amount_total"
+                "partner_id",
+                "amount_total",
 
-            ]
+            ],
 
         }
 
