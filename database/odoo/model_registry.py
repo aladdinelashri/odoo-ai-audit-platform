@@ -1,40 +1,56 @@
-from sqlalchemy import text
+"""
+Odoo Model Registry
 
-from connectors.postgres.connection import PostgreSQLConnection
+Architecture V17
+"""
+
+from __future__ import annotations
+
+from database.registry.schema_registry import SchemaRegistry
 
 
 class ModelRegistry:
 
-    def __init__(self):
+    def __init__(self, registry: SchemaRegistry):
 
-        self.engine = PostgreSQLConnection().connect()
+        self.registry = registry
+
+        self._models: dict[str, str] = {}
 
     # ---------------------------------------------------------
 
-    def models(self):
+    @staticmethod
+    def table_to_model(table: str) -> str:
 
-        sql = text("""
+        return table.replace("_", ".")
 
-            SELECT
+    # ---------------------------------------------------------
 
-                model,
+    @staticmethod
+    def model_to_table(model: str) -> str:
 
-                name
+        return model.replace(".", "_")
 
-            FROM ir_model
+    # ---------------------------------------------------------
 
-            ORDER BY model
+    def build(self) -> None:
 
-        """)
+        self._models.clear()
 
-        with self.engine.connect() as conn:
+        for table in self.registry._cache.keys():
 
-            rows = conn.execute(sql)
+            model = self.table_to_model(table)
 
-            return [
+            self._models[model] = table
 
-                dict(row._mapping)
+    # ---------------------------------------------------------
 
-                for row in rows
+    def has_model(self, model: str) -> bool:
 
-            ]
+        return model in self._models
+
+    # ---------------------------------------------------------
+
+    def table(self, model: str) -> str:
+
+        return self._models[model]

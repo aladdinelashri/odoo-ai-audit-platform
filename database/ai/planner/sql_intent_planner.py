@@ -1,7 +1,7 @@
 """
 SQL Intent Planner
 
-Architecture V13
+Architecture V22
 
 Converts a BusinessQuery into a SQL execution plan.
 """
@@ -18,11 +18,18 @@ class SQLIntentPlanner:
         if not query.entities:
             raise ValueError("No business entity found.")
 
-        table = query.entities[0]
+        # -----------------------------------------------------
+        # Convert Odoo model name -> PostgreSQL table name
+        # Example:
+        # account.move -> account_move
+        # pos.order -> pos_order
+        # -----------------------------------------------------
 
-        # -------------------------
+        table = query.entities[0].replace(".", "_")
+
+        # -----------------------------------------------------
         # SELECT
-        # -------------------------
+        # -----------------------------------------------------
 
         if query.aggregate:
 
@@ -38,9 +45,9 @@ class SQLIntentPlanner:
             select = ["*"]
             limit = 100
 
-        # -------------------------
+        # -----------------------------------------------------
         # WHERE
-        # -------------------------
+        # -----------------------------------------------------
 
         where = []
         where_values = []
@@ -52,11 +59,15 @@ class SQLIntentPlanner:
             where.append(f"{field} {query.operator} %s")
             where_values.append(query.value)
 
-        # -------------------------
-        # ORDER
-        # -------------------------
+        # -----------------------------------------------------
+        # ORDER BY
+        # -----------------------------------------------------
 
         order = []
+
+        # -----------------------------------------------------
+        # SQL Plan
+        # -----------------------------------------------------
 
         return {
             "select": select,

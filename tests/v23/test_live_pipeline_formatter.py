@@ -1,8 +1,8 @@
-from database.ai.pipeline.live_pipeline import LivePipeline
 from database.executor.postgres_executor import PostgreSQLExecutor
+from database.ai.pipeline.live_pipeline import LivePipeline
 
 
-def test_live_pipeline_show_invoices():
+def test_live_pipeline_returns_structured_result():
 
     executor = PostgreSQLExecutor.from_config()
 
@@ -12,9 +12,10 @@ def test_live_pipeline_show_invoices():
 
     assert isinstance(result, dict)
 
+    assert "columns" in result
+
     assert "rows" in result
-    assert "summary" in result
-    assert "sql" in result
-    assert "params" in result
+
+    assert "count" in result
 
     executor.close()

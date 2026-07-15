@@ -1,0 +1,5 @@
+tests/v20/test_schema_validator.py:19:    models = ModelRegistry(schema)
+tests/v17/test_model_registry.py:17:    models = ModelRegistry(registry)
+tests/v21/test_sql_guard.py:21:    models = ModelRegistry(schema)
+tests/v22/test_query_orchestrator.py:24:    models = ModelRegistry(schema)
+tests/v18/test_metadata_service.py:18:    models = ModelRegistry(schema)

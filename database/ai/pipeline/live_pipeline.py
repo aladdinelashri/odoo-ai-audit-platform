@@ -1,9 +1,7 @@
 """
 Live Pipeline
 
-Architecture V14
-
-Executes the complete AI pipeline against a live PostgreSQL database.
+Architecture V24
 """
 
 from __future__ import annotations
@@ -35,13 +33,15 @@ class LivePipeline:
         sql = plan["sql"]
         params = plan["params"]
 
-        rows = self.executor.execute(sql, params)
+        columns, rows = self.executor.execute_with_columns(
+            sql,
+            params,
+        )
 
-        # For now we'll infer generic column names.
-        # In the next step we'll retrieve the real names from PostgreSQL.
-        columns = [f"column_{i}" for i in range(len(rows[0]))] if rows else []
-
-        formatted = self.formatter.format(columns, rows)
+        formatted = self.formatter.format(
+            columns,
+            rows,
+        )
 
         summary = self.summary.summarize(formatted)
 
@@ -50,5 +50,7 @@ class LivePipeline:
             "sql": sql,
             "params": params,
             "summary": summary,
-            "rows": formatted,
+            "columns": formatted["columns"],
+            "rows": formatted["rows"],
+            "count": formatted["count"],
         }

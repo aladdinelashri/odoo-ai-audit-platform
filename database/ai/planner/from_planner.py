@@ -1,9 +1,7 @@
 """
 FROM Planner
 
-Architecture V9
-
-Builds the FROM clause from a BusinessQuery.
+Architecture V22
 """
 
 from __future__ import annotations
@@ -13,7 +11,8 @@ from database.ai.query.business_query import BusinessQuery
 
 class FromPlanner:
     """
-    Builds the FROM clause.
+    Builds the SQL FROM clause.
+    Converts an Odoo model name into a PostgreSQL table name.
     """
 
     def build(self, query: BusinessQuery) -> str:
@@ -21,4 +20,7 @@ class FromPlanner:
         if not query.entities:
             raise ValueError("No entity found.")
 
-        return query.entities[0]
+        model = query.entities[0]
+
+        # Odoo model -> PostgreSQL table
+        return model.replace(".", "_")

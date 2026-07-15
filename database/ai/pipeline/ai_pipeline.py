@@ -1,9 +1,7 @@
 """
 AI Pipeline
 
-Architecture V13
-
-Main orchestration layer for the AI Audit Platform.
+Architecture V22
 """
 
 from __future__ import annotations
@@ -25,7 +23,7 @@ class AIPipeline:
 
     # ---------------------------------------------------------
 
-    def analyze(self, question: str):
+    def analyze(self, question: str) -> dict:
 
         analysis = self.analyzer.analyze(question)
 
@@ -36,9 +34,13 @@ class AIPipeline:
         sql, params = self.sql_builder.build(sql_plan)
 
         return {
+            "intent": analysis.get("intent"),
+            "confidence": analysis.get("confidence"),
+            "entities": analysis.get("entities"),
             "analysis": analysis,
             "business_query": business_query,
             "sql_plan": sql_plan,
+            "model": business_query.entities[0] if business_query.entities else None,
             "sql": sql,
             "params": params,
         }

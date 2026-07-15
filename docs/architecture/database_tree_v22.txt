@@ -1,0 +1,564 @@
+database
+├── ai
+│   ├── aggregate_resolver.py
+│   ├── ai_context.py
+│   ├── ai_engine.py
+│   ├── analyzer
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   └── query_analyzer.py
+│   ├── date_resolver.py
+│   ├── default_fields.py
+│   ├── engine.py
+│   ├── entity_detector.py
+│   ├── entity_detector_v2.py
+│   ├── execution_planner.py
+│   ├── filter_detector.py
+│   ├── filter_field_resolver.py
+│   ├── __init__.py
+│   ├── intent
+│   │   ├── aggregate_extractor.py
+│   │   ├── date_extractor.py
+│   │   ├── entity_extractor.py
+│   │   ├── __init__.py
+│   │   ├── intent_classifier.py
+│   │   ├── intent_result.py
+│   │   ├── operator_extractor.py
+│   │   ├── __pycache__
+│   │   └── value_extractor.py
+│   ├── intent_detector.py
+│   ├── join_resolver.py
+│   ├── parameter_detector.py
+│   ├── parameter_resolver.py
+│   ├── pipeline
+│   │   ├── ai_pipeline.py
+│   │   ├── __init__.py
+│   │   ├── live_pipeline.py
+│   │   ├── __pycache__
+│   │   └── query_orchestrator.py
+│   ├── planner
+│   │   ├── from_planner.py
+│   │   ├── __init__.py
+│   │   ├── limit_planner.py
+│   │   ├── order_planner.py
+│   │   ├── __pycache__
+│   │   ├── select_planner.py
+│   │   ├── sql_intent_planner.py
+│   │   ├── sql_plan_builder.py
+│   │   └── where_planner.py
+│   ├── primary_entity_resolver.py
+│   ├── __pycache__
+│   │   ├── aggregate_resolver.cpython-312.pyc
+│   │   ├── ai_context.cpython-312.pyc
+│   │   ├── ai_engine.cpython-312.pyc
+│   │   ├── default_fields.cpython-312.pyc
+│   │   ├── default_table_config.cpython-312.pyc
+│   │   ├── engine.cpython-312.pyc
+│   │   ├── entity_detector.cpython-312.pyc
+│   │   ├── execution_planner.cpython-312.pyc
+│   │   ├── filter_detector.cpython-312.pyc
+│   │   ├── filter_field_resolver.cpython-312.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── intent_detector.cpython-312.pyc
+│   │   ├── join_resolver.cpython-312.pyc
+│   │   ├── parameter_detector.cpython-312.pyc
+│   │   ├── parameter_resolver.cpython-312.pyc
+│   │   ├── primary_entity_resolver.cpython-312.pyc
+│   │   ├── query_engine.cpython-312.pyc
+│   │   ├── query_executor.cpython-312.pyc
+│   │   ├── query_parser.cpython-312.pyc
+│   │   ├── sql_engine.cpython-312.pyc
+│   │   └── value_resolver.cpython-312.pyc
+│   ├── query
+│   │   ├── business_query_builder.py
+│   │   ├── business_query.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── query_engine.py
+│   ├── query_executor.py
+│   ├── query_parser.py
+│   ├── ranking
+│   │   ├── confidence.py
+│   │   └── __init__.py
+│   ├── README.md
+│   ├── reasoning
+│   │   ├── business_aliases.py
+│   │   ├── business_dictionary.py
+│   │   ├── business_reasoner.py
+│   │   ├── field_reasoner.py
+│   │   ├── filter_reasoner.py
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── README.md
+│   │   ├── relationships
+│   │   └── table_reasoner.py
+│   ├── resolver
+│   │   ├── aggregate_resolver.py
+│   │   ├── field_resolver.py
+│   │   ├── __init__.py
+│   │   └── model_resolver.py
+│   ├── resolvers
+│   │   └── date_resolver.py
+│   ├── semantic
+│   │   ├── aggregate_dictionary.py
+│   │   ├── aggregate_vocabulary.py
+│   │   ├── business_vocabulary.py
+│   │   ├── date_dictionary.py
+│   │   ├── entity_aliases.py
+│   │   ├── field_dictionary.py
+│   │   ├── filter_dictionary.py
+│   │   ├── __init__.py
+│   │   ├── model_dictionary.py
+│   │   ├── operator_dictionary.py
+│   │   ├── phrase_normalizer.py
+│   │   ├── __pycache__
+│   │   ├── README.md
+│   │   ├── semantic_matcher.py
+│   │   ├── semantic_resolver.py
+│   │   ├── synonym_registry.py
+│   │   └── value_dictionary.py
+│   ├── skills
+│   │   ├── aggregate.py
+│   │   ├── base_skill.py
+│   │   ├── date.py
+│   │   ├── group.py
+│   │   ├── numeric.py
+│   │   ├── __pycache__
+│   │   ├── skill_engine.py
+│   │   ├── state.py
+│   │   └── top.py
+│   ├── sql_engine.py
+│   ├── value_resolver.py
+│   └── vocabulary
+│       └── business_terms.json
+├── catalog
+│   ├── catalog_builder.py
+│   ├── catalog_index.py
+│   ├── catalog.json
+│   ├── catalog_loader.py
+│   ├── catalog_search.py
+│   ├── catalog_types.py
+│   ├── column_index.py
+│   ├── field_catalog.py
+│   ├── field_ranker.py
+│   ├── __pycache__
+│   │   ├── catalog_builder.cpython-312.pyc
+│   │   ├── catalog_index.cpython-312.pyc
+│   │   ├── catalog_loader.cpython-312.pyc
+│   │   ├── catalog_search.cpython-312.pyc
+│   │   ├── catalog_types.cpython-312.pyc
+│   │   ├── column_index.cpython-312.pyc
+│   │   ├── field_ranker.cpython-312.pyc
+│   │   ├── semantic_catalog.cpython-312.pyc
+│   │   └── table_index.cpython-312.pyc
+│   ├── relation_catalog.py
+│   ├── semantic_catalog.py
+│   ├── table_catalog.py
+│   └── table_index.py
+├── compiler
+│   ├── compiler.py
+│   ├── __init__.py
+│   ├── join_compiler.py
+│   ├── postgres_compiler.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── join_compiler.cpython-312.pyc
+│   │   ├── sql_compiler.cpython-312.pyc
+│   │   ├── sql_parameter_compiler.cpython-312.pyc
+│   │   └── sql_query_builder.cpython-312.pyc
+│   ├── sql_compiler.py
+│   ├── sql_parameter_compiler.py
+│   └── sql_query_builder.py
+├── config
+│   ├── models.yaml
+│   ├── __pycache__
+│   │   └── settings.cpython-312.pyc
+│   └── settings.py
+├── core
+│   ├── ai
+│   │   ├── __pycache__
+│   │   └── query_parser.py
+│   ├── pipeline
+│   │   ├── context.py
+│   │   ├── pipeline.py
+│   │   ├── __pycache__
+│   │   └── result.py
+│   ├── planner
+│   │   ├── execution_planner.py
+│   │   └── __pycache__
+│   ├── response
+│   │   ├── __pycache__
+│   │   └── response_formatter.py
+│   ├── security
+│   │   ├── __pycache__
+│   │   └── sql_validator.py
+│   ├── semantic
+│   │   ├── aggregate_resolver.py
+│   │   ├── confidence_score.py
+│   │   ├── date_resolver.py
+│   │   ├── entity_resolver.py
+│   │   ├── field_resolver.py
+│   │   ├── filter_resolver.py
+│   │   ├── __init__.py
+│   │   ├── join_resolver.py
+│   │   ├── ranking_engine.py
+│   │   ├── semantic_engine.py
+│   │   └── semantic_resolver.py
+│   └── sql
+│       ├── __pycache__
+│       ├── sql_builder.py
+│       └── sql_executor.py
+├── discovery
+│   ├── base.py
+│   ├── columns.py
+│   ├── constraints.py
+│   ├── discovery_engine.py
+│   ├── exporter.py
+│   ├── foreign_keys.py
+│   ├── indexes.py
+│   ├── __init__.py
+│   ├── inspector.py
+│   ├── model_discovery.py
+│   ├── primary_keys.py
+│   ├── __pycache__
+│   │   ├── base.cpython-312.pyc
+│   │   ├── columns.cpython-312.pyc
+│   │   ├── constraints.cpython-312.pyc
+│   │   ├── discovery_engine.cpython-312.pyc
+│   │   ├── exporter.cpython-312.pyc
+│   │   ├── foreign_keys.cpython-312.pyc
+│   │   ├── indexes.cpython-312.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── inspector.cpython-312.pyc
+│   │   ├── model_discovery.cpython-312.pyc
+│   │   ├── primary_keys.cpython-312.pyc
+│   │   ├── relation_discovery.cpython-312.pyc
+│   │   └── views.cpython-312.pyc
+│   ├── relation_discovery.py
+│   ├── semantic_discovery.py
+│   ├── statistics.py
+│   └── views.py
+├── executor
+│   ├── __init__.py
+│   ├── postgres_executor.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── postgres_executor.cpython-312.pyc
+│   │   ├── query_executor.cpython-312.pyc
+│   │   └── safe_executor.cpython-312.pyc
+│   ├── query_executor.py
+│   └── safe_executor.py
+├── exports
+│   └── raw
+│       ├── account.account.xlsx
+│       ├── account.journal.xlsx
+│       ├── account.move.xlsx
+│       ├── account.tax.xlsx
+│       ├── ir.module.module.xlsx
+│       ├── Odoo_Production_Environment_Reference.md
+│       ├── pos.category.xlsx
+│       └── product.template.xlsx
+├── __init__.py
+├── jsonb
+│   ├── jsonb_resolver.py
+│   ├── language_detector.py
+│   └── __pycache__
+│       ├── jsonb_resolver.cpython-312.pyc
+│       └── language_detector.cpython-312.pyc
+├── knowledge
+│   ├── business_dictionary.py
+│   ├── data_dictionary.json
+│   ├── entity_resolver.py
+│   ├── field_knowledge.py
+│   ├── knowledge_loader.py
+│   ├── relation_knowledge.py
+│   ├── relationships.json
+│   └── table_knowledge.py
+├── metadata
+│   ├── account.account.json
+│   ├── account.journal.json
+│   ├── account.move.json
+│   ├── account.tax.json
+│   ├── builder.py
+│   ├── exporter.py
+│   ├── EXPORT_INDEX.md
+│   ├── __init__.py
+│   ├── ir.module.module.json
+│   ├── model_registry.py
+│   ├── models.json
+│   ├── models.py
+│   ├── pos.category.json
+│   ├── product.template.json
+│   └── __pycache__
+│       ├── builder.cpython-312.pyc
+│       ├── exporter.cpython-312.pyc
+│       └── __init__.cpython-312.pyc
+├── odoo
+│   ├── business_dictionary_builder.py
+│   ├── business_registry.py
+│   ├── database_field_resolver.py
+│   ├── default_field_selector.py
+│   ├── entity_registry.py
+│   ├── field_classifier.py
+│   ├── field_registry.py
+│   ├── knowledge_catalog.py
+│   ├── metadata_registry.py
+│   ├── metadata_service.py
+│   ├── model_registry.py
+│   ├── model_table_registry.py
+│   ├── __pycache__
+│   │   ├── business_dictionary_builder.cpython-312.pyc
+│   │   ├── business_registry.cpython-312.pyc
+│   │   ├── database_field_resolver.cpython-312.pyc
+│   │   ├── entity_registry.cpython-312.pyc
+│   │   ├── field_classifier.cpython-312.pyc
+│   │   ├── field_registry.cpython-312.pyc
+│   │   ├── knowledge_catalog.cpython-312.pyc
+│   │   ├── metadata_registry.cpython-312.pyc
+│   │   ├── metadata_service.cpython-312.pyc
+│   │   ├── model_registry.cpython-312.pyc
+│   │   ├── model_table_registry.cpython-312.pyc
+│   │   ├── registry.cpython-312.pyc
+│   │   ├── relation_registry.cpython-312.pyc
+│   │   └── semantic_registry.cpython-312.pyc
+│   ├── registry.py
+│   ├── relation_registry.py
+│   └── semantic_registry.py
+├── pipeline
+│   ├── pipeline_context.py
+│   ├── pipeline.py
+│   ├── pipeline_result.py
+│   └── __pycache__
+│       └── pipeline.cpython-312.pyc
+├── planner
+│   ├── execution_planner.py
+│   ├── field_optimizer.py
+│   ├── join_optimizer.py
+│   ├── join_planner.py
+│   ├── order_planner.py
+│   ├── planner.py
+│   ├── plan_validator.py
+│   ├── __pycache__
+│   │   ├── execution_planner.cpython-312.pyc
+│   │   ├── field_optimizer.cpython-312.pyc
+│   │   ├── join_optimizer.cpython-312.pyc
+│   │   ├── join_planner.cpython-312.pyc
+│   │   ├── order_planner.cpython-312.pyc
+│   │   ├── planner.cpython-312.pyc
+│   │   ├── query_optimizer.cpython-312.pyc
+│   │   ├── select_planner.cpython-312.pyc
+│   │   └── where_planner.cpython-312.pyc
+│   ├── query_optimizer.py
+│   ├── select_planner.py
+│   └── where_planner.py
+├── __pycache__
+│   └── __init__.cpython-312.pyc
+├── query
+│   ├── audit_query.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   └── query_engine.cpython-312.pyc
+│   ├── query_context.py
+│   ├── query_engine.py
+│   ├── query_executor.py
+│   ├── query_factory.py
+│   ├── query.py
+│   ├── query_result.py
+│   └── report_query.py
+├── query_builder
+│   ├── alias_manager.py
+│   ├── __init__.py
+│   ├── join_resolver.py
+│   ├── query_builder.py
+│   └── select_builder.py
+├── README.md
+├── registry
+│   ├── __pycache__
+│   │   └── schema_registry.cpython-312.pyc
+│   └── schema_registry.py
+├── reportbuilder
+│   ├── __pycache__
+│   │   ├── report_compiler.cpython-312.pyc
+│   │   └── report_parser.cpython-312.pyc
+│   ├── report_builder.py
+│   ├── report_compiler.py
+│   ├── report_parser.py
+│   └── report_validator.py
+├── resolver
+│   ├── field_resolver.py
+│   ├── jsonb_resolver.py
+│   ├── __pycache__
+│   │   ├── field_resolver.cpython-312.pyc
+│   │   ├── relation_resolver.cpython-312.pyc
+│   │   └── table_resolver.cpython-312.pyc
+│   ├── relation_resolver.py
+│   └── table_resolver.py
+├── response
+│   ├── __pycache__
+│   │   └── response_formatter.cpython-312.pyc
+│   └── response_formatter.py
+├── results
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── result_formatter.cpython-312.pyc
+│   │   └── result_summary.cpython-312.pyc
+│   ├── result_formatter.py
+│   └── result_summary.py
+├── schema
+│   ├── account_account.json
+│   ├── auto_join.py
+│   ├── build_schema.py
+│   ├── column_resolver.py
+│   ├── foreign_keys_builder.py
+│   ├── foreign_keys.json
+│   ├── __init__.py
+│   ├── join_builder.py
+│   ├── knowledge_builder.py
+│   ├── knowledge.json
+│   ├── model_relations_builder.py
+│   ├── model_relations.json
+│   ├── path_finder.py
+│   ├── __pycache__
+│   │   ├── auto_join.cpython-312.pyc
+│   │   ├── build_schema.cpython-312.pyc
+│   │   ├── foreign_keys_builder.cpython-312.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── join_builder.cpython-312.pyc
+│   │   ├── knowledge_builder.cpython-312.pyc
+│   │   ├── model_relations_builder.cpython-312.pyc
+│   │   ├── path_finder.cpython-312.pyc
+│   │   ├── query_builder.cpython-312.pyc
+│   │   ├── relationship_builder.cpython-312.pyc
+│   │   ├── relationship_graph.cpython-312.pyc
+│   │   ├── schema_cache.cpython-312.pyc
+│   │   ├── schema_extractor.cpython-312.pyc
+│   │   ├── schema_graph.cpython-312.pyc
+│   │   ├── schema_index.cpython-312.pyc
+│   │   ├── schema_loader.cpython-312.pyc
+│   │   ├── schema_service.cpython-312.pyc
+│   │   ├── sql_builder.cpython-312.pyc
+│   │   └── table_registry.cpython-312.pyc
+│   ├── query_builder.py
+│   ├── relationship_builder.py
+│   ├── relationship_graph.py
+│   ├── relationships.json
+│   ├── schema_cache.py
+│   ├── schema_extractor.py
+│   ├── schema_graph.py
+│   ├── schema_index.py
+│   ├── schema.json
+│   ├── schema_loader.py
+│   ├── schema_service.py
+│   ├── sql_builder.py
+│   ├── sql_join_builder.py
+│   └── table_registry.py
+├── security
+│   ├── __pycache__
+│   │   ├── schema_validator.cpython-312.pyc
+│   │   ├── sql_guard.cpython-312.pyc
+│   │   └── sql_validator.cpython-312.pyc
+│   ├── schema_validator.py
+│   ├── sql_guard.py
+│   └── sql_validator.py
+├── services
+│   ├── metadata_service.py
+│   └── __pycache__
+│       └── metadata_service.cpython-312.pyc
+├── sql
+│   ├── connection.py
+│   ├── executor.py
+│   ├── __init__.py
+│   ├── join_builder.py
+│   ├── __pycache__
+│   │   ├── connection.cpython-312.pyc
+│   │   ├── executor.cpython-312.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── join_builder.cpython-312.pyc
+│   │   ├── query_builder.cpython-312.pyc
+│   │   ├── sql_builder.cpython-312.pyc
+│   │   ├── sql_executor.cpython-312.pyc
+│   │   └── where_builder.cpython-312.pyc
+│   ├── query_builder.py
+│   ├── query_validator.py
+│   ├── result_formatter.py
+│   ├── sql_builder.py
+│   ├── sql_executor.py
+│   └── where_builder.py
+├── sqlbuilder
+│   ├── aggregate_builder.py
+│   ├── auto_join_builder.py
+│   ├── expression_builder.py
+│   ├── __init__.py
+│   ├── join_builder.py
+│   ├── order_builder.py
+│   ├── __pycache__
+│   │   ├── aggregate_builder.cpython-312.pyc
+│   │   ├── auto_join_builder.cpython-312.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   ├── join_builder.cpython-312.pyc
+│   │   ├── order_builder.cpython-312.pyc
+│   │   ├── select_builder.cpython-312.pyc
+│   │   ├── sql_builder.cpython-312.pyc
+│   │   └── where_builder.cpython-312.pyc
+│   ├── select_builder.py
+│   ├── sql_builder.py
+│   └── where_builder.py
+├── v4
+│   ├── api
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── audit
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── compiler
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── engine
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── execution
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── __init__.py
+│   ├── knowledge
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── metadata
+│   │   ├── __init__.py
+│   │   ├── metadata_cache.py
+│   │   ├── metadata_engine.py
+│   │   ├── metadata_fields.py
+│   │   ├── metadata_indexes.py
+│   │   ├── metadata_loader.py
+│   │   ├── metadata_models.py
+│   │   ├── metadata_relations.py
+│   │   ├── metadata_statistics.py
+│   │   └── __pycache__
+│   ├── planner
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── __pycache__
+│   │   └── __init__.cpython-312.pyc
+│   ├── reports
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── response
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── security
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   ├── services
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   └── tests
+│       ├── __init__.py
+│       └── __pycache__
+└── validator
+    ├── __pycache__
+    │   └── sql_validator.cpython-312.pyc
+    └── sql_validator.py
+
+115 directories, 447 files
