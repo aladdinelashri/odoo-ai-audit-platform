@@ -1,9 +1,7 @@
 """
 SQL Parameter Compiler
 
-Architecture V10
-
-Extracts SQL parameters from a logical SQL plan.
+Architecture V34
 """
 
 from __future__ import annotations
@@ -13,10 +11,12 @@ class SQLParameterCompiler:
 
     def compile(self, plan: dict) -> list:
 
-        params: list = []
+        if plan.get("params"):
+
+            return list(plan["params"])
 
         if plan.get("where_values"):
 
-            params.extend(plan["where_values"])
+            return list(plan["where_values"])
 
-        return params
+        return []

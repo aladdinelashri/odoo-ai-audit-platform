@@ -20,4 +20,12 @@ def test_execution_plan_complete():
         "operation": "show",
         "aggregation": None,
         "filters": ["unpaid"],
+        "table": "account.move",
+        "select": ["*"],
+        "from": "account_move",
+        "where": ["payment_state = %s"],
+        "where_values": ["not_paid"],
+        "params": ["not_paid"],
+        "order": [],
+        "limit": None,
     }
