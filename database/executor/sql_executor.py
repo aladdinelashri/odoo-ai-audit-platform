@@ -16,9 +16,13 @@ class SQLExecutor:
         self,
         sql: str,
         params: list,
-    ) -> list:
+    ) -> tuple[list[str], list[tuple]]:
 
         # Placeholder implementation.
-        # Live database execution will be added later.
+        # Real PostgreSQL execution will be implemented later.
 
-        return []
+        columns: list[str] = []
+
+        rows: list[tuple] = []
+
+        return columns, rows

@@ -21,6 +21,7 @@ def test_sql_pipeline():
 
     sql, params = builder.build(plan)
 
-    result = executor.execute(sql, params)
+    columns, rows = executor.execute(sql, params)
 
-    assert isinstance(result, list)
+    assert isinstance(columns, list)
+    assert isinstance(rows, list)

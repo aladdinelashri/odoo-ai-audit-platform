@@ -5,9 +5,10 @@ def test_execute_returns_result():
 
     executor = SQLExecutor()
 
-    result = executor.execute(
+    columns, rows = executor.execute(
         "SELECT 1",
-        []
+        [],
     )
 
-    assert result == []
+    assert columns == []
+    assert rows == []

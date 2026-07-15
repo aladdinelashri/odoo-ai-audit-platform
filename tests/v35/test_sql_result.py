@@ -1,13 +1,14 @@
 from database.executor.sql_executor import SQLExecutor
 
 
-def test_execute_returns_list():
+def test_execute_returns_lists():
 
     executor = SQLExecutor()
 
-    result = executor.execute(
+    columns, rows = executor.execute(
         "SELECT * FROM account_move",
         [],
     )
 
-    assert isinstance(result, list)
+    assert isinstance(columns, list)
+    assert isinstance(rows, list)

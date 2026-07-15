@@ -5,9 +5,10 @@ def test_execute_invalid_sql():
 
     executor = SQLExecutor()
 
-    result = executor.execute(
+    columns, rows = executor.execute(
         "",
         [],
     )
 
-    assert result == []
+    assert columns == []
+    assert rows == []
