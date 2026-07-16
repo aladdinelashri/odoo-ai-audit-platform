@@ -1,16 +1,21 @@
 """
 SQL Executor
 
-Architecture V35
+Architecture V41
+
+Executes SQL against PostgreSQL.
 """
 
 from __future__ import annotations
+
+from database.connection.postgres_connection import PostgreSQLConnection
 
 
 class SQLExecutor:
 
     def __init__(self) -> None:
-        pass
+
+        self.connection = PostgreSQLConnection()
 
     def execute(
         self,
@@ -18,11 +23,23 @@ class SQLExecutor:
         params: list,
     ) -> tuple[list[str], list[tuple]]:
 
-        # Placeholder implementation.
-        # Real PostgreSQL execution will be implemented later.
+        conn = self.connection.open()
 
-        columns: list[str] = []
+        try:
 
-        rows: list[tuple] = []
+            with conn.cursor() as cursor:
 
-        return columns, rows
+                cursor.execute(sql, params)
+
+                rows = cursor.fetchall()
+
+                columns = [
+                    column.name
+                    for column in cursor.description
+                ]
+
+                return columns, rows
+
+        finally:
+
+            self.connection.close()
