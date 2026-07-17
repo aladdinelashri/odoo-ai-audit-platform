@@ -7,7 +7,6 @@ class MetadataRegistry:
     def __init__(self):
 
         self.models = ModelRegistry()
-
         self.fields = FieldRegistry()
 
     # ---------------------------------------------------------
@@ -16,16 +15,11 @@ class MetadataRegistry:
 
         registry = {}
 
-        for model in self.models.models():
-
-            model_name = model["model"]
+        for model_name in self.models.models():
 
             registry[model_name] = {
-
-                "name": model["name"],
-
-                "fields": self.fields.fields(model_name)
-
+                "name": model_name,
+                "fields": self.fields.get_fields(model_name),
             }
 
         return registry

@@ -6,17 +6,30 @@ class SQLExecutor:
     def __init__(self):
 
         self.db = DatabaseConnection()
+        self.cursor = None
 
     # ---------------------------------------------------------
 
     def execute(self, sql, params=None):
 
-        cursor = self.db.cursor()
+        self.cursor = self.db.cursor()
 
-        cursor.execute(sql, params or ())
+        self.cursor.execute(sql, params or ())
 
-        rows = cursor.fetchall()
+        columns = [c[0] for c in self.cursor.description]
 
-        cursor.close()
+        rows = self.cursor.fetchall()
 
-        return rows
+        return [
+            dict(zip(columns, row))
+            for row in rows
+        ]
+
+    # ---------------------------------------------------------
+
+    def close(self):
+
+        if self.cursor is not None:
+            self.cursor.close()
+
+        self.db.close()

@@ -8,7 +8,6 @@ class FieldRegistry:
     def __init__(self):
 
         self.engine = PostgreSQLConnection().connect()
-
         self.registry = {}
 
     # ---------------------------------------------------------
@@ -41,12 +40,10 @@ class FieldRegistry:
             registry.setdefault(model, {})
 
             registry[model][row["name"]] = {
-
                 "name": row["name"],
                 "label": row["field_description"],
                 "type": row["ttype"],
-                "relation": row["relation"]
-
+                "relation": row["relation"],
             }
 
         self.registry = registry
@@ -58,17 +55,21 @@ class FieldRegistry:
     def fields(self, model):
 
         if not self.registry:
-
             self.build()
 
         return self.registry.get(model, {})
 
     # ---------------------------------------------------------
 
+    def get_fields(self, model):
+
+        return list(self.fields(model).keys())
+
+    # ---------------------------------------------------------
+
     def field(self, model, field):
 
         if not self.registry:
-
             self.build()
 
         return self.registry.get(model, {}).get(field)

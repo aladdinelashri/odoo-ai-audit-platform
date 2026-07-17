@@ -1,7 +1,7 @@
 """
 Odoo Model Registry
 
-Architecture V17
+Architecture V72
 """
 
 from __future__ import annotations
@@ -11,11 +11,16 @@ from database.registry.schema_registry import SchemaRegistry
 
 class ModelRegistry:
 
-    def __init__(self, registry: SchemaRegistry):
+    def __init__(
+        self,
+        registry: SchemaRegistry | None = None,
+    ) -> None:
 
-        self.registry = registry
+        self.registry = registry or SchemaRegistry()
 
         self._models: dict[str, str] = {}
+
+        self.build()
 
     # ---------------------------------------------------------
 
@@ -37,11 +42,15 @@ class ModelRegistry:
 
         self._models.clear()
 
-        for table in self.registry._cache.keys():
+        for table in self.registry._cache:
 
-            model = self.table_to_model(table)
+            self._models[self.table_to_model(table)] = table
 
-            self._models[model] = table
+    # ---------------------------------------------------------
+
+    def models(self) -> list[str]:
+
+        return sorted(self._models.keys())
 
     # ---------------------------------------------------------
 
@@ -54,3 +63,19 @@ class ModelRegistry:
     def table(self, model: str) -> str:
 
         return self._models[model]
+
+    # ---------------------------------------------------------
+
+    def get_model(self, alias: str) -> str | None:
+
+        aliases = {
+            "invoice": "account.move",
+            "customer": "res.partner",
+            "partner": "res.partner",
+            "journal": "account.journal",
+            "product": "product.template",
+            "order": "pos.order",
+            "pos": "pos.order",
+        }
+
+        return aliases.get(alias, alias)

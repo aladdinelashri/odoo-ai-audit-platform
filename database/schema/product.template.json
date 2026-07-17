@@ -1,0 +1,686 @@
+{
+    "model": "product.template",
+    "table": "product_template",
+    "fields": [
+        {
+            "name": "account_tag_ids",
+            "type": "many2many",
+            "relation": "account.account.tag"
+        },
+        {
+            "name": "active",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "activity_calendar_event_id",
+            "type": "many2one",
+            "relation": "calendar.event"
+        },
+        {
+            "name": "activity_date_deadline",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "activity_exception_decoration",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "activity_exception_icon",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "activity_ids",
+            "type": "one2many",
+            "relation": "mail.activity"
+        },
+        {
+            "name": "activity_state",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "activity_summary",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "activity_type_icon",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "activity_type_id",
+            "type": "many2one",
+            "relation": "mail.activity.type"
+        },
+        {
+            "name": "activity_user_id",
+            "type": "many2one",
+            "relation": "res.users"
+        },
+        {
+            "name": "asset_category_id",
+            "type": "many2one",
+            "relation": "account.asset.category"
+        },
+        {
+            "name": "attribute_line_ids",
+            "type": "one2many",
+            "relation": "product.template.attribute.line"
+        },
+        {
+            "name": "available_in_pos",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "barcode",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "can_image_1024_be_zoomed",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "categ_id",
+            "type": "many2one",
+            "relation": "product.category"
+        },
+        {
+            "name": "color",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "combo_ids",
+            "type": "many2many",
+            "relation": "product.combo"
+        },
+        {
+            "name": "company_id",
+            "type": "many2one",
+            "relation": "res.company"
+        },
+        {
+            "name": "cost_currency_id",
+            "type": "many2one",
+            "relation": "res.currency"
+        },
+        {
+            "name": "cost_method",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "create_date",
+            "type": "datetime",
+            "relation": null
+        },
+        {
+            "name": "create_uid",
+            "type": "many2one",
+            "relation": "res.users"
+        },
+        {
+            "name": "currency_id",
+            "type": "many2one",
+            "relation": "res.currency"
+        },
+        {
+            "name": "default_code",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "deferred_revenue_category_id",
+            "type": "many2one",
+            "relation": "account.asset.category"
+        },
+        {
+            "name": "description",
+            "type": "html",
+            "relation": null
+        },
+        {
+            "name": "description_picking",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "description_pickingin",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "description_pickingout",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "description_purchase",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "description_sale",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "display_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "expense_policy",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "fiscal_country_codes",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "has_available_route_ids",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "has_configurable_attributes",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "has_message",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "id",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "image_1024",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "image_128",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "image_1920",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "image_256",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "image_512",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "incoming_qty",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "invoice_policy",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "is_favorite",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "is_product_variant",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "is_storable",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "list_price",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "location_id",
+            "type": "many2one",
+            "relation": "stock.location"
+        },
+        {
+            "name": "lot_valuated",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_attachment_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "message_follower_ids",
+            "type": "one2many",
+            "relation": "mail.followers"
+        },
+        {
+            "name": "message_has_error",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_has_error_counter",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "message_has_sms_error",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_ids",
+            "type": "one2many",
+            "relation": "mail.message"
+        },
+        {
+            "name": "message_is_follower",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_needaction",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_needaction_counter",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "message_partner_ids",
+            "type": "many2many",
+            "relation": "res.partner"
+        },
+        {
+            "name": "my_activity_date_deadline",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "nbr_moves_in",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "nbr_moves_out",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "nbr_reordering_rules",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "optional_product_ids",
+            "type": "many2many",
+            "relation": "product.template"
+        },
+        {
+            "name": "outgoing_qty",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "packaging_ids",
+            "type": "one2many",
+            "relation": "product.packaging"
+        },
+        {
+            "name": "pos_categ_ids",
+            "type": "many2many",
+            "relation": "pos.category"
+        },
+        {
+            "name": "pricelist_item_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "product_document_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "product_document_ids",
+            "type": "one2many",
+            "relation": "product.document"
+        },
+        {
+            "name": "product_properties",
+            "type": "properties",
+            "relation": null
+        },
+        {
+            "name": "product_tag_ids",
+            "type": "many2many",
+            "relation": "product.tag"
+        },
+        {
+            "name": "product_tooltip",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "product_variant_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "product_variant_id",
+            "type": "many2one",
+            "relation": "product.product"
+        },
+        {
+            "name": "product_variant_ids",
+            "type": "one2many",
+            "relation": "product.product"
+        },
+        {
+            "name": "property_account_creditor_price_difference",
+            "type": "many2one",
+            "relation": "account.account"
+        },
+        {
+            "name": "property_account_expense_id",
+            "type": "many2one",
+            "relation": "account.account"
+        },
+        {
+            "name": "property_account_income_id",
+            "type": "many2one",
+            "relation": "account.account"
+        },
+        {
+            "name": "property_stock_inventory",
+            "type": "many2one",
+            "relation": "stock.location"
+        },
+        {
+            "name": "property_stock_production",
+            "type": "many2one",
+            "relation": "stock.location"
+        },
+        {
+            "name": "public_description",
+            "type": "html",
+            "relation": null
+        },
+        {
+            "name": "purchase_line_warn",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "purchase_line_warn_msg",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "purchase_method",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "purchase_ok",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "purchased_product_qty",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "qty_available",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "rating_ids",
+            "type": "one2many",
+            "relation": "rating.rating"
+        },
+        {
+            "name": "reordering_max_qty",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "reordering_min_qty",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "responsible_id",
+            "type": "many2one",
+            "relation": "res.users"
+        },
+        {
+            "name": "route_from_categ_ids",
+            "type": "many2many",
+            "relation": "stock.route"
+        },
+        {
+            "name": "route_ids",
+            "type": "many2many",
+            "relation": "stock.route"
+        },
+        {
+            "name": "sale_delay",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "sale_line_warn",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "sale_line_warn_msg",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "sale_ok",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "sales_count",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "seller_ids",
+            "type": "one2many",
+            "relation": "product.supplierinfo"
+        },
+        {
+            "name": "sequence",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "service_to_purchase",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "service_tracking",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "service_type",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "show_forecasted_qty_status_button",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "show_on_hand_qty_status_button",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "standard_price",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "supplier_taxes_id",
+            "type": "many2many",
+            "relation": "account.tax"
+        },
+        {
+            "name": "tax_string",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "taxes_id",
+            "type": "many2many",
+            "relation": "account.tax"
+        },
+        {
+            "name": "to_weight",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "tracking",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "type",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "uom_category_id",
+            "type": "many2one",
+            "relation": "uom.category"
+        },
+        {
+            "name": "uom_id",
+            "type": "many2one",
+            "relation": "uom.uom"
+        },
+        {
+            "name": "uom_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "uom_po_id",
+            "type": "many2one",
+            "relation": "uom.uom"
+        },
+        {
+            "name": "valid_product_template_attribute_line_ids",
+            "type": "many2many",
+            "relation": "product.template.attribute.line"
+        },
+        {
+            "name": "valuation",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "variant_seller_ids",
+            "type": "one2many",
+            "relation": "product.supplierinfo"
+        },
+        {
+            "name": "virtual_available",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "visible_expense_policy",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "volume",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "volume_uom_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "warehouse_id",
+            "type": "many2one",
+            "relation": "stock.warehouse"
+        },
+        {
+            "name": "website_message_ids",
+            "type": "one2many",
+            "relation": "mail.message"
+        },
+        {
+            "name": "weight",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "weight_uom_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "write_date",
+            "type": "datetime",
+            "relation": null
+        },
+        {
+            "name": "write_uid",
+            "type": "many2one",
+            "relation": "res.users"
+        }
+    ]
+}
