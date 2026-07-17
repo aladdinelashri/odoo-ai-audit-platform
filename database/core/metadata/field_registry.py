@@ -1,0 +1,2 @@
+class FieldRegistry:
+    pass
