@@ -1,84 +1,30 @@
-from dataclasses import dataclass
-from pathlib import Path
 import os
 
-from dotenv import load_dotenv
-
-
-# ---------------------------------------------------------
-# Load .env
-# ---------------------------------------------------------
-
-ROOT = Path(__file__).resolve().parents[2]
-
-load_dotenv(ROOT / ".env")
-
-
-# ---------------------------------------------------------
-# Database Settings
-# ---------------------------------------------------------
-
-@dataclass(frozen=True)
-class DatabaseSettings:
-
-    host: str
-    port: int
-    database: str
-    user: str
-    password: str
-
-
-# ---------------------------------------------------------
-# Global Settings
-# ---------------------------------------------------------
 
 class Settings:
 
     def __init__(self):
 
-        self.database = DatabaseSettings(
-
-            host=os.getenv("DB_HOST", ""),
-
-            port=int(os.getenv("DB_PORT", "5432")),
-
-            database=os.getenv("DB_NAME", ""),
-
-            user=os.getenv("DB_USER", ""),
-
-            password=os.getenv("DB_PASSWORD", "")
-
+        self.database_url = os.getenv(
+            "DATABASE_URL",
+            ""
         )
 
-    # -----------------------------------------------------
+        self.odoo_version = os.getenv(
+            "ODOO_VERSION",
+            "18"
+        )
 
-    def validate(self):
-
-        missing = []
-
-        if not self.database.host:
-            missing.append("DB_HOST")
-
-        if not self.database.database:
-            missing.append("DB_NAME")
-
-        if not self.database.user:
-            missing.append("DB_USER")
-
-        if not self.database.password:
-            missing.append("DB_PASSWORD")
-
-        if missing:
-
-            raise RuntimeError(
-
-                "Missing environment variables: "
-
-                + ", ".join(missing)
-
-            )
+        self.environment = os.getenv(
+            "ENVIRONMENT",
+            "development"
+        )
 
 
-settings = Settings()
+    def to_dict(self):
 
-settings.validate()
+        return {
+            "database_url": self.database_url,
+            "odoo_version": self.odoo_version,
+            "environment": self.environment
+        }
