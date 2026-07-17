@@ -26,6 +26,7 @@ from commands.executive import run as executive
 from commands.html import run as html
 from commands.sales import run as sales
 from commands.top_products import run as top_products
+from commands.schema import run as schema
 
 parser = argparse.ArgumentParser(
     description="Odoo AI Audit Platform Builder"
@@ -74,6 +75,9 @@ elif args.command == "discover-schema":
 
 elif args.command == "metadata":
     metadata()
+
+elif args.command == "schema":
+    schema(args.target)
 
 elif args.command == "knowledge":
     knowledge()

@@ -1,0 +1,966 @@
+{
+    "model": "account.move",
+    "table": "account_move",
+    "fields": [
+        {
+            "name": "abnormal_amount_warning",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "abnormal_date_warning",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "access_token",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "access_url",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "access_warning",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "activity_calendar_event_id",
+            "type": "many2one",
+            "relation": "calendar.event"
+        },
+        {
+            "name": "activity_date_deadline",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "activity_exception_decoration",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "activity_exception_icon",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "activity_ids",
+            "type": "one2many",
+            "relation": "mail.activity"
+        },
+        {
+            "name": "activity_state",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "activity_summary",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "activity_type_icon",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "activity_type_id",
+            "type": "many2one",
+            "relation": "mail.activity.type"
+        },
+        {
+            "name": "activity_user_id",
+            "type": "many2one",
+            "relation": "res.users"
+        },
+        {
+            "name": "always_tax_exigible",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "amount_paid",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "amount_residual",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "amount_residual_signed",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "amount_tax",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "amount_tax_signed",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "amount_total",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "amount_total_in_currency_signed",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "amount_total_signed",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "amount_total_words",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "amount_untaxed",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "amount_untaxed_in_currency_signed",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "amount_untaxed_signed",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "asset_depreciation_ids",
+            "type": "one2many",
+            "relation": "account.asset.depreciation.line"
+        },
+        {
+            "name": "attachment_ids",
+            "type": "one2many",
+            "relation": "ir.attachment"
+        },
+        {
+            "name": "audit_trail_message_ids",
+            "type": "one2many",
+            "relation": "mail.message"
+        },
+        {
+            "name": "authorized_transaction_ids",
+            "type": "many2many",
+            "relation": "payment.transaction"
+        },
+        {
+            "name": "auto_post",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "auto_post_origin_id",
+            "type": "many2one",
+            "relation": "account.move"
+        },
+        {
+            "name": "auto_post_until",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "bank_partner_id",
+            "type": "many2one",
+            "relation": "res.partner"
+        },
+        {
+            "name": "campaign_id",
+            "type": "many2one",
+            "relation": "utm.campaign"
+        },
+        {
+            "name": "checked",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "commercial_partner_id",
+            "type": "many2one",
+            "relation": "res.partner"
+        },
+        {
+            "name": "company_currency_id",
+            "type": "many2one",
+            "relation": "res.currency"
+        },
+        {
+            "name": "company_id",
+            "type": "many2one",
+            "relation": "res.company"
+        },
+        {
+            "name": "company_price_include",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "country_code",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "create_date",
+            "type": "datetime",
+            "relation": null
+        },
+        {
+            "name": "create_uid",
+            "type": "many2one",
+            "relation": "res.users"
+        },
+        {
+            "name": "currency_id",
+            "type": "many2one",
+            "relation": "res.currency"
+        },
+        {
+            "name": "custom_user_ids",
+            "type": "many2many",
+            "relation": "res.users"
+        },
+        {
+            "name": "date",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "delivery_date",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "direction_sign",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "display_inactive_currency_warning",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "display_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "display_qr_code",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "due_amount",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "duplicated_ref_ids",
+            "type": "many2many",
+            "relation": "account.move"
+        },
+        {
+            "name": "expected_currency_rate",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "fiscal_position_id",
+            "type": "many2one",
+            "relation": "account.fiscal.position"
+        },
+        {
+            "name": "has_due",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "has_message",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "has_reconciled_entries",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "hide_post_button",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "highest_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "id",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "inalterable_hash",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "incoterm_location",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "invoice_cash_rounding_id",
+            "type": "many2one",
+            "relation": "account.cash.rounding"
+        },
+        {
+            "name": "invoice_currency_rate",
+            "type": "float",
+            "relation": null
+        },
+        {
+            "name": "invoice_date",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "invoice_date_due",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "invoice_filter_type_domain",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "invoice_has_outstanding",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "invoice_incoterm_id",
+            "type": "many2one",
+            "relation": "account.incoterms"
+        },
+        {
+            "name": "invoice_line_ids",
+            "type": "one2many",
+            "relation": "account.move.line"
+        },
+        {
+            "name": "invoice_origin",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "invoice_outstanding_credits_debits_widget",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "invoice_partner_display_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "invoice_payment_term_id",
+            "type": "many2one",
+            "relation": "account.payment.term"
+        },
+        {
+            "name": "invoice_payments_widget",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "invoice_pdf_report_file",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "invoice_pdf_report_id",
+            "type": "many2one",
+            "relation": "ir.attachment"
+        },
+        {
+            "name": "invoice_source_email",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "invoice_user_id",
+            "type": "many2one",
+            "relation": "res.users"
+        },
+        {
+            "name": "invoice_vendor_bill_id",
+            "type": "many2one",
+            "relation": "account.move"
+        },
+        {
+            "name": "is_being_sent",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "is_manually_modified",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "is_move_sent",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "is_purchase_matched",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "is_storno",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "is_warning",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "journal_group_id",
+            "type": "many2one",
+            "relation": "account.journal.group"
+        },
+        {
+            "name": "journal_id",
+            "type": "many2one",
+            "relation": "account.journal"
+        },
+        {
+            "name": "line_ids",
+            "type": "one2many",
+            "relation": "account.move.line"
+        },
+        {
+            "name": "made_sequence_gap",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "matched_payment_ids",
+            "type": "many2many",
+            "relation": "account.payment"
+        },
+        {
+            "name": "medium_id",
+            "type": "many2one",
+            "relation": "utm.medium"
+        },
+        {
+            "name": "message_attachment_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "message_follower_ids",
+            "type": "one2many",
+            "relation": "mail.followers"
+        },
+        {
+            "name": "message_has_error",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_has_error_counter",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "message_has_sms_error",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_ids",
+            "type": "one2many",
+            "relation": "mail.message"
+        },
+        {
+            "name": "message_is_follower",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_main_attachment_id",
+            "type": "many2one",
+            "relation": "ir.attachment"
+        },
+        {
+            "name": "message_needaction",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_needaction_counter",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "message_partner_ids",
+            "type": "many2many",
+            "relation": "res.partner"
+        },
+        {
+            "name": "move_sent_values",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "move_type",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "my_activity_date_deadline",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "name_placeholder",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "narration",
+            "type": "html",
+            "relation": null
+        },
+        {
+            "name": "need_cancel_request",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "needed_terms",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "needed_terms_dirty",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "next_payment_date",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "origin_payment_id",
+            "type": "many2one",
+            "relation": "account.payment"
+        },
+        {
+            "name": "partner_bank_id",
+            "type": "many2one",
+            "relation": "res.partner.bank"
+        },
+        {
+            "name": "partner_credit",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "partner_credit_warning",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "partner_id",
+            "type": "many2one",
+            "relation": "res.partner"
+        },
+        {
+            "name": "partner_shipping_id",
+            "type": "many2one",
+            "relation": "res.partner"
+        },
+        {
+            "name": "payment_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "payment_ids",
+            "type": "one2many",
+            "relation": "account.payment"
+        },
+        {
+            "name": "payment_reference",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "payment_state",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "payment_term_details",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "payslip_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "payslip_ids",
+            "type": "one2many",
+            "relation": "hr.payslip"
+        },
+        {
+            "name": "pos_order_ids",
+            "type": "one2many",
+            "relation": "pos.order"
+        },
+        {
+            "name": "pos_payment_ids",
+            "type": "one2many",
+            "relation": "pos.payment"
+        },
+        {
+            "name": "pos_refunded_invoice_ids",
+            "type": "many2many",
+            "relation": "account.move"
+        },
+        {
+            "name": "pos_session_ids",
+            "type": "one2many",
+            "relation": "pos.session"
+        },
+        {
+            "name": "posted_before",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "preferred_payment_method_line_id",
+            "type": "many2one",
+            "relation": "account.payment.method.line"
+        },
+        {
+            "name": "purchase_id",
+            "type": "many2one",
+            "relation": "purchase.order"
+        },
+        {
+            "name": "purchase_order_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "purchase_order_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "purchase_vendor_bill_id",
+            "type": "many2one",
+            "relation": "purchase.bill.union"
+        },
+        {
+            "name": "qr_code_method",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "quick_edit_mode",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "quick_edit_total_amount",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "quick_encoding_vals",
+            "type": "json",
+            "relation": null
+        },
+        {
+            "name": "rating_ids",
+            "type": "one2many",
+            "relation": "rating.rating"
+        },
+        {
+            "name": "recurring_ref",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "ref",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "restrict_mode_hash_table",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "reversal_move_ids",
+            "type": "one2many",
+            "relation": "account.move"
+        },
+        {
+            "name": "reversed_entry_id",
+            "type": "many2one",
+            "relation": "account.move"
+        },
+        {
+            "name": "reversed_pos_order_id",
+            "type": "many2one",
+            "relation": "pos.order"
+        },
+        {
+            "name": "sale_order_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "secure_sequence_number",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "secured",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "sending_data",
+            "type": "json",
+            "relation": null
+        },
+        {
+            "name": "sequence_number",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "sequence_prefix",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "show_delivery_date",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "show_discount_details",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "show_name_warning",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "show_payment_term_details",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "show_reset_to_draft_button",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "show_update_fpos",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "source_id",
+            "type": "many2one",
+            "relation": "utm.source"
+        },
+        {
+            "name": "state",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "statement_id",
+            "type": "many2one",
+            "relation": "account.bank.statement"
+        },
+        {
+            "name": "statement_line_id",
+            "type": "many2one",
+            "relation": "account.bank.statement.line"
+        },
+        {
+            "name": "statement_line_ids",
+            "type": "one2many",
+            "relation": "account.bank.statement.line"
+        },
+        {
+            "name": "status_in_payment",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "stock_move_id",
+            "type": "many2one",
+            "relation": "stock.move"
+        },
+        {
+            "name": "stock_valuation_layer_ids",
+            "type": "one2many",
+            "relation": "stock.valuation.layer"
+        },
+        {
+            "name": "suitable_journal_ids",
+            "type": "many2many",
+            "relation": "account.journal"
+        },
+        {
+            "name": "tax_calculation_rounding_method",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "tax_cash_basis_created_move_ids",
+            "type": "one2many",
+            "relation": "account.move"
+        },
+        {
+            "name": "tax_cash_basis_origin_move_id",
+            "type": "many2one",
+            "relation": "account.move"
+        },
+        {
+            "name": "tax_cash_basis_rec_id",
+            "type": "many2one",
+            "relation": "account.partial.reconcile"
+        },
+        {
+            "name": "tax_country_code",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "tax_country_id",
+            "type": "many2one",
+            "relation": "res.country"
+        },
+        {
+            "name": "tax_lock_date_message",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "tax_totals",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "taxes_legal_notes",
+            "type": "html",
+            "relation": null
+        },
+        {
+            "name": "team_id",
+            "type": "many2one",
+            "relation": "crm.team"
+        },
+        {
+            "name": "to_check",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "transaction_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "transaction_ids",
+            "type": "many2many",
+            "relation": "payment.transaction"
+        },
+        {
+            "name": "type_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "ubl_cii_xml_file",
+            "type": "binary",
+            "relation": null
+        },
+        {
+            "name": "ubl_cii_xml_id",
+            "type": "many2one",
+            "relation": "ir.attachment"
+        },
+        {
+            "name": "user_id",
+            "type": "many2one",
+            "relation": "res.users"
+        },
+        {
+            "name": "website_message_ids",
+            "type": "one2many",
+            "relation": "mail.message"
+        },
+        {
+            "name": "write_date",
+            "type": "datetime",
+            "relation": null
+        },
+        {
+            "name": "write_uid",
+            "type": "many2one",
+            "relation": "res.users"
+        },
+        {
+            "name": "x_document_no",
+            "type": "char",
+            "relation": null
+        }
+    ]
+}

@@ -1,0 +1,491 @@
+{
+    "model": "account.journal",
+    "table": "account_journal",
+    "fields": [
+        {
+            "name": "access_token",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "access_url",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "access_warning",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "account_control_ids",
+            "type": "many2many",
+            "relation": "account.account"
+        },
+        {
+            "name": "accounting_date",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "active",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "activity_calendar_event_id",
+            "type": "many2one",
+            "relation": "calendar.event"
+        },
+        {
+            "name": "activity_date_deadline",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "activity_exception_decoration",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "activity_exception_icon",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "activity_ids",
+            "type": "one2many",
+            "relation": "mail.activity"
+        },
+        {
+            "name": "activity_state",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "activity_summary",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "activity_type_icon",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "activity_type_id",
+            "type": "many2one",
+            "relation": "mail.activity.type"
+        },
+        {
+            "name": "activity_user_id",
+            "type": "many2one",
+            "relation": "res.users"
+        },
+        {
+            "name": "alias_defaults",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "alias_domain",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "alias_domain_id",
+            "type": "many2one",
+            "relation": "mail.alias.domain"
+        },
+        {
+            "name": "alias_email",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "alias_id",
+            "type": "many2one",
+            "relation": "mail.alias"
+        },
+        {
+            "name": "alias_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "autocheck_on_post",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "available_payment_method_ids",
+            "type": "many2many",
+            "relation": "account.payment.method"
+        },
+        {
+            "name": "bank_acc_number",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "bank_account_id",
+            "type": "many2one",
+            "relation": "res.partner.bank"
+        },
+        {
+            "name": "bank_check_printing_layout",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "bank_id",
+            "type": "many2one",
+            "relation": "res.bank"
+        },
+        {
+            "name": "bank_statements_source",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "body_text_position",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "check_manual_sequencing",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "check_next_number",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "check_sequence_id",
+            "type": "many2one",
+            "relation": "ir.sequence"
+        },
+        {
+            "name": "code",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "color",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "company_id",
+            "type": "many2one",
+            "relation": "res.company"
+        },
+        {
+            "name": "company_partner_id",
+            "type": "many2one",
+            "relation": "res.partner"
+        },
+        {
+            "name": "country_code",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "create_date",
+            "type": "datetime",
+            "relation": null
+        },
+        {
+            "name": "create_uid",
+            "type": "many2one",
+            "relation": "res.users"
+        },
+        {
+            "name": "currency_id",
+            "type": "many2one",
+            "relation": "res.currency"
+        },
+        {
+            "name": "current_statement_balance",
+            "type": "monetary",
+            "relation": null
+        },
+        {
+            "name": "custom_user_ids",
+            "type": "many2many",
+            "relation": "res.users"
+        },
+        {
+            "name": "default_account_id",
+            "type": "many2one",
+            "relation": "account.account"
+        },
+        {
+            "name": "default_account_type",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "display_alias_fields",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "display_name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "entries_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "has_entries",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "has_message",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "has_posted_entries",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "has_sequence_holes",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "has_statement_lines",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "has_unhashed_entries",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "id",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "inbound_payment_method_line_ids",
+            "type": "one2many",
+            "relation": "account.payment.method.line"
+        },
+        {
+            "name": "invoice_reference_model",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "invoice_reference_type",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "journal_group_ids",
+            "type": "many2many",
+            "relation": "account.journal.group"
+        },
+        {
+            "name": "json_activity_data",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "kanban_dashboard",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "kanban_dashboard_graph",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "last_statement_id",
+            "type": "many2one",
+            "relation": "account.bank.statement"
+        },
+        {
+            "name": "layout",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "loss_account_id",
+            "type": "many2one",
+            "relation": "account.account"
+        },
+        {
+            "name": "message_attachment_count",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "message_follower_ids",
+            "type": "one2many",
+            "relation": "mail.followers"
+        },
+        {
+            "name": "message_has_error",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_has_error_counter",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "message_has_sms_error",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_ids",
+            "type": "one2many",
+            "relation": "mail.message"
+        },
+        {
+            "name": "message_is_follower",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_needaction",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "message_needaction_counter",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "message_partner_ids",
+            "type": "many2many",
+            "relation": "res.partner"
+        },
+        {
+            "name": "multiple_invoice_ids",
+            "type": "one2many",
+            "relation": "multiple.invoice"
+        },
+        {
+            "name": "multiple_invoice_type",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "my_activity_date_deadline",
+            "type": "date",
+            "relation": null
+        },
+        {
+            "name": "name",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "outbound_payment_method_line_ids",
+            "type": "one2many",
+            "relation": "account.payment.method.line"
+        },
+        {
+            "name": "payment_sequence",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "pos_payment_method_ids",
+            "type": "one2many",
+            "relation": "pos.payment.method"
+        },
+        {
+            "name": "profit_account_id",
+            "type": "many2one",
+            "relation": "account.account"
+        },
+        {
+            "name": "rating_ids",
+            "type": "one2many",
+            "relation": "rating.rating"
+        },
+        {
+            "name": "refund_sequence",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "restrict_mode_hash_table",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "selected_payment_method_codes",
+            "type": "char",
+            "relation": null
+        },
+        {
+            "name": "sequence",
+            "type": "integer",
+            "relation": null
+        },
+        {
+            "name": "sequence_override_regex",
+            "type": "text",
+            "relation": null
+        },
+        {
+            "name": "show_on_dashboard",
+            "type": "boolean",
+            "relation": null
+        },
+        {
+            "name": "suspense_account_id",
+            "type": "many2one",
+            "relation": "account.account"
+        },
+        {
+            "name": "text_align",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "text_position",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "type",
+            "type": "selection",
+            "relation": null
+        },
+        {
+            "name": "website_message_ids",
+            "type": "one2many",
+            "relation": "mail.message"
+        },
+        {
+            "name": "write_date",
+            "type": "datetime",
+            "relation": null
+        },
+        {
+            "name": "write_uid",
+            "type": "many2one",
+            "relation": "res.users"
+        }
+    ]
+}
