@@ -1,3 +1,9 @@
 class QueryParser:
+
     def parse(self, text: str):
-        return {"query": text}
+        text = text.strip()
+
+        return {
+            "raw": text,
+            "tokens": text.split()
+        }
