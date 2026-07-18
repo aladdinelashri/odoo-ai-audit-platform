@@ -6,3 +6,4 @@ from .product_performance import ProductPerformance
 from .user_performance import UserPerformance
 from .daily_summary import DailySummary
 from .monthly_summary import MonthlySummary
+from .payment_breakdown import PaymentBreakdown
