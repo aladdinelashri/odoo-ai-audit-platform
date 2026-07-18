@@ -11,3 +11,4 @@ from .refund_analysis import RefundAnalysis
 from .branch_daily_ranking import BranchDailyRanking
 from .category_daily_ranking import CategoryDailyRanking
 from .hourly_analysis import HourlyAnalysis
+from .shift_analysis import ShiftAnalysis
