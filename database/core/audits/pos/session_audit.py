@@ -3,21 +3,35 @@ from database.core.models import AuditResult
 
 class SessionAudit:
 
-    def run(self, sessions):
+    def run(
+        self,
+        sessions
+    ):
 
-        open_sessions = [
-            session
-            for session in sessions
-            if session.get("state") != "closed"
-        ]
+        issues = []
 
-        status = "warning" if open_sessions else "ok"
+        for session in sessions:
+
+            if not session.get(
+                "closed",
+                False
+            ):
+
+                issues.append({
+                    "session": session.get("name"),
+                    "issue": "unclosed_session"
+                })
+
 
         return AuditResult(
-            rule="open_pos_sessions",
-            status=status,
+            rule="session_audit",
+            status=(
+                "warning"
+                if issues
+                else "ok"
+            ),
             details={
-                "count": len(open_sessions),
-                "sessions": open_sessions
+                "count": len(issues),
+                "issues": issues
             }
         )
