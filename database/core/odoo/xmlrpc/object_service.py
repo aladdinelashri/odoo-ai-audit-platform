@@ -1,0 +1,2 @@
+class XMLRPCObjectService:
+    pass

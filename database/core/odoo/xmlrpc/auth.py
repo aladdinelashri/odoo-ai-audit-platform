@@ -1,0 +1,2 @@
+class XMLRPCAuth:
+    pass
