@@ -1,0 +1,2 @@
+class POSReportEngine:
+    pass
