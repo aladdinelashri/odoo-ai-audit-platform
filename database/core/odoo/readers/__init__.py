@@ -6,6 +6,7 @@ from .product_template_reader import ProductTemplateReader
 from .product_product_reader import ProductProductReader
 from .pos_category_reader import POSCategoryReader
 from .pos_config_reader import POSConfigReader
+from .pos_session_reader import POSSessionReader
 
 __all__ = [
     "CompanyReader",
@@ -16,4 +17,5 @@ __all__ = [
     "ProductProductReader",
     "POSCategoryReader",
     "POSConfigReader",
+    "POSSessionReader",
 ]
