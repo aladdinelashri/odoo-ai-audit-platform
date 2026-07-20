@@ -13,6 +13,7 @@ from .pos_payment_reader import POSPaymentReader
 from .account_move_reader import AccountMoveReader
 from .account_move_line_reader import AccountMoveLineReader
 from .account_account_reader import AccountAccountReader
+from .account_tax_reader import AccountTaxReader
 
 __all__ = [
     "CompanyReader",
@@ -30,4 +31,5 @@ __all__ = [
     "AccountMoveReader",
     "AccountMoveLineReader",
     "AccountAccountReader",
+    "AccountTaxReader",
 ]
