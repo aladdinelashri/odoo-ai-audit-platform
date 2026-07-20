@@ -9,6 +9,7 @@ from .pos_config_reader import POSConfigReader
 from .pos_session_reader import POSSessionReader
 from .pos_order_reader import POSOrderReader
 from .pos_order_line_reader import POSOrderLineReader
+from .pos_payment_reader import POSPaymentReader
 
 __all__ = [
     "CompanyReader",
@@ -22,4 +23,5 @@ __all__ = [
     "POSSessionReader",
     "POSOrderReader",
     "POSOrderLineReader",
+    "POSPaymentReader",
 ]
