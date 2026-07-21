@@ -1,0 +1,2 @@
+class XMLRPCConnector:
+    pass

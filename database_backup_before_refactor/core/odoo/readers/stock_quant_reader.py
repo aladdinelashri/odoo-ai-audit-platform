@@ -1,12 +1,14 @@
 from database.core.odoo.xmlrpc.object_service import XMLRPCObjectService
 
 
-class POSConfigReader:
+class StockQuantReader:
     """
-    Reader for pos.config
+    Reader for stock.quant
+
+    Read-only access layer.
     """
 
-    MODEL = "pos.config"
+    MODEL = "stock.quant"
 
     def __init__(self):
         self.service = XMLRPCObjectService()
@@ -17,10 +19,9 @@ class POSConfigReader:
             [],
             fields=[
                 "id",
-                "name",
-                "company_id",
-                "picking_type_id",
-                "journal_id",
+                "product_id",
+                "location_id",
+                "quantity",
             ],
             limit=1,
         )
@@ -32,23 +33,20 @@ class POSConfigReader:
             [record_id],
             fields=[
                 "id",
-                "name",
-                "company_id",
-                "picking_type_id",
-                "journal_id",
+                "product_id",
+                "location_id",
+                "quantity",
             ],
         )
         return records[0] if records else None
 
     def search(self, domain, fields=None, limit=100):
-
         if fields is None:
             fields = [
                 "id",
-                "name",
-                "company_id",
-                "picking_type_id",
-                "journal_id",
+                "product_id",
+                "location_id",
+                "quantity",
             ]
 
         return self.service.search_read(
@@ -59,4 +57,8 @@ class POSConfigReader:
         )
 
     def all(self, fields=None, limit=100):
-        return self.search([], fields=fields, limit=limit)
+        return self.search(
+            [],
+            fields=fields,
+            limit=limit,
+        )

@@ -1,0 +1,40 @@
+version: 1.0
+
+modules:
+
+  accounting:
+
+    - account.move
+    - account.move.line
+    - account.account
+    - account.journal
+    - account.tax
+    - account.payment
+
+  pos:
+
+    - pos.order
+    - pos.order.line
+    - pos.payment
+    - pos.session
+    - pos.config
+    - pos.category
+
+  products:
+
+    - product.template
+    - product.product
+    - product.category
+
+  inventory:
+
+    - stock.move
+    - stock.move.line
+    - stock.quant
+
+  base:
+
+    - res.company
+    - res.users
+    - res.partner
+    - ir.module.module

@@ -1,0 +1,19 @@
+organization:
+  resolver: pos_category
+
+resolvers:
+
+  pos_category:
+
+    model: pos.category
+
+    path:
+
+      - field: session_id
+        model: pos.session
+
+      - field: config_id
+        model: pos.config
+
+      - field: iface_available_categ_ids
+        model: pos.category
