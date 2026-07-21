@@ -1,5 +1,6 @@
 from database.core.audits.missing_receipts_audit import MissingReceiptsAudit
 from database.core.audits.refunds.refund_audit import RefundAudit
+from database.core.audits.pos_sales_summary_audit import POSSalesSummaryAudit
 
 
 class AuditRegistry:
@@ -10,6 +11,7 @@ class AuditRegistry:
 
         self.register(MissingReceiptsAudit())
         self.register(RefundAudit())
+        self.register(POSSalesSummaryAudit())
 
     def register(self, audit):
 
