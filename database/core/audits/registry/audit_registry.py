@@ -1,8 +1,11 @@
+# database/core/audits/registry/audit_registry.py
+
 from database.core.audits.missing_receipts_audit import MissingReceiptsAudit
 from database.core.audits.refunds.refund_audit import RefundAudit
 from database.core.audits.pos_sales_summary_audit import POSSalesSummaryAudit
 from database.core.audits.pos_daily_summary_audit import POSDailySummaryAudit
 from database.core.audits.payment_method_summary_audit import PaymentMethodSummaryAudit
+from database.core.audits.pos_monthly_summary_audit import POSMonthlySummaryAudit
 
 
 class AuditRegistry:
@@ -16,6 +19,7 @@ class AuditRegistry:
         self.register(POSSalesSummaryAudit())
         self.register(POSDailySummaryAudit())
         self.register(PaymentMethodSummaryAudit())
+        self.register(POSMonthlySummaryAudit())
 
     def register(self, audit):
 
