@@ -1,21 +1,21 @@
-from database.core.profile import ProfileLoader
-
-from .object_traverser import ObjectTraverser
+from database.core.cache.session_business_unit_cache import (
+    SessionBusinessUnitCache,
+)
 
 
 class BusinessUnitEngine:
 
     def __init__(self):
 
-        self.profile = ProfileLoader().load()
-        self.traverser = ObjectTraverser()
+        self.cache = SessionBusinessUnitCache().build()
 
     def resolve(self, order):
 
-        config = self.profile.organization_config
+        session = order.get("session_id")
 
-        return self.traverser.traverse(
-            start_model="pos.order",
-            start_record=order,
-            path=config["path"],
-        )
+        if not session:
+            return None
+
+        session_id = session if isinstance(session, int) else session[0]
+
+        return self.cache.mapping.get(session_id)

@@ -1,26 +1,27 @@
-from database.core.profile import ProfileLoader
-from database.core.organization.services import OrganizationService
-
-from .audit_context import AuditContext
+from database.core.organization.services.organization_service import (
+    OrganizationService,
+)
+from database.core.context.audit_context import AuditContext
 
 
 class AuditContextBuilder:
 
     def __init__(self):
 
-        self.profile = ProfileLoader().load()
         self.organization_service = OrganizationService()
 
     def build(self, order):
 
+        company = order.get("company_id")
+
+        company_id = (
+            company
+            if isinstance(company, int)
+            else (company[0] if company else None)
+        )
+
         return AuditContext(
-            profile=self.profile,
+            company_id=company_id,
             business_unit=self.organization_service.resolve(order),
-            company_id=order["company_id"][0]
-            if order.get("company_id")
-            else None,
-            session_id=order["session_id"][0]
-            if order.get("session_id")
-            else None,
-            metadata={},
+            profile=None,
         )

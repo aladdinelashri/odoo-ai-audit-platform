@@ -1,96 +1,52 @@
 import re
 
-from database.core.audits.base.base_audit import BaseAudit
-from database.core.repositories.pos_order_repository import POSOrderRepository
+from database.core.audits.base.base_pos_audit import BasePOSAudit
 
 
-class MissingReceiptsAudit(BaseAudit):
+class MissingReceiptsAudit(BasePOSAudit):
 
     code = "missing_receipts"
-    name = "Missing POS Receipts Audit"
 
-    def __init__(self):
+    name = "Missing Receipts Audit"
 
-        super().__init__()
-        self.repo = POSOrderRepository()
+    def analyze(self):
 
-    @staticmethod
-    def _receipt_number(receipt_name):
-
-        if not receipt_name:
-            return None
-
-        match = re.search(r"(\d+)$", receipt_name)
-
-        if not match:
-            return None
-
-        return int(match.group(1))
-
-    def analyze(self, limit=5000):
-
-        orders = self.repo.search(
-            domain=[
-                ("state", "=", "paid"),
-            ],
+        orders = self.get_orders(
             fields=[
                 "id",
-                "name",
-                "date_order",
-                "session_id",
+                "order_name",
                 "company_id",
+                "session_id",
             ],
-            limit=limit,
-            order="name",
+            order="order_name",
         )
 
-        groups = {}
+        numbers = []
 
-        for order in orders:
+        for row in orders:
 
-            context = self.build_context(order)
+            name = row.get("order_name") or ""
 
-            if context.business_unit is None:
+            match = re.search(r"(\d+)", name)
+
+            if not match:
                 continue
 
-            key = (
-                context.company_id,
-                context.business_unit.id,
-                context.session_id,
-            )
+            numbers.append(int(match.group(1)))
 
-            number = self._receipt_number(order["name"])
+        if not numbers:
+            return []
 
-            if number is None:
-                continue
+        numbers = sorted(set(numbers))
 
-            groups.setdefault(key, []).append(number)
+        missing = []
 
-        results = []
+        for current, nxt in zip(numbers, numbers[1:]):
 
-        for key, numbers in groups.items():
+            if nxt - current > 1:
 
-            numbers = sorted(set(numbers))
+                for value in range(current + 1, nxt):
 
-            existing = set(numbers)
+                    missing.append(value)
 
-            missing = [
-                n
-                for n in range(numbers[0], numbers[-1] + 1)
-                if n not in existing
-            ] if numbers else []
-
-            results.append(
-                {
-                    "company_id": key[0],
-                    "business_unit_id": key[1],
-                    "session_id": key[2],
-                    "first_receipt": numbers[0] if numbers else None,
-                    "last_receipt": numbers[-1] if numbers else None,
-                    "existing_receipts": len(numbers),
-                    "missing_receipts": len(missing),
-                    "missing_numbers": missing,
-                }
-            )
-
-        return results
+        return missing

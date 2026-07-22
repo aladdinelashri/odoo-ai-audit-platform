@@ -3,59 +3,58 @@ from .base_repository import BaseRepository
 
 class POSOrderRepository(BaseRepository):
 
-    MODEL = "pos.order"
+    TABLE = "pos_orders"
 
     def paid_orders(self, limit=100):
+
         return self.search(
             domain=[
                 ("state", "=", "paid")
             ],
             fields=[
                 "id",
-                "name",
-                "date_order",
-                "partner_id",
+                "order_name",
+                "order_date",
                 "amount_total",
                 "state",
                 "session_id",
                 "company_id",
             ],
             limit=limit,
-            order="date_order desc",
+            order="order_date DESC",
         )
 
     def refunded_orders(self, limit=100):
+
         return self.search(
-            domain=[
-                ("refund_order_ids", "!=", False)
-            ],
             fields=[
                 "id",
-                "name",
+                "order_name",
                 "amount_total",
-                "refund_order_ids",
             ],
             limit=limit,
         )
 
     def orders_between(self, date_from, date_to, limit=1000):
+
         return self.search(
             domain=[
-                ("date_order", ">=", date_from),
-                ("date_order", "<=", date_to),
+                ("order_date", ">=", date_from),
+                ("order_date", "<=", date_to),
             ],
             fields=[
                 "id",
-                "name",
-                "date_order",
+                "order_name",
+                "order_date",
                 "amount_total",
                 "state",
             ],
             limit=limit,
-            order="date_order",
+            order="order_date",
         )
 
     def count_paid(self):
+
         return self.count(
             [
                 ("state", "=", "paid")

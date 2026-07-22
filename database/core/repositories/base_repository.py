@@ -1,40 +1,37 @@
-from database.core.odoo.xmlrpc.object_service import XMLRPCObjectService
+from database.core.storage.sqlite.sqlite_service import SQLiteService
 
 
 class BaseRepository:
     """
-    Base repository for reusable business queries.
+    Base repository backed by SQLite cache.
     """
 
-    MODEL = None
+    TABLE = None
 
     def __init__(self):
-        self.service = XMLRPCObjectService()
+        self.service = SQLiteService()
 
-    def search(self, domain=None, fields=None, limit=100, order=None):
-        if domain is None:
-            domain = []
+    def search(self, domain=None, fields=None, limit=None, order=None):
 
-        return self.service.search_read(
-            self.MODEL,
-            domain,
+        return self.service.search(
+            table=self.TABLE,
+            domain=domain,
             fields=fields,
             limit=limit,
             order=order,
         )
 
     def read(self, ids, fields=None):
+
         return self.service.read(
-            self.MODEL,
-            ids,
+            table=self.TABLE,
+            ids=ids,
             fields=fields,
         )
 
     def count(self, domain=None):
-        if domain is None:
-            domain = []
 
-        return self.service.search_count(
-            self.MODEL,
-            domain,
+        return self.service.count(
+            table=self.TABLE,
+            domain=domain,
         )

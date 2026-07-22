@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 
 class Settings:
@@ -20,11 +21,17 @@ class Settings:
             "development"
         )
 
+        root = Path(__file__).resolve().parents[3]
+
+        self.sqlite_db_path = str(
+            root / "database" / "storage" / "audit.db"
+        )
 
     def to_dict(self):
 
         return {
             "database_url": self.database_url,
             "odoo_version": self.odoo_version,
-            "environment": self.environment
+            "environment": self.environment,
+            "sqlite_db_path": self.sqlite_db_path,
         }

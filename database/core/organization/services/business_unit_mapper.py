@@ -8,6 +8,9 @@ class BusinessUnitMapper:
         if record is None:
             return None
 
+        if isinstance(record, BusinessUnit):
+            return record
+
         return BusinessUnit(
             id=record["id"],
             code=str(record["id"]),

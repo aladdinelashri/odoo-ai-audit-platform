@@ -24,9 +24,6 @@ class BusinessUnit:
     """
 
     id: int | None
-
     code: str | None
-
     name: str
-
     source: str
