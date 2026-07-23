@@ -17,11 +17,24 @@ class POSMonthlySummaryAudit(BasePOSAudit):
         """
         Produce a reusable monthly aggregation for each month × business unit.
         Includes payment methods analysis.
+        Optimized: loads all payments once into memory.
         """
+        
+        # ⚡ OPTIMIZATION: Load all payments once
+        all_payments = self._db.query(
+            "SELECT order_id, payment_method, amount FROM pos_payments"
+        )
+        
+        payments_by_order = {}
+        for p in all_payments:
+            oid = p["order_id"]
+            if oid not in payments_by_order:
+                payments_by_order[oid] = []
+            payments_by_order[oid].append(p)
         
         orders = self.get_orders(
             domain=[
-                ("state", "=", "paid"),
+                ("state", "=", "done"),
             ],
             fields=[
                 "id",
@@ -81,10 +94,9 @@ class POSMonthlySummaryAudit(BasePOSAudit):
                 summary[key]["orders"] += 1
                 summary[key]["sales"] += amount
 
-            # Get payments for this order
-            payments = self.get_payments_for_order(order["id"])
+            # ⚡ OPTIMIZATION: Use memory instead of SQL query
+            payments = payments_by_order.get(order["id"], [])
             for payment in payments:
-                # sqlite3.Row — استخدام [] بدلاً من .get()
                 method = payment["payment_method"] if payment["payment_method"] else "Unknown"
                 
                 summary[key]["payment_methods"].add(method)
@@ -130,19 +142,3 @@ class POSMonthlySummaryAudit(BasePOSAudit):
         result.sort(key=lambda x: (x["month"], x["business_unit_id"]), reverse=True)
         
         return result
-
-    def get_payments_for_order(self, order_id):
-        """
-        Fetch payments for a specific POS order.
-        """
-        rows = self._db.query(
-            """
-            SELECT 
-                payment_method,
-                amount
-            FROM pos_payments
-            WHERE order_id = ?
-            """,
-            (order_id,)
-        )
-        return rows

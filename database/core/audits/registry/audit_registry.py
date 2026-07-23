@@ -6,6 +6,9 @@ from database.core.audits.pos_sales_summary_audit import POSSalesSummaryAudit
 from database.core.audits.pos_daily_summary_audit import POSDailySummaryAudit
 from database.core.audits.payment_method_summary_audit import PaymentMethodSummaryAudit
 from database.core.audits.pos_monthly_summary_audit import POSMonthlySummaryAudit
+from database.core.audits.cashier_performance_audit import CashierPerformanceAudit
+from database.core.audits.session_audit import SessionAudit
+from database.core.audits.business_unit_kpi_audit import BusinessUnitKPIAudit
 
 
 class AuditRegistry:
@@ -20,6 +23,9 @@ class AuditRegistry:
         self.register(POSDailySummaryAudit())
         self.register(PaymentMethodSummaryAudit())
         self.register(POSMonthlySummaryAudit())
+        self.register(CashierPerformanceAudit())
+        self.register(SessionAudit())
+        self.register(BusinessUnitKPIAudit())
 
     def register(self, audit):
 

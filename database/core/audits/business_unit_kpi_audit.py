@@ -1,0 +1,160 @@
+# database/core/audits/business_unit_kpi_audit.py
+
+from database.core.audits.base.base_pos_audit import BasePOSAudit
+from database.core.storage.sqlite.database import SQLiteDatabase
+
+
+class BusinessUnitKPIAudit(BasePOSAudit):
+
+    code = "business_unit_kpi"
+    name = "Business Unit KPI Audit"
+
+    def __init__(self):
+        super().__init__()
+        self._db = SQLiteDatabase()
+
+    def analyze(self):
+        """
+        Calculate KPIs for each business unit.
+
+        Returns:
+            list[dict]: KPI metrics per business unit
+        """
+
+        # ⚡ OPTIMIZATION: Load all payments once
+        all_payments = self._db.query(
+            "SELECT order_id, payment_method, amount FROM pos_payments"
+        )
+        
+        payments_by_order = {}
+        for p in all_payments:
+            oid = p["order_id"]
+            if oid not in payments_by_order:
+                payments_by_order[oid] = []
+            payments_by_order[oid].append(p)
+
+        orders = self.get_orders(
+            domain=[
+                ("state", "=", "done"),  # ✅ تعديل: "done" بدلاً من "paid"
+            ],
+            fields=[
+                "id",
+                "amount_total",
+                "company_id",
+                "session_id",
+                "name",
+                "date_order",
+            ],
+            order="date_order",
+        )
+
+        summary = {}
+
+        for order in orders:
+
+            context = self.build_context(order)
+
+            if context.business_unit is None:
+                continue
+
+            key = (
+                context.company_id,
+                context.business_unit.id,
+            )
+
+            if key not in summary:
+                summary[key] = {
+                    "company_id": context.company_id,
+                    "business_unit_id": context.business_unit.id,
+                    "business_unit_name": context.business_unit.name,
+                    "orders": 0,
+                    "sales": 0.0,
+                    "refunds": 0,
+                    "refund_amount": 0.0,
+                    "payment_methods": set(),
+                    "payment_method_totals": {},
+                    "daily_sales": {},
+                }
+
+            amount = order.get("amount_total", 0.0) or 0.0
+
+            # Track daily sales for trend
+            order_date = order.get("date_order", "")
+            if isinstance(order_date, str) and len(order_date) >= 10:
+                day = order_date[:10]
+                if day not in summary[key]["daily_sales"]:
+                    summary[key]["daily_sales"][day] = 0.0
+                summary[key]["daily_sales"][day] += amount if amount > 0 else 0.0
+
+            if amount < 0:
+                summary[key]["refunds"] += 1
+                summary[key]["refund_amount"] += abs(amount)
+            else:
+                summary[key]["orders"] += 1
+                summary[key]["sales"] += amount
+
+            # ⚡ OPTIMIZATION: Use memory instead of SQL query
+            payments = payments_by_order.get(order["id"], [])
+            for payment in payments:
+                method = payment["payment_method"] if payment["payment_method"] else "Unknown"
+                
+                summary[key]["payment_methods"].add(method)
+                
+                if method not in summary[key]["payment_method_totals"]:
+                    summary[key]["payment_method_totals"][method] = 0.0
+                summary[key]["payment_method_totals"][method] += payment["amount"] if payment["amount"] else 0.0
+
+        result = []
+        for key, data in summary.items():
+
+            total_orders = data["orders"]
+            total_sales = data["sales"]
+            total_refunds = data["refunds"]
+            refund_amount = data["refund_amount"]
+
+            net_sales = total_sales - refund_amount
+
+            avg_order_value = total_sales / total_orders if total_orders > 0 else 0.0
+
+            refund_rate = (total_refunds / total_orders * 100) if total_orders > 0 else 0.0
+
+            # Calculate sales trend (days with sales)
+            daily_sales = data["daily_sales"]
+            active_days = len(daily_sales)
+            avg_daily_sales = total_sales / active_days if active_days > 0 else 0.0
+
+            # Best day
+            best_day = max(daily_sales, key=daily_sales.get) if daily_sales else None
+            best_day_sales = daily_sales[best_day] if best_day else 0.0
+
+            payment_methods = data["payment_methods"]
+            payment_method_totals = data["payment_method_totals"]
+            
+            top_payment_method = None
+            if payment_method_totals:
+                top_payment_method = max(payment_method_totals, key=payment_method_totals.get)
+
+            result.append({
+                "company_id": data["company_id"],
+                "business_unit_id": data["business_unit_id"],
+                "business_unit_name": data["business_unit_name"],
+                "number_of_orders": total_orders,
+                "total_sales": round(total_sales, 2),
+                "average_order_value": round(avg_order_value, 2),
+                "number_of_refunds": total_refunds,
+                "refund_amount": round(refund_amount, 2),
+                "refund_rate_percent": round(refund_rate, 2),
+                "net_sales": round(net_sales, 2),
+                "active_days": active_days,
+                "average_daily_sales": round(avg_daily_sales, 2),
+                "best_day": best_day,
+                "best_day_sales": round(best_day_sales, 2),
+                "number_of_payment_methods": len(payment_methods),
+                "payment_methods": list(payment_methods),
+                "top_payment_method": top_payment_method,
+            })
+
+        # Sort by total_sales desc
+        result.sort(key=lambda x: -x["total_sales"])
+
+        return result

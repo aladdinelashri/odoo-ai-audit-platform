@@ -1,3 +1,5 @@
+# database/core/storage/sqlite/database.py
+
 from pathlib import Path
 import sqlite3
 
@@ -36,6 +38,17 @@ class SQLiteDatabase:
                 order_name TEXT,
                 order_date TEXT,
                 amount_total REAL
+            );
+
+            ------------------------------------------------------------------
+            -- POS Order Lines
+            ------------------------------------------------------------------
+            CREATE TABLE IF NOT EXISTS pos_order_lines(
+                id INTEGER PRIMARY KEY,
+                order_id INTEGER,
+                product_id INTEGER,
+                qty REAL,
+                price_subtotal REAL
             );
 
             ------------------------------------------------------------------
