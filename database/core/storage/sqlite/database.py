@@ -52,6 +52,16 @@ class SQLiteDatabase:
             );
 
             ------------------------------------------------------------------
+            -- Product Products
+            ------------------------------------------------------------------
+            CREATE TABLE IF NOT EXISTS product_products(
+                id INTEGER PRIMARY KEY,
+                display_name TEXT,
+                categ_id INTEGER,
+                categ_name TEXT
+            );
+
+            ------------------------------------------------------------------
             -- POS Payments
             ------------------------------------------------------------------
             CREATE TABLE IF NOT EXISTS pos_payments(

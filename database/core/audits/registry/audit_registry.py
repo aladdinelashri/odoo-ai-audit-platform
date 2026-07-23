@@ -9,6 +9,7 @@ from database.core.audits.pos_monthly_summary_audit import POSMonthlySummaryAudi
 from database.core.audits.cashier_performance_audit import CashierPerformanceAudit
 from database.core.audits.session_audit import SessionAudit
 from database.core.audits.business_unit_kpi_audit import BusinessUnitKPIAudit
+from database.core.audits.pos_category_daily_ranking_audit import POSCategoryDailyRankingAudit
 
 
 class AuditRegistry:
@@ -26,6 +27,7 @@ class AuditRegistry:
         self.register(CashierPerformanceAudit())
         self.register(SessionAudit())
         self.register(BusinessUnitKPIAudit())
+        self.register(POSCategoryDailyRankingAudit())
 
     def register(self, audit):
 
