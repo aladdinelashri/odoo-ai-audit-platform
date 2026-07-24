@@ -1,8 +1,35 @@
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual Environment
 .venv/
+venv/
+env/
+
+# Environment & Secrets
 .env
+
+# Logs
 *.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Backup files
+*.save
+*.bak
+*~
+
+# Cache
 database/cache/
-knowledge/cache/
