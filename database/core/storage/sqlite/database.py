@@ -1,30 +1,25 @@
 # database/core/storage/sqlite/database.py
 
 from pathlib import Path
-import sqlite3
+from database.core.storage.sqlite.sqlite_service import SQLiteService
 
 
 class SQLiteDatabase:
+    """
+    Backward-compatible wrapper around SQLiteService.
+    All new code should use SQLiteService directly.
+    This class is kept for existing audits and sync scripts.
+    """
 
-    def __init__(self):
-
-        root = Path(__file__).resolve().parents[4]
-
-        db_folder = root / "database" / "storage"
-        db_folder.mkdir(parents=True, exist_ok=True)
-
-        self.path = db_folder / "audit.db"
-
-        self.connection = sqlite3.connect(self.path)
-        self.connection.row_factory = sqlite3.Row
-
+    def __init__(self, db_path=None):
+        from config.settings import Settings
+        self.path = db_path or Settings.SQLITE_PATH
+        self._service = SQLiteService(db_path=self.path)
         self.create_schema()
 
     def create_schema(self):
-
-        cursor = self.connection.cursor()
-
-        cursor.executescript(
+        """Create schema if not exists."""
+        self._service.execute_script(
             """
             ------------------------------------------------------------------
             -- POS Orders
@@ -102,7 +97,7 @@ class SQLiteDatabase:
             );
 
             ------------------------------------------------------------------
-            -- Session → Business Unit Mapping
+            -- Session -> Business Unit Mapping
             ------------------------------------------------------------------
             CREATE TABLE IF NOT EXISTS session_business_units(
                 session_id INTEGER PRIMARY KEY,
@@ -111,34 +106,27 @@ class SQLiteDatabase:
             """
         )
 
-        self.connection.commit()
+    def query(self, sql, params=()):
+        """Execute raw SELECT query. Returns list of dicts."""
+        return self._service.execute(sql, params)
+
+    def query_one(self, sql, params=()):
+        """Execute raw SQL and return first row (or None)."""
+        rows = self._service.execute(sql, params)
+        return rows[0] if rows else None
 
     def execute(self, sql, params=()):
-
-        cursor = self.connection.cursor()
+        """Execute raw SQL (INSERT/UPDATE/DELETE). Returns cursor."""
+        conn = self._service.connect()
+        cursor = conn.cursor()
         cursor.execute(sql, params)
-        self.connection.commit()
+        conn.commit()
         return cursor
 
     def executemany(self, sql, rows):
-
-        cursor = self.connection.cursor()
-        cursor.executemany(sql, rows)
-        self.connection.commit()
-        return cursor
-
-    def query(self, sql, params=()):
-
-        cursor = self.connection.cursor()
-        cursor.execute(sql, params)
-        return cursor.fetchall()
-
-    def query_one(self, sql, params=()):
-
-        cursor = self.connection.cursor()
-        cursor.execute(sql, params)
-        return cursor.fetchone()
+        """Execute many inserts. Returns cursor."""
+        return self._service.executemany(sql, rows)
 
     def close(self):
-
-        self.connection.close()
+        """Close database connection."""
+        self._service.close()
