@@ -33,3 +33,10 @@ Thumbs.db
 
 # Cache
 database/cache/
+
+# Database
+*.db-journal
+*.sqlite3-journal
+
+# Exports (old Excel files - no longer used)
+database/exports/raw/*.xlsx
