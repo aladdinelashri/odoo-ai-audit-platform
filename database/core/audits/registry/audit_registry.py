@@ -1,89 +1,136 @@
 """
-Audit Registry - Registry Pattern for all audit modules.
-Central registry to dynamically discover and run audits.
+Audit Registry - Manages all available audit modules
 """
-
-import importlib
-import logging
-from typing import Dict, Callable, Any, Optional
 from dataclasses import dataclass
-
-from config.logging import get_logger
-
-logger = get_logger("audit.registry")
+from typing import Dict, List, Optional, Type
+from database.core.audits.base.base_audit import BaseAudit
 
 
 @dataclass
 class AuditInfo:
-    """Metadata for a registered audit."""
-    name: str
+    """Information about an audit module."""
     code: str
+    name: str
     description: str
     module_path: str
-    func_name: str = "run"
+    func_name: str
     category: str = "pos"
+    enabled: bool = True
 
 
 class AuditRegistry:
-    """Central registry for all audit modules."""
-
-    def __init__(self):
-        self._audits: Dict[str, AuditInfo] = {}
-        self._register_defaults()
-
-    def _register_defaults(self):
-        """Register all built-in audits."""
-        defaults = [
-            AuditInfo("missing_receipts", "MISSING_RCPT", "Detect missing receipts", "database.core.audits.missing_receipts_audit"),
-            AuditInfo("refunds", "REFUNDS", "Analyze refund patterns", "database.core.audits.refunds.refund_spike_audit"),
-            AuditInfo("daily_summary", "DAILY_SUM", "Daily POS summary", "database.core.audits.pos_daily_summary_audit"),
-            AuditInfo("monthly_summary", "MONTHLY_SUM", "Monthly POS summary", "database.core.audits.pos_monthly_summary_audit"),
-            AuditInfo("sales_summary", "SALES_SUM", "Sales performance summary", "database.core.audits.pos_sales_summary_audit"),
-            AuditInfo("payment_methods", "PAY_METH", "Payment method breakdown", "database.core.audits.payment_method_summary_audit"),
-            AuditInfo("cashier_performance", "CASH_PERF", "Cashier performance KPI", "database.core.audits.cashier_performance_audit"),
-            AuditInfo("session", "SESSION", "POS session audit", "database.core.audits.session_audit"),
-            AuditInfo("business_unit_kpi", "BU_KPI", "Business unit KPI", "database.core.audits.business_unit_kpi_audit"),
-            AuditInfo("category_ranking", "CAT_RANK", "Category daily ranking", "database.core.audits.pos_category_daily_ranking_audit"),
-        ]
-        for audit in defaults:
-            self.register(audit)
-
-    def register(self, audit: AuditInfo) -> None:
-        """Register an audit module."""
-        self._audits[audit.name] = audit
-        logger.debug(f"Registered audit: {audit.name} ({audit.code})")
-
-    def get(self, name: str) -> Optional[AuditInfo]:
-        """Get audit metadata by name."""
-        return self._audits.get(name)
-
-    def list_audits(self, category: str = None) -> Dict[str, AuditInfo]:
-        """List all registered audits, optionally filtered by category."""
-        if category:
-            return {k: v for k, v in self._audits.items() if v.category == category}
-        return self._audits.copy()
-
-    def run(self, name: str, context, **kwargs) -> Any:
-        """Dynamically load and run an audit by name."""
-        audit = self.get(name)
-        if not audit:
-            raise ValueError(f"Audit '{name}' not found. Available: {list(self._audits.keys())}")
+    """Registry for all audit modules."""
+    
+    _registry: Dict[str, AuditInfo] = {}
+    
+    @classmethod
+    def register(cls, audit_info: AuditInfo) -> None:
+        """Register a new audit."""
+        cls._registry[audit_info.code] = audit_info
+    
+    @classmethod
+    def get(cls, code: str) -> Optional[AuditInfo]:
+        """Get audit info by code."""
+        return cls._registry.get(code)
+    
+    @classmethod
+    def list_all(cls) -> List[AuditInfo]:
+        """List all registered audits."""
+        return list(cls._registry.values())
+    
+    @classmethod
+    def list_by_category(cls, category: str) -> List[AuditInfo]:
+        """List audits by category."""
+        return [a for a in cls._registry.values() if a.category == category]
+    
+    @classmethod
+    def get_audit_class(cls, code: str) -> Optional[Type[BaseAudit]]:
+        """Get the audit class by code."""
+        info = cls.get(code)
+        if not info:
+            return None
+        
         try:
-            module = importlib.import_module(audit.module_path)
-            func = getattr(module, audit.func_name, None)
-            if not func:
-                for attr_name in dir(module):
-                    attr = getattr(module, attr_name)
-                    if callable(attr) and not attr_name.startswith("_"):
-                        func = attr
-                        break
-            if not func:
-                raise AttributeError(f"No callable found in {audit.module_path}")
-            logger.info(f"Running audit: {audit.name} ({audit.code})")
-            return func(context, **kwargs)
-        except Exception as e:
-            logger.error(f"Failed to run audit '{name}': {e}")
-            raise
+            module = __import__(info.module_path, fromlist=[info.func_name])
+            return getattr(module, info.func_name)
+        except (ImportError, AttributeError) as e:
+            print(f"Error loading audit {code}: {e}")
+            return None
 
 
+# Create a singleton instance for backward compatibility
 registry = AuditRegistry()
+
+
+def _register_default_audits():
+    """Register all default audits."""
+    # Try to import accounting audits first (they should work)
+    try:
+        from database.core.audits.accounting.journal_audit import JournalAudit
+        registry.register(AuditInfo(
+            code="journal_audit",
+            name="Journal Audit",
+            description="Checks for unbalanced entries, sequence gaps, duplicates.",
+            module_path="database.core.audits.accounting.journal_audit",
+            func_name="JournalAudit",
+            category="accounting"
+        ))
+    except ImportError as e:
+        print(f"Warning: Could not import JournalAudit: {e}")
+    
+    try:
+        from database.core.audits.accounting.tax_validation_audit import TaxValidationAudit
+        registry.register(AuditInfo(
+            code="tax_validation",
+            name="Tax Validation Audit",
+            description="Validates tax amounts and rates.",
+            module_path="database.core.audits.accounting.tax_validation_audit",
+            func_name="TaxValidationAudit",
+            category="accounting"
+        ))
+    except ImportError as e:
+        print(f"Warning: Could not import TaxValidationAudit: {e}")
+    
+    try:
+        from database.core.audits.accounting.ledger_integrity_audit import LedgerIntegrityAudit
+        registry.register(AuditInfo(
+            code="ledger_integrity",
+            name="Ledger Integrity Audit",
+            description="Checks ledger integrity and account consistency.",
+            module_path="database.core.audits.accounting.ledger_integrity_audit",
+            func_name="LedgerIntegrityAudit",
+            category="accounting"
+        ))
+    except ImportError as e:
+        print(f"Warning: Could not import LedgerIntegrityAudit: {e}")
+    
+    # Register POS audits (if they exist)
+    try:
+        from database.core.audits.missing_receipts_audit import MissingReceiptsAudit
+        registry.register(AuditInfo(
+            code="missing_receipts",
+            name="Missing Receipts Audit",
+            description="Detects sequential gaps in receipt numbering.",
+            module_path="database.core.audits.missing_receipts_audit",
+            func_name="MissingReceiptsAudit",
+            category="pos"
+        ))
+    except ImportError:
+        pass
+    
+    try:
+        from database.core.audits.refunds.refund_spike_audit import RefundSpikeAudit
+        registry.register(AuditInfo(
+            code="refunds",
+            name="Refund Spike Audit",
+            description="Detects unusual spikes in refund activity.",
+            module_path="database.core.audits.refunds.refund_spike_audit",
+            func_name="RefundSpikeAudit",
+            category="pos"
+        ))
+    except ImportError:
+        pass
+
+
+# Auto-register on import
+_register_default_audits()

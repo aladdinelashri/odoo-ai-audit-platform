@@ -1,135 +1,215 @@
 """
-Audit Runner — executes audits using the registry and context builder.
-Separates execution logic from CLI.
+Audit Runner - Executes audits and manages results
 """
+import logging
+from typing import Dict, List, Optional, Any
+from datetime import datetime
 
-import json
-from typing import Any, Dict, Optional
-
-from config.logging import get_logger
-from database.core.context.context_builder import AuditContextBuilder, AuditContext
 from database.core.audits.registry.audit_registry import AuditRegistry, registry
+from database.core.audits.base.base_audit import BaseAudit
 
-logger = get_logger('audit.runner')
+logger = logging.getLogger(__name__)
 
 
 class AuditRunner:
-    """
-    High-level runner for audit operations.
-    Can be used by CLI, API, scheduler, or tests.
-    """
+    """Runner for executing audits."""
     
-    def __init__(self, sqlite_service=None):
-        self.context_builder = AuditContextBuilder(sqlite_service)
-        self.registry = registry
+    def __init__(self):
+        self.results = {}
     
-    def run(
-        self,
-        audit_name: str,
-        session_id: int = None,
-        business_unit_id: int = None,
-        date_from: str = None,
-        date_to: str = None,
-        **filters
-    ) -> Dict[str, Any]:
+    def list_audits(self) -> List[Dict[str, Any]]:
+        """List all available audits."""
+        audits = []
+        for info in registry.list_all():
+            audits.append({
+                "code": info.code,
+                "name": info.name,
+                "description": info.description,
+                "category": info.category,
+                "enabled": info.enabled
+            })
+        return audits
+    
+    def run(self, code: str = None, context: Optional[Dict] = None, 
+            category: str = None, run_all: bool = False, **kwargs) -> Dict[str, Any]:
         """
-        Run a single audit with full context.
+        Main entry point for running audits.
         
         Args:
-            audit_name: Name of registered audit
-            session_id: Optional session filter
-            business_unit_id: Optional business unit filter
-            date_from: Start date (YYYY-MM-DD)
-            date_to: End date (YYYY-MM-DD)
-            **filters: Additional audit-specific filters
+            code: Specific audit code to run
+            context: Optional context (date range, filters, etc.)
+            category: Category to run ('pos' or 'accounting')
+            run_all: Run all audits if True
+            **kwargs: Additional arguments (e.g., session_id, date_from, date_to)
         
         Returns:
-            Dictionary with audit results and metadata
+            Audit results
         """
-        logger.info(f"AuditRunner starting: {audit_name}")
+        # Merge context with kwargs
+        if context is None:
+            context = {}
+        for key, value in kwargs.items():
+            if key not in context:
+                context[key] = value
         
-        # Build context
-        context = self.context_builder.build(
-            session_id=session_id,
-            business_unit_id=business_unit_id,
-            date_from=date_from,
-            date_to=date_to,
-            **filters
-        )
+        if run_all:
+            return self.run_all(**context)
+        elif category:
+            return self.run_by_category(category, context)
+        elif code:
+            return self.run_audit(code, context)
+        else:
+            return {
+                "status": "error",
+                "error": "No audit specified. Provide code, category, or run_all=True",
+                "timestamp": datetime.now().isoformat()
+            }
+    
+    def run_audit(self, code: str, context: Optional[Dict] = None) -> Dict[str, Any]:
+        """
+        Run a single audit by code.
         
-        # Run audit via registry
-        result = self.registry.run(audit_name, context, **filters)
+        Args:
+            code: Audit code to run
+            context: Optional context (date range, filters, etc.)
+            
+        Returns:
+            Audit results
+        """
+        try:
+            # Get audit info
+            info = registry.get(code)
+            if not info:
+                return {
+                    "audit": code,
+                    "status": "error",
+                    "error": f"Audit '{code}' not found",
+                    "executed_at": datetime.now().isoformat()
+                }
+            
+            # Get audit class
+            audit_class = registry.get_audit_class(code)
+            if not audit_class:
+                return {
+                    "audit": code,
+                    "status": "error",
+                    "error": f"Could not load audit class for '{code}'",
+                    "executed_at": datetime.now().isoformat()
+                }
+            
+            # Instantiate and run
+            audit_instance = audit_class(context or {})
+            result = audit_instance.analyze()
+            
+            # Add metadata
+            result["executed_at"] = datetime.now().isoformat()
+            result["audit_code"] = code
+            
+            # Store result
+            self.results[code] = result
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"Failed to run audit '{code}': {e}")
+            return {
+                "audit": code,
+                "status": "error",
+                "error": str(e),
+                "executed_at": datetime.now().isoformat()
+            }
+    
+    def run_all(self, context: Optional[Dict] = None, **kwargs) -> Dict[str, Any]:
+        """
+        Run all enabled audits.
         
-        # Wrap result with metadata
+        Args:
+            context: Optional context (date range, filters, etc.)
+            **kwargs: Additional arguments to merge into context
+            
+        Returns:
+            Summary of all audit results
+        """
+        # Merge kwargs into context
+        if context is None:
+            context = {}
+        for key, value in kwargs.items():
+            if key not in context:
+                context[key] = value
+        
+        results = {}
+        completed = 0
+        errors = 0
+        
+        for info in registry.list_all():
+            if not info.enabled:
+                continue
+            
+            result = self.run_audit(info.code, context)
+            results[info.code] = result
+            
+            if result.get("status") == "error":
+                errors += 1
+            else:
+                completed += 1
+        
         return {
-            'audit': audit_name,
-            'timestamp': self._now(),
-            'context': {
-                'business_unit': context.business_unit.name if context.business_unit else None,
-                'session_id': session_id,
-                'date_from': date_from,
-                'date_to': date_to,
-            },
-            'result': result,
-            'status': 'success'
+            "category": "all",
+            "timestamp": datetime.now().isoformat(),
+            "total": len(results),
+            "completed": completed,
+            "errors": errors,
+            "results": results
         }
     
-    def run_all(
-        self,
-        category: str = 'pos',
-        session_id: int = None,
-        business_unit_id: int = None,
-        date_from: str = None,
-        date_to: str = None,
-        **filters
-    ) -> Dict[str, Any]:
+    def run_by_category(self, category: str, context: Optional[Dict] = None, **kwargs) -> Dict[str, Any]:
         """
         Run all audits in a category.
         
+        Args:
+            category: Category name ('pos' or 'accounting')
+            context: Optional context
+            **kwargs: Additional arguments to merge into context
+            
         Returns:
-            Dictionary mapping audit names to results
+            Summary of audit results
         """
-        audits = self.registry.list_audits(category=category)
-        results = {}
+        # Merge kwargs into context
+        if context is None:
+            context = {}
+        for key, value in kwargs.items():
+            if key not in context:
+                context[key] = value
         
-        for name in audits:
-            try:
-                results[name] = self.run(
-                    name,
-                    session_id=session_id,
-                    business_unit_id=business_unit_id,
-                    date_from=date_from,
-                    date_to=date_to,
-                    **filters
-                )
-            except Exception as e:
-                logger.error(f"Audit '{name}' failed: {e}")
-                results[name] = {
-                    'audit': name,
-                    'status': 'error',
-                    'error': str(e)
-                }
+        results = {}
+        completed = 0
+        errors = 0
+        
+        for info in registry.list_by_category(category):
+            if not info.enabled:
+                continue
+            
+            result = self.run_audit(info.code, context)
+            results[info.code] = result
+            
+            if result.get("status") == "error":
+                errors += 1
+            else:
+                completed += 1
         
         return {
-            'category': category,
-            'timestamp': self._now(),
-            'total': len(audits),
-            'completed': sum(1 for r in results.values() if r.get('status') == 'success'),
-            'results': results
+            "category": category,
+            "timestamp": datetime.now().isoformat(),
+            "total": len(results),
+            "completed": completed,
+            "errors": errors,
+            "results": results
         }
     
-    def list_available(self, category: str = None) -> Dict[str, str]:
-        """List available audits with descriptions."""
-        audits = self.registry.list_audits(category=category)
-        return {name: info.description for name, info in audits.items()}
+    def get_result(self, code: str) -> Optional[Dict[str, Any]]:
+        """Get a stored audit result."""
+        return self.results.get(code)
     
-    def _now(self) -> str:
-        from datetime import datetime
-        return datetime.now().isoformat()
-
-
-# Convenience function
-def run_audit(audit_name: str, **kwargs) -> Dict[str, Any]:
-    """Quick-run a single audit."""
-    runner = AuditRunner()
-    return runner.run(audit_name, **kwargs)
+    def clear_results(self) -> None:
+        """Clear all stored results."""
+        self.results.clear()

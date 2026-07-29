@@ -1,110 +1,104 @@
-"""Refund Spike Detection — flags abnormal refund patterns."""
-
+"""
+Refund Spike Audit
+Detects unusual spikes in refund activity.
+"""
 from database.core.audits.base.base_pos_audit import BasePOSAudit
-from database.core.storage.sqlite.database import SQLiteDatabase
+from database.core.storage.sqlite.sqlite_pool import SQLitePool
 from datetime import datetime, timedelta
-from collections import Counter
 
 
 class RefundSpikeAudit(BasePOSAudit):
-    """
-    Detects refund spikes compared to 30-day moving average.
-
-    Flags HIGH risk if refunds spike > 280% of daily average.
-    Flags MEDIUM risk if refunds spike > 150% of daily average.
-    """
-
-    code = "refund_spike"
-    name = "Refund Spike Detection"
-
-    def __init__(self):
-        super().__init__()
-        self._db = SQLiteDatabase()
-
+    code = "refunds"
+    name = "Refund Spike Audit"
+    
     def analyze(self):
         """
-        Analyze refund patterns and detect anomalies.
-
+        Detect refund spikes using 30-day moving average.
+        
         Returns:
-            dict: Refund statistics, spike ratios, and risk assessment.
+            Dict with audit results
         """
-        today = datetime.now().strftime("%Y-%m-%d")
-
-        # ─── Today's refunds ───
-        today_orders = self.get_orders(
-            domain=[
-                ("state", "=", "done"),
-                ("date_order", "like", f"{today}%"),
-            ],
-            fields=["id", "amount_total", "date_order", "user_id", "name"],
-        )
-        today_refunds = [o for o in today_orders if o.get("amount_total", 0) < 0]
-        today_count = len(today_refunds)
-        today_amount = abs(
-            sum(o["amount_total"] for o in today_refunds)
-        ) if today_refunds else 0.0
-
-        # ─── 30-day moving average ───
-        thirty_days_ago = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
-        rows = self._db.query(
-            """
-            SELECT 
-                COUNT(*) as count,
-                COALESCE(SUM(ABS(amount_total)), 0) as amount
-            FROM pos_orders
-            WHERE amount_total < 0 AND date_order >= ?
-            """,
-            (thirty_days_ago,),
-        )
-
-        hist_count = rows[0]["count"] if rows else 0
-        hist_amount = rows[0]["amount"] if rows else 0
-
-        daily_avg = hist_count / 30.0 if hist_count > 0 else 0.0
-        daily_avg_amount = hist_amount / 30.0 if hist_amount > 0 else 0.0
-
-        # ─── Spike ratios ───
-        spike_ratio = (today_count / daily_avg) if daily_avg > 0 else 0.0
-        amount_spike = (today_amount / daily_avg_amount) if daily_avg_amount > 0 else 0.0
-
-        # ─── Risk assessment ───
-        risk = "LOW"
-        if spike_ratio > 2.8 or amount_spike > 2.8:
-            risk = "HIGH"
-        elif spike_ratio > 1.5 or amount_spike > 1.5:
-            risk = "MEDIUM"
-
-        # ─── Top cashiers by refund count ───
-        cashiers = Counter(o.get("user_id", "Unknown") for o in today_refunds)
-        top_cashiers = [
-            {"cashier_id": c, "refund_count": n}
-            for c, n in cashiers.most_common(5)
-        ]
-
-        # ─── Top refunds by amount ───
-        top_refunds = sorted(
-            today_refunds,
-            key=lambda o: abs(o.get("amount_total", 0)),
-            reverse=True,
-        )[:5]
-        top_refunds_summary = [
-            {
-                "order_id": o["id"],
-                "order_name": o.get("name", ""),
-                "amount": round(abs(o["amount_total"]), 2),
-                "cashier_id": o.get("user_id"),
+        findings = []
+        query_time_ms = 0
+        queries_executed = 0
+        
+        try:
+            import time
+            start = time.perf_counter()
+            
+            conn = SQLitePool.get_connection()
+            cursor = conn.cursor()
+            
+            # Get daily refund counts for the last 30 days
+            cursor.execute("""
+                SELECT 
+                    DATE(date_order) as date,
+                    COUNT(*) as refund_count,
+                    SUM(amount_total) as refund_amount
+                FROM pos_orders
+                WHERE state = 'done' 
+                    AND amount_total < 0
+                    AND date_order >= DATE('now', '-30 days')
+                GROUP BY DATE(date_order)
+                ORDER BY date
+            """)
+            queries_executed += 1
+            
+            daily_refunds = cursor.fetchall()
+            
+            if len(daily_refunds) >= 7:  # Need at least 7 days for meaningful analysis
+                # Calculate moving average
+                for i in range(len(daily_refunds)):
+                    day = daily_refunds[i]
+                    # Use 7-day moving average
+                    start_idx = max(0, i - 6)
+                    window = daily_refunds[start_idx:i]
+                    
+                    if window:
+                        avg_count = sum(r['refund_count'] for r in window) / len(window)
+                        avg_amount = sum(r['refund_amount'] for r in window) / len(window)
+                        
+                        current_count = day['refund_count']
+                        current_amount = day['refund_amount'] or 0
+                        
+                        # Check if current day is significantly above average (2x or more)
+                        if avg_count > 0 and current_count > avg_count * 2:
+                            findings.append({
+                                "type": "refund_spike_count",
+                                "severity": "HIGH" if current_count > avg_count * 3 else "MEDIUM",
+                                "message": f"Refund spike detected on {day['date']}",
+                                "date": day['date'],
+                                "refund_count": current_count,
+                                "avg_count": round(avg_count, 1),
+                                "refund_amount": current_amount,
+                                "avg_amount": round(avg_amount, 2)
+                            })
+            
+            end = time.perf_counter()
+            query_time_ms = (end - start) * 1000
+            
+            status = "FAIL" if findings else "PASS"
+            
+            return {
+                "audit_code": self.code,
+                "name": self.name,
+                "category": self.category,
+                "status": status,
+                "findings": findings,
+                "findings_count": len(findings),
+                "performance": {
+                    "query_time_ms": round(query_time_ms, 2),
+                    "queries_executed": queries_executed
+                }
             }
-            for o in top_refunds
-        ]
-
-        return {
-            "today_refunds": today_count,
-            "today_amount": round(today_amount, 2),
-            "daily_avg_refunds": round(daily_avg, 2),
-            "daily_avg_amount": round(daily_avg_amount, 2),
-            "spike_ratio": round(spike_ratio, 2),
-            "amount_spike": round(amount_spike, 2),
-            "risk_level": risk,
-            "top_cashiers": top_cashiers,
-            "top_refunds": top_refunds_summary,
-        }
+            
+        except Exception as e:
+            return {
+                "audit_code": self.code,
+                "name": self.name,
+                "category": self.category,
+                "status": "ERROR",
+                "error": str(e),
+                "findings": [],
+                "findings_count": 0
+            }
