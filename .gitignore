@@ -41,3 +41,4 @@ database/cache/
 # Exports (old Excel files - no longer used)
 database/exports/raw/*.xlsx
 *.tar.gz
+*.tar.gz
