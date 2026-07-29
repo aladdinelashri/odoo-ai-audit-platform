@@ -21,7 +21,7 @@ env/
 .idea/
 *.swp
 *.swo
-
+*.tar.gz
 # OS
 .DS_Store
 Thumbs.db
