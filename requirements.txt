@@ -26,4 +26,27 @@ SQLAlchemy==2.0.51
 typer==0.26.8
 typing_extensions==4.16.0
 Werkzeug==3.1.8
+
+# (your existing loose version lines)
+apscheduler>=3.10.0
+fastapi>=0.100.0
+passlib[bcrypt]>=1.7.4
+pydantic>=2.0.0
+python-jose[cryptography]>=3.3.0
+python-multipart>=0.0.6
+pytz>=2023.3
+reportlab>=4.0.0
 sqlalchemy>=2.0
+uvicorn[standard]>=0.23.0
+
+# ----- NEW DEPENDENCIES -----
+alembic>=1.13.1
+prometheus-client>=0.20.0
+sentry-sdk[fastapi]>=2.8.0
+slowapi>=0.1.9
+structlog>=24.1.0
+tenacity>=8.3.0
+pydantic-settings==2.1.0
+pytest==7.4.4
+pytest-asyncio==0.23.3
+redis==5.0.1

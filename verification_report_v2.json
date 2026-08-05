@@ -1,0 +1,139 @@
+{
+  "summary": {
+    "total": 18,
+    "passed": 11,
+    "failed": 3,
+    "skipped": 4,
+    "critical_failures": 1,
+    "timestamp": "2026-08-03T10:29:54.898410+00:00",
+    "base_url": "http://localhost:8000"
+  },
+  "results": [
+    {
+      "name": "Health endpoint",
+      "status": "PASS",
+      "detail": "db=ok, scheduler=ok",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.622392+00:00"
+    },
+    {
+      "name": "Health: DB connected",
+      "status": "PASS",
+      "detail": "",
+      "critical": true,
+      "timestamp": "2026-08-03T10:29:54.622445+00:00"
+    },
+    {
+      "name": "Health: Scheduler ok",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.622461+00:00"
+    },
+    {
+      "name": "Metrics endpoint",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.625302+00:00"
+    },
+    {
+      "name": "Metrics: report_executions_total",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.625340+00:00"
+    },
+    {
+      "name": "Metrics: report_duration_seconds",
+      "status": "FAIL",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.625355+00:00"
+    },
+    {
+      "name": "Login endpoint",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.879566+00:00"
+    },
+    {
+      "name": "Login returns access_token",
+      "status": "PASS",
+      "detail": "",
+      "critical": true,
+      "timestamp": "2026-08-03T10:29:54.879651+00:00"
+    },
+    {
+      "name": "Login returns refresh_token",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.879671+00:00"
+    },
+    {
+      "name": "Token refresh",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.881882+00:00"
+    },
+    {
+      "name": "Invalid login rejected",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.884603+00:00"
+    },
+    {
+      "name": "Login rate limit (5/min)",
+      "status": "PASS",
+      "detail": "429 received",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.892727+00:00"
+    },
+    {
+      "name": "Create report",
+      "status": "FAIL",
+      "detail": "status=422",
+      "critical": true,
+      "timestamp": "2026-08-03T10:29:54.895817+00:00"
+    },
+    {
+      "name": "Report execution",
+      "status": "SKIP",
+      "detail": "No report created or no auth",
+      "critical": true,
+      "timestamp": "2026-08-03T10:29:54.895893+00:00"
+    },
+    {
+      "name": "Export formats",
+      "status": "SKIP",
+      "detail": "No report created or no auth",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.895948+00:00"
+    },
+    {
+      "name": "Email delivery check",
+      "status": "SKIP",
+      "detail": "No execution to check",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.895993+00:00"
+    },
+    {
+      "name": "Audit log endpoint",
+      "status": "FAIL",
+      "detail": "status=401",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.898087+00:00"
+    },
+    {
+      "name": "Cleanup",
+      "status": "SKIP",
+      "detail": "No report to delete",
+      "critical": false,
+      "timestamp": "2026-08-03T10:29:54.898180+00:00"
+    }
+  ]
+}

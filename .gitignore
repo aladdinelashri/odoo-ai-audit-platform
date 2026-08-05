@@ -1,9 +1,13 @@
+cd ~/odoo-ai-audit-platform
+cat > .gitignore << 'EOF'
 # Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
 .Python
+*.egg-info/
+dist/
+build/
 
 # Virtual Environment
 .venv/
@@ -12,33 +16,60 @@ env/
 
 # Environment & Secrets
 .env
+.env.local
 
 # Logs
 *.log
+logs/
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-*.tar.gz
+*~
+
 # OS
 .DS_Store
 Thumbs.db
 
-# Backup files
-*.save
-*.bak
-*~
-
 # Cache
 database/cache/
+.pytest_cache/
+.mypy_cache/
 
-# Database
+# Database files (ALL of them)
+*.db
+*.sqlite
+*.sqlite3
 *.db-journal
 *.sqlite3-journal
+database/storage/*.db
 
-# Exports (old Excel files - no longer used)
+# Backups
+backup*/
+*.save
+*.bak
+
+# Archives
+*.tar
+*.tar.gz
+*.zip
+
+# Exports
 database/exports/raw/*.xlsx
-*.tar.gz
-*.tar.gz
+
+# Alembic (if not using it)
+# alembic/
+# alembic.ini
+
+# Junk
+-H
+-d
+=0.*
+EOF
+
+# Junk files
+-H
+-d
+=0.*

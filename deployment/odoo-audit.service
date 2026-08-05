@@ -1,0 +1,25 @@
+[Unit]
+Description=Odoo AI Audit Platform
+After=network.target postgresql.service
+
+[Service]
+Type=notify
+User=odooaudit
+Group=odooaudit
+WorkingDirectory=/opt/odoo-ai-audit-platform
+Environment="PATH=/opt/odoo-ai-audit-platform/.venv/bin"
+EnvironmentFile=/opt/odoo-ai-audit-platform/.env
+ExecStart=/opt/odoo-ai-audit-platform/.venv/bin/gunicorn -c deployment/gunicorn.conf.py api.main:app
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+NoNewPrivileges=true
+ReadWritePaths=/opt/odoo-ai-audit-platform/database/storage
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

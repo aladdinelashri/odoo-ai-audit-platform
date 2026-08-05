@@ -1,0 +1,12 @@
+{
+  "name": "Test Users Report",
+  "description": "List all users",
+  "query_ast": {
+    "type": "select",
+    "table": "users",
+    "columns": ["id", "username", "role", "created_at"]
+  },
+  "parameters": {},
+  "export_format": "json",
+  "recipients": []
+}

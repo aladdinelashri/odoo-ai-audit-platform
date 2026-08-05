@@ -1,0 +1,71 @@
+
+[1m[94m▶ 1. API CONNECTIVITY & HEALTH[0m
+============================================================
+✅ [92m[1mPASS[0m — Health endpoint
+   db=ok, scheduler=ok
+✅ [92m[1mPASS[0m — Health: DB connected
+✅ [92m[1mPASS[0m — Health: Scheduler ok
+✅ [92m[1mPASS[0m — Metrics endpoint
+✅ [92m[1mPASS[0m — Metrics: report_executions_total
+⚠️ [93m[1mFAIL[0m — Metrics: report_duration_seconds
+
+[1m[94m▶ 2. AUTHENTICATION[0m
+============================================================
+✅ [92m[1mPASS[0m — Login endpoint
+✅ [92m[1mPASS[0m — Login returns access_token
+✅ [92m[1mPASS[0m — Login returns refresh_token
+✅ [92m[1mPASS[0m — Token refresh
+✅ [92m[1mPASS[0m — Invalid login rejected
+
+[1m[94m▶ 3. RATE LIMITING[0m
+============================================================
+   Testing login rate limit (6 rapid requests)...
+✅ [92m[1mPASS[0m — Login rate limit (5/min)
+   429 received
+
+[1m[94m▶ 4. REPORT CRUD (Admin Protected)[0m
+============================================================
+🔴 [91m[1mFAIL[0m — Create report
+   status=500
+
+[1m[94m▶ 5. REPORT EXECUTION (Manual Trigger)[0m
+============================================================
+🔴 [91m[1mSKIP[0m — Report execution
+   No report created or no auth
+
+[1m[94m▶ 6. EXPORT FORMATS[0m
+============================================================
+⚠️ [93m[1mSKIP[0m — Export formats
+   No report created or no auth
+
+[1m[94m▶ 7. EMAIL DELIVERY VERIFICATION[0m
+============================================================
+⚠️ [93m[1mSKIP[0m — Email delivery check
+   No execution to check
+
+[1m[94m▶ 8. AUDIT LOG VERIFICATION[0m
+============================================================
+⚠️ [93m[1mFAIL[0m — Audit log endpoint
+   status=401
+
+[1m[94m▶ 9. CLEANUP[0m
+============================================================
+⚠️ [93m[1mSKIP[0m — Cleanup
+   No report to delete
+
+[1m[94m▶ VERIFICATION SUMMARY[0m
+============================================================
+
+┌─────────────────────────────────────────────────────────────┐
+│  TOTAL TESTS:  18                                          │
+│  ✅ PASSED:     11                                          │
+│  🔴 FAILED:      3                                          │
+│  ⏭️  SKIPPED:     4                                          │
+│  🔴 CRITICAL FAILURES:   1                          │
+└─────────────────────────────────────────────────────────────┘
+
+[91m[1mCRITICAL FAILURES — MUST FIX BEFORE PRODUCTION:[0m
+  🔴 Create report
+     → status=500
+
+[1mDetailed results written to: verification_report_v3.json[0m

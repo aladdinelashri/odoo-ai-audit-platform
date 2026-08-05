@@ -1,0 +1,187 @@
+{
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "failed": 0,
+    "critical_failures": 0,
+    "timestamp": "2026-08-04T03:09:30.027535+00:00",
+    "base_url": "http://localhost:8000"
+  },
+  "results": [
+    {
+      "name": "Health endpoint",
+      "status": "PASS",
+      "detail": "db=None, cache=None",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.512561+00:00"
+    },
+    {
+      "name": "Health: DB ok",
+      "status": "PASS",
+      "detail": "",
+      "critical": true,
+      "timestamp": "2026-08-04T03:09:19.512656+00:00"
+    },
+    {
+      "name": "Metrics endpoint",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.519344+00:00"
+    },
+    {
+      "name": "Metrics: executions_total",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.519413+00:00"
+    },
+    {
+      "name": "Metrics: duration_seconds",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.519445+00:00"
+    },
+    {
+      "name": "Login",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.790847+00:00"
+    },
+    {
+      "name": "Login: access_token",
+      "status": "PASS",
+      "detail": "",
+      "critical": true,
+      "timestamp": "2026-08-04T03:09:19.791038+00:00"
+    },
+    {
+      "name": "Login: refresh_token",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.791096+00:00"
+    },
+    {
+      "name": "Token refresh",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.795234+00:00"
+    },
+    {
+      "name": "Invalid login rejected",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.799242+00:00"
+    },
+    {
+      "name": "Login rate limit",
+      "status": "PASS",
+      "detail": "429 received",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.811033+00:00"
+    },
+    {
+      "name": "Create report",
+      "status": "PASS",
+      "detail": "id=30",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.816512+00:00"
+    },
+    {
+      "name": "Create: has query_ast",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.816580+00:00"
+    },
+    {
+      "name": "List reports",
+      "status": "PASS",
+      "detail": "count=16",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.820234+00:00"
+    },
+    {
+      "name": "Get report",
+      "status": "PASS",
+      "detail": "name=Verify 060919",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.824333+00:00"
+    },
+    {
+      "name": "Update report",
+      "status": "PASS",
+      "detail": "name=Updated, status=inactive",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.830299+00:00"
+    },
+    {
+      "name": "Update with schedule",
+      "status": "PASS",
+      "detail": "status=200",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:19.835903+00:00"
+    },
+    {
+      "name": "Trigger report",
+      "status": "PASS",
+      "detail": "rows=46507",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:20.715098+00:00"
+    },
+    {
+      "name": "Trigger: returns data",
+      "status": "PASS",
+      "detail": "",
+      "critical": true,
+      "timestamp": "2026-08-04T03:09:20.715146+00:00"
+    },
+    {
+      "name": "Trigger rate limit",
+      "status": "PASS",
+      "detail": "429 received",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:27.604725+00:00"
+    },
+    {
+      "name": "Export JSON",
+      "status": "PASS",
+      "detail": "bytes=4301706",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:27.917404+00:00"
+    },
+    {
+      "name": "Export Excel",
+      "status": "PASS",
+      "detail": "bytes=913155, signature=PK..",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:29.705166+00:00"
+    },
+    {
+      "name": "Export PDF",
+      "status": "PASS",
+      "detail": "bytes=70332, header=%PDF",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:30.005571+00:00"
+    },
+    {
+      "name": "Audit log endpoint",
+      "status": "PASS",
+      "detail": "",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:30.009891+00:00"
+    },
+    {
+      "name": "Delete report",
+      "status": "PASS",
+      "detail": "status=204",
+      "critical": false,
+      "timestamp": "2026-08-04T03:09:30.027162+00:00"
+    }
+  ]
+}
